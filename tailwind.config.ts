@@ -12,6 +12,7 @@ const config: Config = {
 				openSans: ['Open Sans', 'sans-serif'],
 				lemonada: ['Lemonada', 'sans-serif'],
 				bakilda: ['Bakilda', 'sans-serif'],
+				oswald: ['Oswald', 'sans-serif'],
 			},
 			colors: {
 				primary: '#101113',
