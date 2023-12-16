@@ -5,6 +5,7 @@ import {
 	SubTitleLeft,
 	Dinner,
 	Chef,
+	Taco,
 } from '../../public/assets/svg';
 
 import Image from 'next/image';
@@ -42,6 +43,7 @@ const About = () => {
 						/>
 					</div>
 				</div>
+				<Taco className='w-60 h-60 absolute bottom-0 right-0 opacity-40 lg:opacity-100' />
 				<div className='text-white md:w-1/2 relative flex flex-col items-center justify-center md:items-start'>
 					<div className='flex items-center justify-center gap-2 relative my-2'>
 						<SubTitleLeft className='w-7 h-7' />
