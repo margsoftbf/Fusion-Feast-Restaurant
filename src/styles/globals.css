@@ -12,15 +12,15 @@
 
 @layer components {
 	.header-underline::after {
-		@apply absolute left-0 bottom-0 w-screen h-[0.5px] bg-white opacity-20;
+		@apply absolute left-0 bottom-0 w-full h-[0.5px] bg-white opacity-20;
 		content: '';
 	}
-
 }
 
 #root {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
+	overflow: hidden;
 	font-family: 'Open Sans', sans-serif;
 }

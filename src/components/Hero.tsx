@@ -18,7 +18,7 @@ const Hero: React.FC<SearchProps>  = ({ showSearch, setShowSearch }) => {
 						fill={true}
 						style={{ objectFit: 'cover' }}
 						quality={75}
-						alt='Opis obrazu'
+						alt='Chef cooking in the kitchen'
 					/>
 					<div className='absolute inset-0 bg-black bg-opacity-90'></div>
 					<Orange className='w-64 h-64 absolute bottom-0 opacity-20 lg:opacity-60' />
