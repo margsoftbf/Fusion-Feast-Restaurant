@@ -1,0 +1,16 @@
+export { default as Tomato } from './Tomato.svg';
+export { default as BorderMeal } from './BorderMeal.svg';
+export { default as BorderPrice } from './BorderPrice.svg';
+export { default as Cookie } from './Cookie.svg';
+export { default as Donut } from './Donut.svg';
+export { default as Drink } from './Drink.svg';
+export { default as Ellipse } from './Ellipse.svg';
+export { default as EmptyEllipse } from './EmptyEllipse.svg';
+export { default as Fries } from './Fries.svg';
+export { default as Orange } from './Orange.svg';
+export { default as Shape } from './Shape.svg';
+export { default as SubTitleLeft } from './SubTitleLeft.svg';
+export { default as SubTitleRight } from './SubTitleRight.svg';
+export { default as SubTitleLeft2 } from './SubTitleLeft2.svg';
+export { default as SubTitleRight2 } from './SubTitleRight2.svg';
+export { default as Taco } from './Taco.svg';

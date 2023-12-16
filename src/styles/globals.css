@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@font-face {
+	font-family: 'Bakilda';
+	src: url('/fonts/bakilda-histori.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
