@@ -4,7 +4,7 @@ Welcome to Fusion Feast, a contemporary dining experience that combines traditio
 
 ## Live Preview:
 
-https://fusion-feast.netlify.app/
+https://fusion-feast-restaurant.vercel.app/
 
 ## Screenshot
 
