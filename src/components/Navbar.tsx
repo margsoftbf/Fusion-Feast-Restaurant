@@ -21,9 +21,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		setShowSearch(!showSearch);
 	};
 
-	const handleCloseSearch = () => {
-		setShowSearch(false);
-	};
+
 
 	return (
 		<header className='relative inset-x-0 top-0 z-50 header-underline bg-primary'>
@@ -73,7 +71,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									type='text'
 									placeholder='Search...'
 									className='transition-width duration-300 ease-in-out block w-36 rounded-md border-0 bg-primary py-0.5 pl-1 pr-3 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none focus:ring-darkBlue sm:text-sm sm:leading-6'
-									onBlur={handleCloseSearch}
+									
 									onClick={(e) => e.stopPropagation()}
 								/>
 							</div>

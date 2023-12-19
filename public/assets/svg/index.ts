@@ -16,3 +16,5 @@ export { default as SubTitleRight2 } from './SubTitleRight2.svg';
 export { default as Taco } from './Taco.svg';
 export { default as Chef } from './Chef.svg';
 export { default as Dinner } from './Dinner.svg';
+export { default as BorderDeal } from './BorderDeal.svg';
+export { default as LineDeal } from './LineDeal.svg';

@@ -43,11 +43,11 @@ const BookingForm = () => {
 		}
 
 		if (formData.name.trim() === '') {
-			newErrors.name = 'Please fill in this field';
+			newErrors.name = 'Name cannot be empty';
 		}
 
 		if (formData.email.trim() === '') {
-			newErrors.email = 'Please fill in this field';
+			newErrors.email = 'Email cannot be empty';
 		}
 
 		setErrors(newErrors);

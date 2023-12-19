@@ -2,13 +2,11 @@ import Image from 'next/image';
 import { Orange, Tomato } from '../../public/assets/svg';
 import { SearchProps } from '@/types/types';
 import BookingForm from './BookingForm';
-const Hero: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
-	const handleCloseSearch = () => {
-		setShowSearch(false);
-	};
+const Hero = () => {
+	
 
 	return (
-		<div className='bg-primary relative' onClick={handleCloseSearch}>
+		<div className='bg-primary relative'>
 			<div className='relative isolate px-6 pt-14 lg:px-8'>
 				<div className='absolute inset-0 z-[-1]'>
 					<Image
@@ -18,7 +16,7 @@ const Hero: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						quality={75}
 						alt='Chef cooking in the kitchen'
 					/>
-					<div className='absolute inset-0 bg-black bg-opacity-70'></div>
+					<div className='absolute inset-0 bg-black bg-opacity-60'></div>
 					<Orange className='w-64 h-64 absolute bottom-0 opacity-20 lg:opacity-60' />
 					<Tomato className='hidden lg:block lg:w-64 lg:h-64 lg:absolute lg:right-12 lg:top-12 lg:opacity-60' />
 				</div>
