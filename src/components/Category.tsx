@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { categories, products } from '@/data/data';
 import CategoryBox from './CategoryBox';
 import React from 'react';
+import { SubTitleLeft, SubTitleRight } from '../../public/assets/svg';
 
 const Category = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -9,9 +10,19 @@ const Category = () => {
 	);
 
 	return (
-		<div className='bg-secondary py-8'>
-			<div className='max-w-8xl mx-auto'>
-				<div className='flex flex-row flex-wrap justify-center items-center gap-2 mx-4'>
+		<div className='bg-secondary py-8 relative'>
+			<div className='max-w-8xl mx-auto relative'>
+				<div className='flex items-center justify-center gap-2 relative'>
+					<SubTitleLeft className='w-7 h-7' />
+					<h2 className='font-lemonada text-myOrange font-light'>Menu Book</h2>
+					<SubTitleRight className='w-7 h-7' />
+				</div>
+				<div className='flex items-center justify-center gap-2 relative'>
+					<h2 className='font-bakilda text-2xl text-center my-2 md:text-left md:text-4xl text-white'>
+						Our Main Menu
+					</h2>
+				</div>
+				<div className='flex flex-row flex-wrap justify-center items-center gap-2 mx-4 mt-4'>
 					{categories.map((category) => (
 						<button
 							key={category.slug}
@@ -28,7 +39,7 @@ const Category = () => {
 					))}
 				</div>
 
-				<div className='grid grid-cols-2 md:grid-cols-4 gap-4 pt-6'>
+				<div className='mx-auto flex flex-col px-4 py-2 sm:px-6 lg:max-w-8xl my-2'>
 					{categories
 						.filter(
 							(category) =>

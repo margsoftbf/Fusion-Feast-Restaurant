@@ -13,6 +13,9 @@ export type Product = {
 	id: number;
 	name: string;
 	categorySlug: string;
+	img: string;
+	rating: number;
+	reviews: number;
 	price: number;
 	description: string;
 };
@@ -31,6 +34,9 @@ export const products: Product[] = [
 		id: 1,
 		name: 'Margherita - 1',
 		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
@@ -38,6 +44,9 @@ export const products: Product[] = [
 		id: 2,
 		name: 'Margherita - 2',
 		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
@@ -45,6 +54,9 @@ export const products: Product[] = [
 		id: 3,
 		name: 'Margherita - 3',
 		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
@@ -52,6 +64,9 @@ export const products: Product[] = [
 		id: 4,
 		name: 'Margherita - 4',
 		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
@@ -59,6 +74,19 @@ export const products: Product[] = [
 		id: 5,
 		name: 'Margherita - 5',
 		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
+		price: 10.99,
+		description: 'Classic Margherita with mozzarella cheese and basil.',
+	},
+	{
+		id: 6,
+		name: 'Margherita - 6',
+		categorySlug: 'pizza',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
@@ -66,6 +94,9 @@ export const products: Product[] = [
 		id: 1,
 		name: 'Cheeseburger - 1',
 		categorySlug: 'burgers',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
@@ -74,6 +105,9 @@ export const products: Product[] = [
 		id: 2,
 		name: 'Cheeseburger - 2',
 		categorySlug: 'burgers',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
@@ -82,6 +116,9 @@ export const products: Product[] = [
 		id: 3,
 		name: 'Hamburger - 3',
 		categorySlug: 'burgers',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
@@ -90,6 +127,9 @@ export const products: Product[] = [
 		id: 4,
 		name: 'Hamburger - 4',
 		categorySlug: 'burgers',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
@@ -98,6 +138,9 @@ export const products: Product[] = [
 		id: 5,
 		name: 'Hamburger - 5',
 		categorySlug: 'burgers',
+		img: './assets/products/pizza/margherita.webp',
+		rating: 4.5,
+		reviews: 123,
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',

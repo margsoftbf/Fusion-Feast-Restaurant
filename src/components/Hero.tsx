@@ -2,9 +2,8 @@ import Image from 'next/image';
 import { Orange, Tomato } from '../../public/assets/svg';
 import { SearchProps } from '@/types/types';
 import BookingForm from './BookingForm';
+import ButtonFull from './common/ButtonFull';
 const Hero = () => {
-	
-
 	return (
 		<div className='bg-primary relative'>
 			<div className='relative isolate px-6 pt-14 lg:px-8'>
@@ -29,12 +28,7 @@ const Hero = () => {
 							We serve the best fusion dishes in the city.
 						</p>
 						<div className='mt-10 flex items-center justify-center gap-x-6'>
-							<a
-								href='#'
-								className='font-openSans tracking-wide  rounded-md bg-myOrange px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-myOrange/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-myOrange transition-colors ease-in-out duration-300'
-							>
-								Main Menu
-							</a>
+							<ButtonFull>Main Menu</ButtonFull>
 						</div>
 					</div>
 				</div>

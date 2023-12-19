@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import ButtonFull from './common/ButtonFull';
 
 interface FormData {
 	date: string;
@@ -144,12 +145,7 @@ const BookingForm = () => {
 						</p>
 					)}
 				</div>
-				<button
-					type='submit'
-					className='bg-myOrange text-white rounded-md px-4 py-2 font-semibold font-openSans hover:bg-myOrange/80 transition-colors ease-in-out duration-300'
-				>
-					Book Table
-				</button>
+				<ButtonFull type='submit'>Book Table</ButtonFull>
 			</form>
 			{isFormSubmitted && (
 				<div className='relative flex justify-center'>

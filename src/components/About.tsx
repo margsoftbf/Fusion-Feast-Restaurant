@@ -9,6 +9,7 @@ import {
 } from '../../public/assets/svg';
 
 import Image from 'next/image';
+import ButtonEmpty from './common/ButtonEmpty';
 const imageStyle = {
 	borderRadius: '0.75rem',
 };
@@ -96,9 +97,7 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<button className='mt-2 border px-6 py-2 rounded-md border-myOrange hover:bg-myOrange hover:text-white text-myOrange transition ease-in-out duration-200'>
-						<span>Learn More</span>
-					</button>
+					<ButtonEmpty>Learn More</ButtonEmpty>
 				</div>
 			</div>
 		</div>

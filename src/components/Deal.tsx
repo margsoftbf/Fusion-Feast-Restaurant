@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Orange } from '../../public/assets/svg';
+import ButtonFull from './common/ButtonFull';
 
 const Deal = () => {
 	const [timeLeft, setTimeLeft] = useState({
@@ -46,9 +47,7 @@ const Deal = () => {
 					<p className='text-xl md:text-2xl font-bakilda xl:text-4xl'>
 						50% Discount in
 					</p>
-					<button className='font-openSans tracking-wide  rounded-md bg-myOrange px-6 py-1 my-2 text-sm font-semibold text-white shadow-sm hover:bg-myOrange/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-myOrange transition-colors ease-in-out duration-300 md:py-2 md:text-base'>
-						Get Now
-					</button>
+					<ButtonFull>Get Now</ButtonFull>
 				</div>
 				<div className='flex space-x-4 mt-4'>
 					<div className='text-center relative'>
