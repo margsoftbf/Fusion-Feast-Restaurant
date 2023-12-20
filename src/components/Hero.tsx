@@ -21,7 +21,7 @@ const Hero = () => {
 				</div>
 				<div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
 					<div className='text-center'>
-						<h1 className='font-bakilda text-2xl text-center my-2 md:text-left md:text-6xl text-white'>
+						<h1 className='font-bakilda text-2xl my-2 md:text-6xl text-white'>
 							Our Best Fusion Dishes
 						</h1>
 						<p className='mt-6 text-lg leading-8 text-white font-openSans'>

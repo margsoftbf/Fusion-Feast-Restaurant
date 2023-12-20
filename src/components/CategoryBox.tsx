@@ -63,11 +63,10 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 					<SwiperSlide key={product.id} className='flex justify-center'>
 						<div className='flex flex-col justify-center bg-third relative p-2 rounded-lg'>
 							<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
-								<Image
-									src={`/${product.img}`}
+								<img
+									src={product.img}
 									alt={product.name}
-									width={100}
-									height={100}
+									className='w-24 h-24 rounded-full'
 								/>
 							</div>
 							<div className='px-4'>
