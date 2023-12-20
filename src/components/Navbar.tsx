@@ -8,6 +8,10 @@ import {
 	ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import { SearchProps } from '@/types/types';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
+import Cart from './Cart';
 const navigation = [
 	{ name: 'Menu', href: '#' },
 	{ name: 'Testimonials', href: '#' },
@@ -15,16 +19,21 @@ const navigation = [
 ];
 const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [isCartOpen, setCartOpen] = useState(false);
 
+	const toggleCart = () => {
+		setCartOpen(!isCartOpen);
+	};
 	const handleToggleSearch = (e: React.MouseEvent) => {
 		e.stopPropagation();
 		setShowSearch(!showSearch);
 	};
 
-
-
+	const cartItemsCount = useSelector(
+		(state: RootState) => state.cart.items.length
+	);
 	return (
-		<header className='relative inset-x-0 top-0 z-50 header-underline bg-primary'>
+		<header className='sticky inset-x-0 top-0 z-[250] header-underline bg-primary'>
 			<nav
 				className='flex items-center justify-between p-4 lg:px-8 max-w-8xl mx-auto'
 				aria-label='Global'
@@ -51,11 +60,11 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 					))}
 				</div>
 				<div className='flex lg:flex-1 justify-center text-3xl'>
-					<a href='#' className='-m-1.5 p-1.5 flex-grow'>
+					<Link href='/' className='-m-1.5 p-1.5 flex-grow'>
 						<h2 className='font-bakilda text-white text-center'>
 							Fusion Feast
 						</h2>
-					</a>
+					</Link>
 				</div>
 				<div className='hidden lg:flex lg:gap-x-8 text-white font-openSans relative'>
 					<div className='flex items-center w-36'>
@@ -71,7 +80,6 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									type='text'
 									placeholder='Search...'
 									className='transition-width duration-300 ease-in-out block w-36 rounded-md border-0 bg-primary py-0.5 pl-1 pr-3 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none focus:ring-darkBlue sm:text-sm sm:leading-6'
-									
 									onClick={(e) => e.stopPropagation()}
 								/>
 							</div>
@@ -96,15 +104,21 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 					</a>
 					<a
 						href='#'
+						onClick={toggleCart}
 						className='relative justify-center text-sm font-semibold leading-6  p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2'
 					>
-						<span className='flex justify-center items-center absolute -left-1 top-0 bg-white text-black rounded-full w-4 h-4 text-xs font-openSans'>
-							1
+						<span className='flex justify-center items-center absolute -left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
+							{cartItemsCount}
 						</span>
 						<ShoppingBagIcon className='h-5 w-5' />
 						<span>Checkout</span>
 					</a>
 				</div>
+				<Cart
+					isCartOpen={isCartOpen}
+					toggleCart={toggleCart}
+					cartItemsCount={cartItemsCount}
+				/>
 			</nav>
 			<Dialog
 				as='div'
@@ -150,7 +164,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									className='relative flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
 								>
 									<span className='flex justify-center items-center absolute left-1 top-2 bg-white text-black rounded-full w-4 h-4 text-xs font-openSans'>
-										1
+										{cartItemsCount}
 									</span>
 									<ShoppingBagIcon className='h-5 w-5' />
 									<span>Checkout</span>

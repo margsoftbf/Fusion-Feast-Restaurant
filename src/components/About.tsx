@@ -37,7 +37,7 @@ const About = () => {
 						<Image
 							src='/assets/about/chefAbout.webp'
 							style={imageStyle}
-							objectFit='cover'
+							className='object-cover'
 							fill={true}
 							quality={75}
 							alt='Chef cooking in the kitchen'
@@ -45,7 +45,7 @@ const About = () => {
 					</div>
 				</div>
 				<Taco className='w-60 h-60 absolute bottom-0 right-0 opacity-40 lg:opacity-100' />
-				<div className='text-white md:w-1/2 relative flex flex-col items-center justify-center md:items-start'>
+				<div className='text-white md:w-1/2 relative flex flex-col mr-4 items-center justify-center md:items-start'>
 					<div className='flex items-center justify-center gap-2 relative my-2'>
 						<SubTitleLeft className='w-7 h-7' />
 						<h2 className='font-lemonada text-myOrange font-light'>About Us</h2>

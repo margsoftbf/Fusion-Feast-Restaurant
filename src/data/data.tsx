@@ -2,6 +2,7 @@ import { CiPizza, CiBurger } from 'react-icons/ci';
 import { BiSushi } from 'react-icons/bi';
 import { MdOutlineDinnerDining } from 'react-icons/md';
 import { LuSoup, LuSalad } from 'react-icons/lu';
+import { Product } from '@/types/types';
 
 export type Category = {
 	name: string;
@@ -9,16 +10,6 @@ export type Category = {
 	icon: JSX.Element;
 };
 
-export type Product = {
-	id: number;
-	name: string;
-	categorySlug: string;
-	img: string;
-	rating: number;
-	reviews: number;
-	price: number;
-	description: string;
-};
 
 export const categories: Category[] = [
 	{ name: 'Pizza', slug: 'pizza', icon: <CiPizza /> },
@@ -55,7 +46,7 @@ export const products: Product[] = [
 		name: 'Margherita - 3',
 		categorySlug: 'pizza',
 		img: './assets/products/pizza/margherita.webp',
-		rating: 4.5,
+		rating: 3,
 		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
@@ -65,7 +56,7 @@ export const products: Product[] = [
 		name: 'Margherita - 4',
 		categorySlug: 'pizza',
 		img: './assets/products/pizza/margherita.webp',
-		rating: 4.5,
+		rating: 4,
 		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',

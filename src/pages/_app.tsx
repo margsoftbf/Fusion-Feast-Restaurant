@@ -3,12 +3,14 @@ import '../styles/globals.css';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import { useState } from 'react';
+import { Provider } from 'react-redux';
+import { store } from '@/store/store';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const [showSearch, setShowSearch] = useState(false);
 
 	return (
-		<>
+		<Provider store={store}>
 			<Head>
 				<title>Fusion Feast Restaurant</title>
 				<meta name='description' content='Fusion Feast Restaurant' />
@@ -19,7 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 			<main onClick={() => setShowSearch(false)} className='m-auto'>
 				<Component {...pageProps} setShowSearch={setShowSearch} />
 			</main>
-		</>
+		</Provider>
 	);
 };
 

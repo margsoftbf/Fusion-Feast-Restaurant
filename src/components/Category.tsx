@@ -39,7 +39,7 @@ const Category = () => {
 					))}
 				</div>
 
-				<div className='mx-auto flex flex-col px-4 py-2 sm:px-6 lg:max-w-8xl my-2'>
+				<div className='mx-auto  flex flex-col px-4 sm:px-6 lg:max-w-5xl my-2'>
 					{categories
 						.filter(
 							(category) =>
