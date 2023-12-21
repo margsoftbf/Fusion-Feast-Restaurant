@@ -40,6 +40,7 @@ const About = () => {
 							className='object-cover'
 							fill={true}
 							quality={75}
+							sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 							alt='Chef cooking in the kitchen'
 						/>
 					</div>
