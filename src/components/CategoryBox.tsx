@@ -53,15 +53,18 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 					750: {
 						slidesPerView: 3,
 					},
-					1024: {
+					1000: {
 						slidesPerView: 4,
+					},
+					1250: {
+						slidesPerView: 5,
 					},
 				}}
 				className='w-full mx-auto'
 			>
 				{products.map((product) => (
-					<SwiperSlide key={product.id} className='flex justify-center'>
-						<div className='flex flex-col justify-center bg-third relative p-2 rounded-lg'>
+					<SwiperSlide key={product.id} className='flex justify-center '>
+						<div className='flex flex-col justify-center bg-third relative p-1 rounded-lg'>
 							<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
 								<Image
 									src={product.img}
@@ -98,7 +101,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 										? `${product.description.slice(0, 100)}...`
 										: product.description}
 								</p>
-								<div className='flex flex-row justify-between items-center'>
+								<div className='flex flex-row justify-between items-center my-2'>
 									<p className='font-bold text-myRed font-oswald py-1'>
 										${product.price}
 									</p>
