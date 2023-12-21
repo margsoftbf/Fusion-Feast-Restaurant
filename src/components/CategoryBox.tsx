@@ -107,7 +107,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 										onClick={() => handleAddToCart(product)}
 										aria-label='Add to cart'
 									>
-										<IoMdAddCircle className='text-white w-6' />
+										<IoMdAddCircle className='text-third w-6' />
 									</button>
 								</div>
 							</div>

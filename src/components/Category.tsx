@@ -39,7 +39,7 @@ const Category = () => {
 							onClick={() => setSelectedCategory(category.slug)}
 							className={`inline-flex items-center justify-center rounded-md font-openSans w-32 px-2.5 py-1.5 uppercase text-xs shadow-sm hover:bg-myOrange hover:text-white transition duration-300 ease-in-out flex-shrink-0 font-bold ${
 								selectedCategory === category.slug
-									? 'bg-myOrange text-white'
+									? 'bg-myOrange text-black'
 									: 'bg-white text-black'
 							}`}
 						>

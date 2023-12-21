@@ -147,7 +147,7 @@ const BookingForm = () => {
 				</div>
 				<button
 					type='submit'
-					className={`inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:brightness-75 transition duration-300 ease-in-out`}
+					className={`inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out`}
 				>
 					Book Table
 				</button>

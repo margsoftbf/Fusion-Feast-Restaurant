@@ -51,9 +51,9 @@ const About = () => {
 						<SubTitleLeft className='w-7 h-7' />
 						<h2 className='font-lemonada text-myOrange font-light'>About Us</h2>
 					</div>
-					<h2 className='font-bakilda text-2xl text-center my-2 md:text-left md:text-4xl'>
+					<p className='font-bakilda text-2xl text-center my-2 md:text-left md:text-4xl'>
 						On Every Special Occasion We Serve You First
-					</h2>
+					</p>
 					<p className='font-openSans text-xs my-2 text-center md:text-left tracking-wide mx-2 md:mx-0 lg:text-base'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
 						molestias molestiae aspernatur veniam nesciunt laboriosam excepturi,
@@ -64,9 +64,9 @@ const About = () => {
 						<div className='md:border-r-[1px] md:border-gray-500 relative flex flex-col md:flex-row items-center mt-2 justify-center'>
 							<Dinner className='w-10 h-10 md:w-12 md:h-12' />
 							<div className='text-center md:text-left md:mx-4'>
-								<h3 className='font-oswald my-2 text-2xl md:my-0'>
+								<p className='font-oswald my-2 text-2xl md:my-0'>
 									Fine Dining
-								</h3>
+								</p>
 								<p className='font-openSans text-xs mx-8 md:mx-0'>
 									Lorem ipsum, dolor sit amet consectetur.
 								</p>
@@ -75,9 +75,9 @@ const About = () => {
 						<div className=' relative flex flex-col md:flex-row items-center mt-2 justify-center'>
 							<Chef className='w-10 h-10 md:w-12 md:h-12' />
 							<div className='text-center md:text-left md:mx-4'>
-								<h3 className='font-oswald my-2 text-2xl md:my-0'>
+								<p className='font-oswald my-2 text-2xl md:my-0'>
 									Master Chef
-								</h3>
+								</p>
 								<p className='font-openSans text-xs mx-8 md:mx-0'>
 									Lorem ipsum, dolor sit amet consectetur.
 								</p>

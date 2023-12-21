@@ -20,8 +20,8 @@ const config: Config = {
 				third: '#232732',
 				myOrange: '#FD9900',
 				myGray: '#B1B1B1',
-				myRed: '#c33130',
-				myGreen: '#02833d',
+				myRed: '#FCC6C6',
+				myGreen: '#3CF38E',
 			},
 			maxWidth: {
 				'8xl': '1440px',

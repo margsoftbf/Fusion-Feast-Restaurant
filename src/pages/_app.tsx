@@ -12,6 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<Provider store={store}>
 			<Head>
+				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<title>Fusion Feast Restaurant</title>
 				<meta name='description' content='Fusion Feast Restaurant' />
 				<link rel='icon' href='/favicon.ico' />

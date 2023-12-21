@@ -28,13 +28,12 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	const totalPriceItems = (price: number, quantity: number): string =>
 		(price * quantity).toFixed(2);
 
-
 	const subtotal = cartItems.reduce(
 		(total, item) => total + item.price * item.quantity,
 		0
 	);
-	const tax = subtotal * 0.07; 
-	const shipping = cartItems.length * 1.5; 
+	const tax = subtotal * 0.07;
+	const shipping = cartItems.length * 1.5;
 	const orderTotal = subtotal + tax + shipping;
 
 	const formatPrice = (price: number): string => price.toFixed(2);
@@ -145,7 +144,11 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 					</div>
 				</div>
 				<div className='my-6 flex justify-center'>
-					<ButtonFull className='w-full'>Checkout</ButtonFull>
+					<button
+						className={`w-full mx-8 inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out`}
+					>
+						Checkout
+					</button>
 				</div>
 			</div>
 		</Transition>
