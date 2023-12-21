@@ -97,8 +97,8 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 									</span>
 								</div>
 								<p className='text-white font-oswald text-xs'>
-									{product.description.length > 100
-										? `${product.description.slice(0, 100)}...`
+									{product.description.length > 50
+										? `${product.description.slice(0, 50)}...`
 										: product.description}
 								</p>
 								<div className='flex flex-row justify-between items-center my-2'>
