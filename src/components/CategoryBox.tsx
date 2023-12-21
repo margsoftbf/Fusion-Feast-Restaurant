@@ -63,10 +63,17 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 					<SwiperSlide key={product.id} className='flex justify-center'>
 						<div className='flex flex-col justify-center bg-third relative p-2 rounded-lg'>
 							<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
-								<img
-									src={product.img}
+								<Image
+									src={
+										product.img.startsWith('/')
+											? product.img
+											: `/${product.img}`
+									}
 									alt={product.name}
-									className='w-24 h-24 rounded-full'
+									width={96}
+									height={96}
+									className='rounded-full'
+									objectFit='cover'
 								/>
 							</div>
 							<div className='px-4'>
@@ -103,6 +110,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 									<button
 										className='h-7 w-8 rounded-lg flex items-center justify-center bg-myGreen hover:bg-myOrange duration-200 transition ease-linear'
 										onClick={() => handleAddToCart(product)}
+										aria-label='Add to cart'
 									>
 										<IoMdAddCircle className='text-white w-6' />
 									</button>

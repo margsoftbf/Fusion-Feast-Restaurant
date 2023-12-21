@@ -13,6 +13,7 @@ const Hero = () => {
 						fill={true}
 						style={{ objectFit: 'cover' }}
 						quality={75}
+						priority={true}
 						alt='Chef cooking in the kitchen'
 					/>
 					<div className='absolute inset-0 bg-black bg-opacity-60'></div>
