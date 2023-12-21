@@ -24,11 +24,11 @@ const About = () => {
 					<EmptyEllipse className='w-2 h-2 absolute top-16 left-6 lg:w-5 lg:h-5 lg:top-40' />
 					<div className='w-48 h-64 sm:h-96 sm:w-60 lg:h-[500px] lg:w-[300px] relative ml-12 rounded-3xl'>
 						<div className='absolute h-16 w-24 rounded-md bg-white z-50 -right-6 top-6 flex flex-col items-center justify-center gap-1'>
-							<h3 className='text-myOrange font-lemonada '>144+</h3>
+							<h3 className='text-black font-lemonada '>144+</h3>
 							<p className='text-black text-xs font-openSans'>Master Chefs</p>
 						</div>
 						<div className='absolute h-16 w-24 rounded-md bg-white z-50 -left-12 bottom-6 flex flex-col items-center justify-center gap-1'>
-							<h3 className='text-myOrange font-lemonada '>25+</h3>
+							<h3 className='text-black font-lemonada '>25+</h3>
 							<p className='text-black text-xs font-openSans'>Serving Years</p>
 						</div>
 						<div className='absolute w-full top-0 h-full rounded-xl bg-black/10 z-40'></div>

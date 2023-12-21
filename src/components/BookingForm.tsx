@@ -145,7 +145,12 @@ const BookingForm = () => {
 						</p>
 					)}
 				</div>
-				<ButtonFull type='submit'>Book Table</ButtonFull>
+				<button
+					type='submit'
+					className={`inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:brightness-75 transition duration-300 ease-in-out`}
+				>
+					Book Table
+				</button>
 			</form>
 			{isFormSubmitted && (
 				<div className='relative flex justify-center'>

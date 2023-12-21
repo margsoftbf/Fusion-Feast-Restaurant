@@ -64,11 +64,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 						<div className='flex flex-col justify-center bg-third relative p-2 rounded-lg'>
 							<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
 								<Image
-									src={
-										product.img.startsWith('/')
-											? product.img
-											: `/${product.img}`
-									}
+									src={product.img}
 									alt={product.name}
 									width={96}
 									height={96}
