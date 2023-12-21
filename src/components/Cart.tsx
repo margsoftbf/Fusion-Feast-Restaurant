@@ -120,15 +120,15 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 				<div className='border-t border-gray-200 pt-6'>
 					<div className=' bg-gray-100 px-2 rounded-lg'>
 						<div className='-my-4 divide-y divide-gray-200 text-sm'>
-							<div className='flex items-center justify-between py-2 text-myGray'>
+							<div className='flex items-center justify-between py-2 text-gray-500'>
 								<div className=''>Subtotal</div>
 								<div className='font-medium '>${formatPrice(subtotal)}</div>
 							</div>
-							<div className='flex items-center justify-between py-2 text-myGray'>
+							<div className='flex items-center justify-between py-2 text-gray-500'>
 								<div>Shipping</div>
 								<div className='font-medium '>${formatPrice(shipping)}</div>
 							</div>
-							<div className='flex items-center justify-between py-2 text-myGray'>
+							<div className='flex items-center justify-between py-2 text-gray-500'>
 								<div>Tax</div>
 								<div className='font-medium '>${formatPrice(tax)}</div>
 							</div>
