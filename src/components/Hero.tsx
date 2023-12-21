@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Orange, Tomato } from '../../public/assets/svg';
-import { SearchProps } from '@/types/types';
+
 import BookingForm from './BookingForm';
 import ButtonFull from './common/ButtonFull';
 const Hero = () => {

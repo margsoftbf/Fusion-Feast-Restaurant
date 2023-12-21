@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { categories, products } from '@/data/data';
 import CategoryBox from './CategoryBox';
 import React from 'react';
-import { SubTitleLeft, SubTitleRight } from '../../public/assets/svg';
+import {
+	Ellipse,
+	EmptyEllipse,
+	Fries,
+	SubTitleLeft,
+	SubTitleRight,
+} from '../../public/assets/svg';
 
 const Category = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -11,6 +17,10 @@ const Category = () => {
 
 	return (
 		<div className='bg-secondary py-8 relative'>
+			<Fries className='w-36 h-36 absolute bottom-0 left-0 lg:bottom-12' />
+			<Ellipse className='w-3 h-3 absolute bottom-0 right-6 lg:w-5 lg:h-5 lg:bottom-12' />
+			<Ellipse className='w-1 h-1 absolute top-48 left-48 lg:w-5 lg:h-5 lg:top-28' />
+			<EmptyEllipse className='w-2 h-2 absolute top-32 right-96 lg:w-5 lg:h-5 lg:top-40' />
 			<div className='max-w-8xl mx-auto relative'>
 				<div className='flex items-center justify-center gap-2 relative'>
 					<SubTitleLeft className='w-7 h-7' />

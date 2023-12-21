@@ -72,8 +72,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 									alt={product.name}
 									width={96}
 									height={96}
-									className='rounded-full'
-									objectFit='cover'
+									className='rounded-full object-cover w-auto h-auto'
 								/>
 							</div>
 							<div className='px-4'>
