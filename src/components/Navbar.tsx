@@ -29,13 +29,13 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		setShowSearch(!showSearch);
 	};
 
-	const cartItemsCount = useSelector(
-		(state: RootState) => state.cart.items.length
+	const cartItemsCount = useSelector((state: RootState) =>
+		state.cart.items.reduce((total, item) => total + item.quantity, 0)
 	);
 	return (
-		<header className='sticky inset-x-0 top-0 z-[250] header-underline bg-primary'>
+		<header className='sticky top-0 z-[250] header-underline bg-primary'>
 			<nav
-				className='flex items-center justify-between p-4 lg:px-8 max-w-8xl mx-auto'
+				className='flex items-center justify-between p-4 max-w-8xl mx-auto'
 				aria-label='Global'
 			>
 				<div className='flex lg:hidden text-white'>
@@ -45,7 +45,11 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						onClick={() => setMobileMenuOpen(true)}
 					>
 						<span className='sr-only'>Open main menu</span>
-						<Bars3Icon className='h-6 w-6 text-white' aria-hidden='true' />
+						{mobileMenuOpen ? (
+							<XMarkIcon className='h-6 w-6 text-white' aria-hidden='true' />
+						) : (
+							<Bars3Icon className='h-6 w-6 text-white' aria-hidden='true' />
+						)}
 					</button>
 				</div>
 				<div className='hidden lg:flex lg:gap-x-12 text-white'>
@@ -95,6 +99,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 							</div>
 						)}
 					</div>
+
 					<a
 						href='#'
 						className='relative p-1 text-sm font-semibold leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2'
@@ -105,7 +110,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 					<a
 						href='#'
 						onClick={toggleCart}
-						className='relative justify-center text-sm font-semibold leading-6  p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2'
+						className='relative justify-center text-sm font-semibold leading-6  p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 					>
 						<span className='flex justify-center items-center absolute -left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
 							{cartItemsCount}
@@ -113,12 +118,12 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						<ShoppingBagIcon className='h-5 w-5' />
 						<span>Checkout</span>
 					</a>
+					<Cart
+						isCartOpen={isCartOpen}
+						toggleCart={toggleCart}
+						cartItemsCount={cartItemsCount}
+					/>
 				</div>
-				<Cart
-					isCartOpen={isCartOpen}
-					toggleCart={toggleCart}
-					cartItemsCount={cartItemsCount}
-				/>
 			</nav>
 			<Dialog
 				as='div'
@@ -126,8 +131,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				open={mobileMenuOpen}
 				onClose={setMobileMenuOpen}
 			>
-				<div className='fixed inset-0 z-50' />
-				<Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-secondary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+				<Dialog.Panel className='fixed inset-x-0 w-auto h-full top-0 z-50 bg-secondary px-6 py-8 overflow-auto'>
 					<div className='flex items-center justify-between'>
 						<button
 							type='button'
@@ -160,10 +164,10 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									<span>Order online</span>
 								</a>
 								<a
-									href='#'
-									className='relative flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
+									onClick={toggleCart}
+									className='relative flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 cursor-pointer text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
 								>
-									<span className='flex justify-center items-center absolute left-1 top-2 bg-white text-black rounded-full w-4 h-4 text-xs font-openSans'>
+									<span className='flex justify-center items-center absolute left-1 top-2 bg-white text-black rounded-full w-4 h-4 text-xs font-openSans '>
 										{cartItemsCount}
 									</span>
 									<ShoppingBagIcon className='h-5 w-5' />
@@ -185,6 +189,11 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									/>
 								</div>
 							</div>
+							<Cart
+								isCartOpen={isCartOpen}
+								toggleCart={toggleCart}
+								cartItemsCount={cartItemsCount}
+							/>
 						</div>
 					</div>
 				</Dialog.Panel>

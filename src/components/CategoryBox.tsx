@@ -10,7 +10,7 @@ import { IoMdAddCircle } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
 
-import { CartItem } from '@/types/types'
+import { CartItem } from '@/types/types';
 
 type CategoryBoxProps = {
 	categorySlug: string;
