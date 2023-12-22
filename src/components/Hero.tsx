@@ -13,7 +13,7 @@ const Hero = () => {
 						fill={true}
 						style={{ objectFit: 'cover' }}
 						quality={100}
-						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 33vw'
+						sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 						priority={true}
 						alt='Chef cooking in the kitchen'
 					/>

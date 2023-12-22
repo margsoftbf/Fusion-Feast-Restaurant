@@ -40,7 +40,7 @@ const About = () => {
 							className='object-cover'
 							fill={true}
 							quality={75}
-							sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 							alt='Chef cooking in the kitchen'
 						/>
 					</div>
@@ -64,9 +64,7 @@ const About = () => {
 						<div className='md:border-r-[1px] md:border-gray-500 relative flex flex-col md:flex-row items-center mt-2 justify-center'>
 							<Dinner className='w-10 h-10 md:w-12 md:h-12' />
 							<div className='text-center md:text-left md:mx-4'>
-								<p className='font-oswald my-2 text-2xl md:my-0'>
-									Fine Dining
-								</p>
+								<p className='font-oswald my-2 text-2xl md:my-0'>Fine Dining</p>
 								<p className='font-openSans text-xs mx-8 md:mx-0'>
 									Lorem ipsum, dolor sit amet consectetur.
 								</p>
@@ -75,9 +73,7 @@ const About = () => {
 						<div className=' relative flex flex-col md:flex-row items-center mt-2 justify-center'>
 							<Chef className='w-10 h-10 md:w-12 md:h-12' />
 							<div className='text-center md:text-left md:mx-4'>
-								<p className='font-oswald my-2 text-2xl md:my-0'>
-									Master Chef
-								</p>
+								<p className='font-oswald my-2 text-2xl md:my-0'>Master Chef</p>
 								<p className='font-openSans text-xs mx-8 md:mx-0'>
 									Lorem ipsum, dolor sit amet consectetur.
 								</p>
