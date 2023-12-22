@@ -49,14 +49,14 @@ const Deal = () => {
 		<div className='bg-primary p-4 text-white flex justify-between items-center relative overflow-hidden'>
 			<Orange className='w-40 h-40 absolute -top-3 -left-5 rotate-45' />
 			<div className='max-w-8xl mx-auto flex flex-col md:flex-row md:max-w-2xl lg:max-w-4xl items-center justify-between w-full'>
-				<div className='flex flex-col items-center md:items-start xl:gap-2 my-4'>
+				<div className='flex flex-col items-center md:items-start gap-2 my-4'>
 					<p className='text-xl md:text-2xl font-bakilda xl:text-4xl'>
 						We Offer You More Than
 					</p>
 					<p className='text-xl md:text-2xl font-bakilda xl:text-4xl'>
 						50% Discount in
 					</p>
-					<div className='flex items-center'>
+					<div className='flex flex-col justify-center gap-2 md:flex-row items-center'>
 						<ButtonFull onClick={handleGetNow}>Get Now</ButtonFull>
 						{showNotification && (
 							<p className='bg-green-100 border border-green-400 text-green-700 px-2 py-1 ml-2 rounded z-100 text-xs'>

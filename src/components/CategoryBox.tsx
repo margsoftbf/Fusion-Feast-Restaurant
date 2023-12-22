@@ -65,54 +65,62 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 				{products.map((product) => (
 					<SwiperSlide key={product.id} className='flex justify-center '>
 						<div className='flex flex-col justify-center bg-third relative p-1 rounded-lg'>
-							<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
-								<Image
-									src={product.img}
-									alt={product.name}
-									width={96}
-									height={96}
-									className='rounded-full object-cover w-auto h-auto'
-								/>
-							</div>
-							<div className='px-4'>
-								<h2 className='text-base uppercase font-medium font-oswald text-white'>
-									{product.name}
-								</h2>
-								<div className='flex items-center  py-1'>
-									{[0, 1, 2, 3, 4].map((rating) => (
-										<StarIcon
-											key={rating}
-											className={`${
-												product.rating > rating
-													? 'text-yellow-400'
-													: 'text-gray-200'
-											}
-												'h-3 w-3 flex-shrink-0'
-											`}
-											aria-hidden='true'
+							<Link
+								href={`/category/product/${product.name
+									.replace(/\s+/g, '-')
+									.toLowerCase()}`}
+							>
+								<div className='flex p-1'>
+									<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
+										<Image
+											src={product.img}
+											alt={product.name}
+											width={96}
+											height={96}
+											className='rounded-full object-cover w-auto h-auto'
 										/>
-									))}
-									<span className='ml-1 text-xs font-oswald text-myGray'>
-										({product.reviews} reviews)
-									</span>
+									</div>
 								</div>
-								<p className='text-white font-oswald text-xs'>
-									{product.description.length > 50
-										? `${product.description.slice(0, 50)}...`
-										: product.description}
-								</p>
-								<div className='flex flex-row justify-between items-center my-2'>
-									<p className='font-bold text-myRed font-oswald py-1'>
-										${product.price}
+								<div className='px-1'>
+									<h2 className='text-base uppercase font-medium font-oswald text-white'>
+										{product.name}
+									</h2>
+									<div className='flex items-center  py-1'>
+										{[0, 1, 2, 3, 4].map((rating) => (
+											<StarIcon
+												key={rating}
+												className={`${
+													product.rating > rating
+														? 'text-yellow-400'
+														: 'text-gray-200'
+												}
+										'h-3 w-3 flex-shrink-0'
+										`}
+												aria-hidden='true'
+											/>
+										))}
+										<span className='ml-1 text-xs font-oswald text-myGray'>
+											({product.reviews} reviews)
+										</span>
+									</div>
+									<p className='text-white font-oswald text-xs'>
+										{product.description.length > 50
+											? `${product.description.slice(0, 50)}...`
+											: product.description}
 									</p>
-									<button
-										className='h-7 w-8 rounded-lg flex items-center justify-center bg-myGreen hover:bg-myOrange duration-200 transition ease-linear'
-										onClick={() => handleAddToCart(product)}
-										aria-label='Add to cart'
-									>
-										<IoMdAddCircle className='text-third w-6' />
-									</button>
 								</div>
+							</Link>
+							<div className='flex flex-row justify-between items-center my-2 px-1'>
+								<p className='font-bold text-myRed font-oswald py-1'>
+									${product.price}
+								</p>
+								<button
+									className='h-7 w-8 rounded-lg flex items-center justify-center bg-myGreen hover:bg-myOrange duration-200 transition ease-linear'
+									onClick={() => handleAddToCart(product)}
+									aria-label='Add to cart'
+								>
+									<IoMdAddCircle className='text-third w-6' />
+								</button>
 							</div>
 						</div>
 					</SwiperSlide>

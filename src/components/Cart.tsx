@@ -69,7 +69,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 			<div
 				className={`${
 					isCartOpen ? 'block' : 'hidden'
-				} absolute inset-x-0 mt-px bg-white text-black shadow-lg sm:px-2 lg:ml-auto lg:top-full lg:mt-5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5 border-2 m-4 rounded-md lg:border-none`}
+				} absolute inset-x-0 mt-px bg-white text-black shadow-lg px-2 lg:ml-auto lg:top-full lg:mt-5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5 border-2 m-4 rounded-md lg:border-none`}
 			>
 				<XMarkIcon
 					className='h-5 w-5 right-2 top-2 absolute cursor-pointer'

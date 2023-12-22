@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Dialog } from '@headlessui/react';
+import { Link as ScrollLink } from 'react-scroll';
 import {
 	Bars3Icon,
 	MagnifyingGlassIcon,
 	XMarkIcon,
-	ListBulletIcon,
 	ShoppingBagIcon,
+	PhoneIcon,
 } from '@heroicons/react/24/outline';
-import { SearchProps } from '@/types/types';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
+import { products } from '@/data/data';
+import { SearchProps, Product } from '@/types/types';
 import Cart from './Cart';
+
 const navigation = [
 	{ name: 'Menu', href: '#' },
 	{ name: 'Testimonials', href: '#' },
@@ -20,11 +23,16 @@ const navigation = [
 const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
+	const [searchTerm, setSearchTerm] = useState('');
+	const searchInputRef = useRef<HTMLInputElement>(null);
+	const [searchResults, setSearchResults] = useState<Product[]>([]);
 
 	const toggleCart = () => {
 		setCartOpen(!isCartOpen);
+		setShowSearch(false);
 	};
 	const handleToggleSearch = (e: React.MouseEvent) => {
+		setCartOpen(false);
 		e.stopPropagation();
 		setShowSearch(!showSearch);
 	};
@@ -32,8 +40,26 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const cartItemsCount = useSelector((state: RootState) =>
 		state.cart.items.reduce((total, item) => total + item.quantity, 0)
 	);
+
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const searchTerm = e.target.value.toLowerCase();
+		setSearchTerm(searchTerm);
+		setSearchResults(filteredProducts);
+	};
+
+	const filteredProducts = products.filter((product) =>
+		product.name.toLowerCase().includes(searchTerm)
+	);
+
+	const handleLinkClick = () => {
+		setSearchTerm('');
+		if (searchInputRef.current) {
+			searchInputRef.current.blur();
+		}
+	};
+
 	return (
-		<header className='sticky top-0 z-[250] header-underline bg-primary'>
+		<header className='sticky top-0 z-[250] header-underline bg-primary '>
 			<nav
 				className='flex items-center justify-between p-4 max-w-8xl mx-auto'
 				aria-label='Global'
@@ -54,13 +80,15 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				</div>
 				<div className='hidden lg:flex lg:gap-x-12 text-white'>
 					{navigation.map((item) => (
-						<a
+						<ScrollLink
 							key={item.name}
-							href={item.href}
-							className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition'
+							to={item.href}
+							smooth={true}
+							offset={-120}
+							className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
 						>
 							{item.name}
-						</a>
+						</ScrollLink>
 					))}
 				</div>
 				<div className='flex lg:flex-1 justify-center text-3xl'>
@@ -73,19 +101,37 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				<div className='hidden lg:flex lg:gap-x-8 text-white font-openSans relative'>
 					<div className='flex items-center w-36'>
 						{showSearch ? (
-							<div className='w-36 flex'>
-								<a
-									onClick={handleToggleSearch}
-									className='text-sm font-semibold p-1 leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
-								>
-									<MagnifyingGlassIcon className='h-5 w-5' />
-								</a>
-								<input
-									type='text'
-									placeholder='Search...'
-									className='transition-width duration-300 ease-in-out block w-36 rounded-md border-0 bg-primary py-0.5 pl-1 pr-3 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none focus:ring-darkBlue sm:text-sm sm:leading-6'
-									onClick={(e) => e.stopPropagation()}
-								/>
+							<div className='w-36 flex relative'>
+								<div className='w-36 flex'>
+									<a
+										onClick={handleToggleSearch}
+										className='text-sm font-semibold p-1 leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
+									>
+										<MagnifyingGlassIcon className='h-5 w-5' />
+									</a>
+									<input
+										type='text'
+										placeholder='Search...'
+										className='transition-width duration-300 ease-in-out block w-36 rounded-md border-0 bg-primary py-0.5 pl-1 pr-3 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none focus:ring-darkBlue sm:text-sm sm:leading-6'
+										onClick={(e) => e.stopPropagation()}
+										value={searchTerm}
+										onChange={handleSearchChange}
+									/>
+								</div>
+								{searchTerm && (
+									<div className='absolute top-full -right-6 mt-6 bg-white border border-gray-200 rounded-md shadow-lg w-96 z-10 text-black'>
+										{filteredProducts.map((product) => (
+											<Link
+												href={`/product/${product.id}`}
+												key={product.id}
+												className='block px-4 py-2 hover:bg-gray-100'
+												onClick={handleLinkClick}
+											>
+												{product.name} - {product.price}
+											</Link>
+										))}
+									</div>
+								)}
 							</div>
 						) : (
 							<div className='w-36 flex justify-end'>
@@ -100,18 +146,15 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						)}
 					</div>
 
-					<a
-						href='#'
-						className='relative p-1 text-sm font-semibold leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2'
-					>
-						<ListBulletIcon className='h-5 w-5' />
-						<span>Order</span>
-					</a>
+					<span className='flex items-center gap-2 mx-1 rounded-lg px-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition cursor-pointer'>
+						<PhoneIcon className='h-5 w-5' />
+						<span>+1-555-157-5651</span>
+					</span>
 					<button
 						onClick={toggleCart}
-						className='relative justify-center text-sm font-semibold leading-6  p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
+						className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 					>
-						<span className='flex justify-center items-center absolute -left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
+						<span className='flex justify-center items-center absolute left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
 							{cartItemsCount}
 						</span>
 						<ShoppingBagIcon className='h-5 w-5' />
@@ -154,19 +197,16 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									</a>
 								))}
 							</div>
-							<div className='py-2'>
-								<a
-									href='#'
-									className='flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
-								>
-									<ListBulletIcon className='h-5 w-5' />
-									<span>Order online</span>
-								</a>
+							<div className='py-2 cursor-pointer'>
+								<span className='flex items-center gap-2 -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'>
+									<PhoneIcon className='h-5 w-5' />
+									<span>+1-555-157-5651</span>
+								</span>
 								<button
 									onClick={toggleCart}
-									className='relative flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 cursor-pointer text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
+									className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 								>
-									<span className='flex justify-center items-center absolute left-1 top-2 bg-white text-black rounded-full w-4 h-4 text-xs font-openSans '>
+									<span className='flex justify-center items-center absolute left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
 										{cartItemsCount}
 									</span>
 									<ShoppingBagIcon className='h-5 w-5' />
@@ -185,7 +225,24 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 										className='block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
 										placeholder='Search'
 										type='search'
+										onClick={(e) => e.stopPropagation()}
+										value={searchTerm}
+										onChange={handleSearchChange}
 									/>
+									{searchTerm && (
+										<div className='absolute left-0 right-0 w-full mt-6 bg-white border border-gray-200 rounded-md shadow-lg z-10'>
+											{filteredProducts.map((product) => (
+												<Link
+													href={`/product/${product.id}`}
+													key={product.id}
+													className='block px-4 py-2 hover:bg-gray-100'
+													onClick={handleLinkClick}
+												>
+													{product.name} - {product.price}
+												</Link>
+											))}
+										</div>
+									)}
 								</div>
 							</div>
 							<Cart
