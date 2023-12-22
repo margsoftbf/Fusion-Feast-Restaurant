@@ -4,7 +4,6 @@ import { decrementQuantity, incrementQuantity } from '@/store/cartSlice';
 import { Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
-import ButtonFull from './common/ButtonFull';
 import { products } from '@/data/data';
 
 interface CartProps {
@@ -116,6 +115,10 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 							))}
 						</ul>
 					)}
+				</div>
+				<div className='border-t py-2 border-gray-200 flex items-center justify-between bg-black'>
+					<input type='text' />
+					<button>Apply code</button>
 				</div>
 				<div className='border-t border-gray-200 pt-6'>
 					<div className=' bg-gray-100 px-2 rounded-lg'>

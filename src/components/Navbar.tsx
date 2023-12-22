@@ -107,8 +107,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						<ListBulletIcon className='h-5 w-5' />
 						<span>Order</span>
 					</a>
-					<a
-						href='#'
+					<button
 						onClick={toggleCart}
 						className='relative justify-center text-sm font-semibold leading-6  p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 					>
@@ -117,7 +116,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						</span>
 						<ShoppingBagIcon className='h-5 w-5' />
 						<span>Checkout</span>
-					</a>
+					</button>
 					<Cart
 						isCartOpen={isCartOpen}
 						toggleCart={toggleCart}
@@ -163,7 +162,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									<ListBulletIcon className='h-5 w-5' />
 									<span>Order online</span>
 								</a>
-								<a
+								<button
 									onClick={toggleCart}
 									className='relative flex items-center gap-2 -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 cursor-pointer text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
 								>
@@ -172,7 +171,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									</span>
 									<ShoppingBagIcon className='h-5 w-5' />
 									<span>Checkout</span>
-								</a>
+								</button>
 								<div className='relative my-4'>
 									<div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
 										<MagnifyingGlassIcon
