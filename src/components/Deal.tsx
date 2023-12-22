@@ -3,6 +3,7 @@ import { Orange } from '../../public/assets/svg';
 import ButtonFull from './common/ButtonFull';
 
 const Deal = () => {
+	const [showNotification, setShowNotification] = useState(false);
 	const [timeLeft, setTimeLeft] = useState({
 		hours: '00',
 		minutes: '00',
@@ -36,6 +37,14 @@ const Deal = () => {
 
 		return () => clearInterval(interval);
 	}, []);
+
+	const handleGetNow = () => {
+		setShowNotification(true);
+		setTimeout(() => {
+			setShowNotification(false);
+		}, 3000);
+	};
+
 	return (
 		<div className='bg-primary p-4 text-white flex justify-between items-center relative overflow-hidden'>
 			<Orange className='w-40 h-40 absolute -top-3 -left-5 rotate-45' />
@@ -47,7 +56,14 @@ const Deal = () => {
 					<p className='text-xl md:text-2xl font-bakilda xl:text-4xl'>
 						50% Discount in
 					</p>
-					<ButtonFull>Get Now</ButtonFull>
+					<div className='flex items-center'>
+						<ButtonFull onClick={handleGetNow}>Get Now</ButtonFull>
+						{showNotification && (
+							<p className='bg-green-100 border border-green-400 text-green-700 px-2 py-1 ml-2 rounded z-100 text-xs'>
+								Use: PROMO50
+							</p>
+						)}
+					</div>
 				</div>
 				<div className='flex space-x-4 mt-4'>
 					<div className='text-center relative'>

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { decrementQuantity, incrementQuantity } from '@/store/cartSlice';
 import { Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { products } from '@/data/data';
 
@@ -15,6 +15,10 @@ interface CartProps {
 const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	const dispatch = useDispatch();
 	const cartItems = useSelector((state: RootState) => state.cart.items);
+	const [promoCode, setPromoCode] = useState('');
+	const [isPromoApplied, setIsPromoApplied] = useState(false);
+	const [discount, setDiscount] = useState(0);
+	const [triedToApply, setTriedToApply] = useState(false);
 
 	const handleIncrement = (productId: number) => {
 		dispatch(incrementQuantity(productId));
@@ -31,9 +35,23 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 		(total, item) => total + item.price * item.quantity,
 		0
 	);
+
+	const handleApplyPromoCode = () => {
+		setTriedToApply(true);
+		if (promoCode === 'PROMO50' && !isPromoApplied) {
+			setIsPromoApplied(true);
+			setDiscount(0.5);
+		} else {
+			setIsPromoApplied(false);
+		}
+	};
 	const tax = subtotal * 0.07;
 	const shipping = cartItems.length * 1.5;
-	const orderTotal = subtotal + tax + shipping;
+	let orderTotal = subtotal + tax + shipping;
+
+	if (isPromoApplied) {
+		orderTotal = orderTotal * (1 - discount);
+	}
 
 	const formatPrice = (price: number): string => price.toFixed(2);
 
@@ -94,7 +112,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 											className='bg-gray-200 text-black h-4 w-4 rounded-l-md flex items-center justify-center hover:bg-gray-300'
 											onClick={() => handleDecrement(item.id)}
 										>
-											<span className='text-myRed text-base font-bold'>-</span>
+											<span className='text-black text-base'>-</span>
 										</button>
 										<span className='bg-gray-200 text-black h-4 w-5 text-xs flex items-center justify-center hover:bg-gray-300 text-center'>
 											{item.quantity}
@@ -103,7 +121,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 											className='bg-gray-200 text-black h-4 w-4 rounded-r-md flex items-center justify-center hover:bg-gray-300'
 											onClick={() => handleIncrement(item.id)}
 										>
-											<span className='text-myGreen text-base font-bold'>
+											<span className='text-black text-base font-oswald'>
 												+
 											</span>
 										</button>
@@ -116,9 +134,38 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 						</ul>
 					)}
 				</div>
-				<div className='border-t py-2 border-gray-200 flex items-center justify-between bg-black'>
-					<input type='text' />
-					<button>Apply code</button>
+				<div className='border-t py-2 border-gray-200 flex flex-col items-center gap-2 justify-between w-full'>
+					<div className='flex items-center gap-2 justify-between w-full'>
+						<input
+							value={promoCode}
+							onChange={(e) => setPromoCode(e.target.value)}
+							disabled={isPromoApplied}
+							type='text'
+							className='bg-gray-200 block w-2/3 text-xs rounded-md border-0 py-1 indent-2 text-gray-900 shadow-sm  ring-inset ring-gray-300 placeholder:text-gray-400 outline-none'
+							placeholder='Coupon Code'
+						/>
+						<button
+							onClick={handleApplyPromoCode}
+							disabled={isPromoApplied}
+							className='w-1/3 inline-flex  py-1 bg-myOrange rounded-md justify-center items-center text-xs text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out'
+						>
+							Apply code
+						</button>
+					</div>
+					{triedToApply &&
+						(isPromoApplied ? (
+							<div className='flex items-center gap-2 justify-between w-full'>
+								<span className='text-xs text-green-900 font-bold font-oswald ml-1'>
+									Promo code applied
+								</span>
+							</div>
+						) : (
+							<div className='flex items-center gap-2 justify-between w-full'>
+								<span className='text-xs text-red-900 font-bold font-oswald ml-1'>
+									Error: Invalid promo code
+								</span>
+							</div>
+						))}
 				</div>
 				<div className='border-t border-gray-200 pt-6'>
 					<div className=' bg-gray-100 px-2 rounded-lg'>
