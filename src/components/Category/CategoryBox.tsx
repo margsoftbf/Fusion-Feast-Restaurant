@@ -1,7 +1,7 @@
 import { Product } from '@/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
-import ButtonEmpty from './common/ButtonEmpty';
+import ButtonEmpty from '../common/ButtonEmpty';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';

@@ -1,5 +1,5 @@
 import About from '@/components/About';
-import Category from '@/components/Category';
+import Category from '@/components/Category/Category';
 import Deal from '@/components/Deal';
 import Hero from '@/components/Hero';
 

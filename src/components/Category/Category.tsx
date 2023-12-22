@@ -8,7 +8,7 @@ import {
 	Fries,
 	SubTitleLeft,
 	SubTitleRight,
-} from '../../public/assets/svg';
+} from '../../../public/assets/svg';
 
 const Category = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -16,7 +16,7 @@ const Category = () => {
 	);
 
 	return (
-		<div className='bg-secondary py-8 relative'>
+		<div className='bg-secondary py-8 relative' id='menu'>
 			<Fries className='w-36 h-36 absolute bottom-0 left-0 lg:bottom-12' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-6 lg:w-5 lg:h-5 lg:bottom-12' />
 			<Ellipse className='w-1 h-1 absolute top-48 left-48 lg:w-5 lg:h-5 lg:top-28' />

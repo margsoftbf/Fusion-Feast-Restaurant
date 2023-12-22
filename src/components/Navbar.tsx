@@ -16,7 +16,7 @@ import { SearchProps, Product } from '@/types/types';
 import Cart from './Cart';
 
 const navigation = [
-	{ name: 'Menu', href: '#' },
+	{ name: 'Menu', href: 'menu' },
 	{ name: 'Testimonials', href: '#' },
 	{ name: 'Contact Us', href: '#' },
 ];
@@ -61,7 +61,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	return (
 		<header className='sticky top-0 z-[250] header-underline bg-primary '>
 			<nav
-				className='flex items-center justify-between p-4 max-w-8xl mx-auto'
+				className='flex items-center justify-between  p-4 max-w-8xl mx-auto '
 				aria-label='Global'
 			>
 				<div className='flex lg:hidden text-white'>
@@ -84,14 +84,14 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 							key={item.name}
 							to={item.href}
 							smooth={true}
-							offset={-120}
+							offset={-60}
 							className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
 						>
 							{item.name}
 						</ScrollLink>
 					))}
 				</div>
-				<div className='flex lg:flex-1 justify-center text-3xl'>
+				<div className='flex lg:flex-1 text-3xl'>
 					<Link href='/' className='-m-1.5 p-1.5 flex-grow'>
 						<h2 className='font-bakilda text-white text-center'>
 							Fusion Feast
@@ -119,15 +119,30 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 									/>
 								</div>
 								{searchTerm && (
-									<div className='absolute top-full -right-6 mt-6 bg-white border border-gray-200 rounded-md shadow-lg w-96 z-10 text-black'>
+									<div className='absolute top-full -right-6 mt-6 bg-white border border-gray-200 rounded-md shadow-lg w-80 z-10 text-black'>
 										{filteredProducts.map((product) => (
 											<Link
-												href={`/product/${product.id}`}
+												href={`/category/product/${product.name
+													.replace(/\s+/g, '-')
+													.toLowerCase()}`}
 												key={product.id}
 												className='block px-4 py-2 hover:bg-gray-100'
 												onClick={handleLinkClick}
 											>
-												{product.name} - {product.price}
+												<div className='flex items-center space-x-3'>
+													<img
+														src={product.img}
+														alt={product.name}
+														className='w-10 h-10 object-cover rounded-full'
+													/>
+
+													<div className='flex  items-center justify-between w-full'>
+														<p className='font-medium'>{product.name}</p>
+														<p className='text-sm text-gray-600'>
+															${product.price}
+														</p>
+													</div>
+												</div>
 											</Link>
 										))}
 									</div>
@@ -198,13 +213,13 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 								))}
 							</div>
 							<div className='py-2 cursor-pointer'>
-								<span className='flex items-center gap-2 -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'>
+								<span className='flex items-center gap-2 -mx-2 rounded-lg px-2 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'>
 									<PhoneIcon className='h-5 w-5' />
 									<span>+1-555-157-5651</span>
 								</span>
 								<button
 									onClick={toggleCart}
-									className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
+									className='relative text-sm font-semibold leading-6 py-1 my-2 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 								>
 									<span className='flex justify-center items-center absolute left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
 										{cartItemsCount}
@@ -238,7 +253,20 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 													className='block px-4 py-2 hover:bg-gray-100'
 													onClick={handleLinkClick}
 												>
-													{product.name} - {product.price}
+													<div className='flex items-center space-x-3'>
+														<img
+															src={product.img}
+															alt={product.name}
+															className='w-10 h-10 object-cover rounded-full'
+														/>
+
+														<div className='flex  items-center justify-between w-full'>
+															<p className='font-medium'>{product.name}</p>
+															<p className='text-sm text-gray-600'>
+																${product.price}
+															</p>
+														</div>
+													</div>
 												</Link>
 											))}
 										</div>

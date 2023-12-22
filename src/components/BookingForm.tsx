@@ -1,5 +1,4 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import ButtonFull from './common/ButtonFull';
 
 interface FormData {
 	date: string;
@@ -117,7 +116,7 @@ const BookingForm = () => {
 						className={`border rounded-lg p-2 w-36 outline-none ${
 							errors.name ? 'border-red-500' : ''
 						}`}
-						placeholder='Person'
+						placeholder='Person name'
 						value={formData.name}
 						onChange={handleInputChange}
 					/>
