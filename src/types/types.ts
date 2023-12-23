@@ -8,6 +8,7 @@ export type Product = {
 	name: string;
 	categorySlug: string;
 	img: string;
+	imgBig: string;
 	imgAlt: string;
 	rating: number;
 	reviews: number;
@@ -15,6 +16,18 @@ export type Product = {
 	description: string;
 };
 
-export interface CartItem extends Product {
+export interface ExtraOptions {
+	[key: string]: boolean;
+}
+
+
+
+export interface ProductWithExtras extends Product {
 	quantity: number;
+	extraOptions: ExtraOptions;
+}
+
+export interface CartItem extends ProductWithExtras {
+	price: number;
+	extraOptions: ExtraOptions;
 }

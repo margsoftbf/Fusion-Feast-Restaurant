@@ -1,4 +1,4 @@
-import { Product } from '@/types/types';
+import { Product, CartItem } from '@/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import ButtonEmpty from '../common/ButtonEmpty';
@@ -9,8 +9,8 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import { IoMdAddCircle } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
-
-import { CartItem } from '@/types/types';
+import { useState } from 'react';
+import ProductModal from './ProductModal';
 
 type CategoryBoxProps = {
 	categorySlug: string;
@@ -22,14 +22,23 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 	categorySlug,
 }) => {
 	const dispatch = useDispatch();
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-	const handleAddToCart = (product: Product) => {
-		const cartItem: CartItem = {
-			...product,
-			quantity: 1,
-		};
+	const handleOpenModal = (product: Product) => {
+		setSelectedProduct(product);
+		setIsModalOpen(true);
+	};
 
-		dispatch(addItem(cartItem));
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+		setSelectedProduct(null);
+	};
+
+
+	const handleAddToCartWithExtras = (productWithExtras: CartItem) => {
+		dispatch(addItem(productWithExtras));
+		handleCloseModal();
 	};
 
 	return (
@@ -116,12 +125,20 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 								</p>
 								<button
 									className='h-7 w-8 rounded-lg flex items-center justify-center bg-myGreen hover:bg-myOrange duration-200 transition ease-linear'
-									onClick={() => handleAddToCart(product)}
+									onClick={() => handleOpenModal(product)}
 									aria-label='Add to cart'
 								>
 									<IoMdAddCircle className='text-third w-6' />
 								</button>
 							</div>
+							{isModalOpen && (
+								<ProductModal
+									product={selectedProduct}
+									onClose={handleCloseModal}
+									onAddToCart={handleAddToCartWithExtras}
+									category={categorySlug}
+								/>
+							)}
 						</div>
 					</SwiperSlide>
 				))}

@@ -35,7 +35,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-			<div className='hidden lg:block lg:mx-auto lg:absolute lg:-bottom-12 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-50'>
+			<div className='hidden lg:block lg:mx-auto lg:absolute lg:-bottom-12 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-40'>
 				<BookingForm />
 			</div>
 		</div>

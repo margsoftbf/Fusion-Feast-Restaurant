@@ -2,13 +2,19 @@ import { AppProps } from 'next/app';
 import '../styles/globals.css';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
+import Modal from 'react-modal';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const [showSearch, setShowSearch] = useState(false);
 
+
+	useEffect(() => {
+		Modal.setAppElement('#__next');
+	}, []);
+	
 	return (
 		<Provider store={store}>
 			<Head>

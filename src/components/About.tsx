@@ -23,11 +23,11 @@ const About = () => {
 					<Ellipse className='w-1 h-1 absolute top-12 left-6 lg:w-5 lg:h-5 lg:top-28' />
 					<EmptyEllipse className='w-2 h-2 absolute top-16 left-6 lg:w-5 lg:h-5 lg:top-40' />
 					<div className='w-48 h-64 sm:h-96 sm:w-60 lg:h-[500px] lg:w-[300px] relative ml-12 rounded-3xl'>
-						<div className='absolute h-16 w-24 rounded-md bg-white z-50 -right-6 top-6 flex flex-col items-center justify-center gap-1'>
+						<div className='absolute h-16 w-24 rounded-md bg-white z-[41] -right-6 top-6 flex flex-col items-center justify-center gap-1'>
 							<p className='text-black font-lemonada '>144+</p>
 							<p className='text-black text-xs font-openSans'>Master Chefs</p>
 						</div>
-						<div className='absolute h-16 w-24 rounded-md bg-white z-50 -left-12 bottom-6 flex flex-col items-center justify-center gap-1'>
+						<div className='absolute h-16 w-24 rounded-md bg-white z-[41] -left-12 bottom-6 flex flex-col items-center justify-center gap-1'>
 							<p className='text-black font-lemonada '>25+</p>
 							<p className='text-black text-xs font-openSans'>Serving Years</p>
 						</div>
@@ -39,6 +39,7 @@ const About = () => {
 							style={imageStyle}
 							className='object-cover'
 							fill={true}
+							priority={true}
 							quality={75}
 							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 							alt='Chef cooking in the kitchen'

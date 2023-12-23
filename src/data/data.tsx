@@ -19,12 +19,30 @@ export const categories: Category[] = [
 	{ name: 'Salads', slug: 'salads', icon: <LuSalad /> },
 ];
 
+type Addon = {
+    name: string;
+    price: number;
+};
+
+export const addons: Record<string, Addon[]> = {
+    pizza: [
+        { name: "Extra Cheese", price: 1 },
+        { name: "Salami", price: 1.5 },
+        { name: "Olives", price: 0.5 },
+    ],
+    burgers: [
+        { name: "Extra Cheese", price: 0.75 },
+        { name: "Bacon", price: 1.25 },
+    ],
+};
+
 export const products: Product[] = [
 	{
 		id: 1,
 		name: 'Margherita - 1',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -36,6 +54,7 @@ export const products: Product[] = [
 		name: 'Margherita - 2',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -47,6 +66,7 @@ export const products: Product[] = [
 		name: 'Margherita - 3',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 3,
 		reviews: 123,
@@ -58,6 +78,7 @@ export const products: Product[] = [
 		name: 'Margherita - 4',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4,
 		reviews: 123,
@@ -69,6 +90,7 @@ export const products: Product[] = [
 		name: 'Margherita - 5',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -80,6 +102,7 @@ export const products: Product[] = [
 		name: 'Margherita - 6',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -91,6 +114,7 @@ export const products: Product[] = [
 		name: 'Cheeseburger - 1',
 		categorySlug: 'burgers',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -103,6 +127,7 @@ export const products: Product[] = [
 		name: 'Cheeseburger - 2',
 		categorySlug: 'burgers',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -115,6 +140,7 @@ export const products: Product[] = [
 		name: 'Hamburger - 3',
 		categorySlug: 'burgers',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -127,6 +153,7 @@ export const products: Product[] = [
 		name: 'Hamburger - 4',
 		categorySlug: 'burgers',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
@@ -139,6 +166,7 @@ export const products: Product[] = [
 		name: 'Hamburger - 5',
 		categorySlug: 'burgers',
 		img: '/assets/products/pizza/margherita.webp',
+		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
