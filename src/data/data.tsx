@@ -20,74 +20,74 @@ export const categories: Category[] = [
 ];
 
 type Addon = {
-    name: string;
-    price: number;
+	name: string;
+	price: number;
 };
 
 export const addons: Record<string, Addon[]> = {
-    pizza: [
-        { name: "Extra Cheese", price: 1 },
-        { name: "Salami", price: 1.5 },
-        { name: "Olives", price: 0.5 },
-    ],
-    burgers: [
-        { name: "Extra Cheese", price: 0.75 },
-        { name: "Bacon", price: 1.25 },
-    ],
+	pizza: [
+		{ name: 'Cheese', price: 1 },
+		{ name: 'Salami', price: 1.5 },
+		{ name: 'Olives', price: 0.5 },
+	],
+	burgers: [
+		{ name: 'Cheese', price: 0.75 },
+		{ name: 'Bacon', price: 1.25 },
+	],
 };
 
 export const products: Product[] = [
 	{
 		id: 1,
-		name: 'Margherita - 1',
+		name: 'Margherit',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
-		price: 10.99,
+		price: 9.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
 	{
 		id: 2,
-		name: 'Margherita - 2',
+		name: 'Margheritka',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4.5,
 		reviews: 123,
-		price: 10.99,
+		price: 17.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
 	{
 		id: 3,
-		name: 'Margherita - 3',
+		name: 'Prosa',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 3,
 		reviews: 123,
-		price: 10.99,
+		price: 11.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
 	{
 		id: 4,
-		name: 'Margherita - 4',
+		name: 'Margh',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',
 		imgAlt: 'Margherita',
 		rating: 4,
 		reviews: 123,
-		price: 10.99,
+		price: 12.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
 	},
 	{
 		id: 5,
-		name: 'Margherita - 5',
+		name: 'AMarg',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',
@@ -99,7 +99,7 @@ export const products: Product[] = [
 	},
 	{
 		id: 6,
-		name: 'Margherita - 6',
+		name: 'AAMargherita - 6',
 		categorySlug: 'pizza',
 		img: '/assets/products/pizza/margherita.webp',
 		imgBig: '/assets/products/pizza/margheritaBig.webp',

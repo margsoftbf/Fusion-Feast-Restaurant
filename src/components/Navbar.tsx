@@ -58,6 +58,8 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
+
+
 	return (
 		<header className='sticky top-0 z-[250] header-underline bg-primary '>
 			<nav

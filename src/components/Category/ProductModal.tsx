@@ -119,20 +119,20 @@ const ProductModal: React.FC<ProductModalProps> = ({
 							))}
 						</div>
 					</div>
-					<div className='mt-3 w-24 flex items-center justify-center border border-gray-300 rounded-md'>
-						<div className='flex items-center justify-between'>
+					<div className='mt-3 w-24 flex items-center justify-center rounded-md '>
+						<div className='flex items-center gap-1 justify-between'>
 							<button
 								onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
-								className='px-2 text-white bg-third font-bold rounded-md hover:bg-gray-300 hover:text-black duration-200 transition ease-linear'
+								className='w-6 h-6 flex items-center font-bold justify-center  text-black bg-myOrange rounded-full hover:brightness-125 duration-200 transition ease-linear'
 							>
 								-
 							</button>
-							<span className='px-2 py-1 text-black bg-white font-bold'>
+							<span className='w-7 h-7  flex items-center  justify-center  text-black bg-white rounded-xl font-bold border'>
 								{quantity}
 							</span>
 							<button
 								onClick={() => setQuantity(quantity + 1)}
-								className='px-2 text-white bg-third font-bold rounded-md hover:bg-gray-300 hover:text-black duration-200 transition ease-linear'
+								className='w-6 h-6 flex items-center font-bold justify-center  text-black bg-myOrange rounded-full hover:brightness-125 duration-200 transition ease-linear'
 							>
 								+
 							</button>
@@ -143,13 +143,13 @@ const ProductModal: React.FC<ProductModalProps> = ({
 					</div>
 					<div className='flex justify-between mt-1'>
 						<button
-							className='bg-myGreen  duration-200 transition ease-linear text-black font-bold py-2 px-4 rounded'
+							className='bg-myDarkGreen  duration-200 transition ease-linear text-white font-bold py-2 px-4 rounded'
 							onClick={handleAddToCartClick}
 						>
 							Add to Cart
 						</button>
 						<button
-							className='bg-myRed  duration-200 transition ease-linear text-black font-bold py-2 px-4 rounded'
+							className='bg-myDarkRed  duration-200 transition ease-linear text-white font-bold py-2 px-4 rounded'
 							onClick={onClose}
 						>
 							Close

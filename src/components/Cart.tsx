@@ -1,4 +1,3 @@
-
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { decrementQuantity, incrementQuantity } from '@/store/cartSlice';
@@ -6,7 +5,7 @@ import { Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { products } from '@/data/data';
-
+import { CartItem, ExtraOptions } from '@/types/types';
 interface CartProps {
 	isCartOpen: boolean;
 	toggleCart: () => void;
@@ -21,12 +20,12 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	const [discount, setDiscount] = useState(0);
 	const [triedToApply, setTriedToApply] = useState(false);
 
-	const handleIncrement = (productId: number) => {
-		dispatch(incrementQuantity(productId));
+	const handleIncrement = (item: CartItem) => {
+		dispatch(incrementQuantity(item));
 	};
 
-	const handleDecrement = (productId: number) => {
-		dispatch(decrementQuantity(productId));
+	const handleDecrement = (item: CartItem) => {
+		dispatch(decrementQuantity(item));
 	};
 
 	const totalPriceItems = (price: number, quantity: number): string =>
@@ -55,6 +54,15 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	}
 
 	const formatPrice = (price: number): string => price.toFixed(2);
+
+	const formatAddons = (extraOptions: ExtraOptions): string => {
+		const selectedAddons = Object.entries(extraOptions)
+			.filter(([key, value]) => value)
+			.map(([key]) => key.charAt(0).toUpperCase() + key.slice(1))
+			.join(', ');
+
+		return selectedAddons.length > 0 ? selectedAddons : 'No addons';
+	};
 
 	return (
 		<Transition
@@ -103,7 +111,9 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 										<div className='flex flex-col'>
 											<span className='text-xs font-bold'>{item.name}</span>
 											<span className='text-[10px] text-gray-400'>
-												{item.name}
+												{formatAddons(item.extraOptions).length > 19
+											? `${formatAddons(item.extraOptions).slice(0, 17)}...`
+											: formatAddons(item.extraOptions)}
 											</span>
 										</div>
 									</div>
@@ -111,7 +121,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 									<div className='flex items-center justify-center gap-1 font-sans'>
 										<button
 											className='bg-gray-200 text-black h-4 w-4 rounded-l-md flex items-center justify-center hover:bg-gray-300'
-											onClick={() => handleDecrement(item.id)}
+											onClick={() => handleDecrement(item)}
 										>
 											<span className='text-black text-base'>-</span>
 										</button>
@@ -120,7 +130,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 										</span>
 										<button
 											className='bg-gray-200 text-black h-4 w-4 rounded-r-md flex items-center justify-center hover:bg-gray-300'
-											onClick={() => handleIncrement(item.id)}
+											onClick={() => handleIncrement(item)}
 										>
 											<span className='text-black text-base font-oswald'>
 												+

@@ -64,9 +64,6 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 					1000: {
 						slidesPerView: 4,
 					},
-					1250: {
-						slidesPerView: 5,
-					},
 				}}
 				className='w-full mx-auto'
 			>
@@ -79,7 +76,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 									.toLowerCase()}`}
 							>
 								<div className='flex p-1'>
-									<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto'>
+									<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto relative'>
 										<Image
 											src={product.img}
 											alt={product.name}
