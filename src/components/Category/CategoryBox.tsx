@@ -35,7 +35,6 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 		setSelectedProduct(null);
 	};
 
-
 	const handleAddToCartWithExtras = (productWithExtras: CartItem) => {
 		dispatch(addItem(productWithExtras));
 		handleCloseModal();
