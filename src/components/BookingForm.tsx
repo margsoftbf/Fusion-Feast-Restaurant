@@ -1,23 +1,18 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import {FormDataTypes} from '@/types/types';
 
-interface FormData {
-	date: string;
-	time: string;
-	name: string;
-	email: string;
-}
 
 const BookingForm = () => {
-	const initialFormData: FormData = {
+	const initialFormData: FormDataTypes = {
 		date: '',
 		time: '',
 		name: '',
 		email: '',
 	};
 
-	const [formData, setFormData] = useState<FormData>(initialFormData);
+	const [formData, setFormData] = useState<FormDataTypes>(initialFormData);
 
-	const [errors, setErrors] = useState<Partial<FormData>>({});
+	const [errors, setErrors] = useState<Partial<FormDataTypes>>({});
 
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
@@ -32,7 +27,7 @@ const BookingForm = () => {
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 
-		const newErrors: Partial<FormData> = {};
+		const newErrors: Partial<FormDataTypes> = {};
 
 		if (formData.date.trim() === '') {
 			newErrors.date = 'Please select date';

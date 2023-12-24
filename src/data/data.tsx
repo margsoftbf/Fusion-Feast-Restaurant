@@ -10,6 +10,12 @@ export type Category = {
 	icon: JSX.Element;
 };
 
+export const navigation = [
+	{ name: 'Menu', href: 'menu' },
+	{ name: 'Testimonials', href: '#' },
+	{ name: 'Contact Us', href: '#' },
+];
+
 export const categories: Category[] = [
 	{ name: 'Pizza', slug: 'pizza', icon: <CiPizza /> },
 	{ name: 'Burgers', slug: 'burgers', icon: <CiBurger /> },

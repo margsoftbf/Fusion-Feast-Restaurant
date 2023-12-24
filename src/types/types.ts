@@ -20,7 +20,19 @@ export interface ExtraOptions {
 	[key: string]: boolean;
 }
 
+export interface TotalProps {
+	subtotal: number;
+	shipping: number;
+	tax: number;
+	orderTotal: number;
+}
 
+export interface FormDataTypes {
+	date: string;
+	time: string;
+	name: string;
+	email: string;
+}
 
 export interface ProductWithExtras extends Product {
 	quantity: number;

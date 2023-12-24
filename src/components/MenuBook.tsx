@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { categories, products } from '@/data/data';
-import CategoryBox from './CategoryBox';
+import CategoryBox from './category/MenuBookSlider';
 import React from 'react';
 import {
 	Ellipse,
@@ -8,9 +8,9 @@ import {
 	Fries,
 	SubTitleLeft,
 	SubTitleRight,
-} from '../../../public/assets/svg';
+} from '../../public/assets/svg';
 
-const Category = () => {
+const MenuBook = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
 		categories[0].slug
 	);
@@ -49,7 +49,7 @@ const Category = () => {
 					))}
 				</div>
 
-				<div className='mx-auto  flex flex-col px-4 sm:px-6 lg:max-w-5xl my-2'>
+				<div className='mx-auto  flex flex-col px-4 sm:px-6 lg:max-w-7xl my-2'>
 					{categories
 						.filter(
 							(category) =>
@@ -70,4 +70,4 @@ const Category = () => {
 	);
 };
 
-export default Category;
+export default MenuBook;

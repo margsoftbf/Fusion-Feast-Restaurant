@@ -10,14 +10,14 @@ import { IoMdAddCircle } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
 import { useState } from 'react';
-import ProductModal from './ProductModal';
+import ProductModal from '../ProductModal';
 
 type CategoryBoxProps = {
 	categorySlug: string;
 	products: Product[];
 };
 
-const CategoryBox: React.FC<CategoryBoxProps> = ({
+const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 	products,
 	categorySlug,
 }) => {
@@ -63,6 +63,9 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 					},
 					1000: {
 						slidesPerView: 4,
+					},
+					1250: {
+						slidesPerView: 5,
 					},
 				}}
 				className='w-full mx-auto'
@@ -146,4 +149,4 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 	);
 };
 
-export default CategoryBox;
+export default MenuBookSlider;

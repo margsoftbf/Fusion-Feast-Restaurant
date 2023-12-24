@@ -1,7 +1,7 @@
 import About from '@/components/About';
-import Category from '@/components/Category/Category';
 import Deal from '@/components/Deal';
 import Hero from '@/components/Hero';
+import MenuBook from '@/components/MenuBook';
 
 export default function Home() {
 	return (
@@ -9,7 +9,7 @@ export default function Home() {
 			<Hero />
 			<About />
 			<Deal />
-			<Category />
+			<MenuBook />
 		</main>
 	);
 }

@@ -3,6 +3,7 @@ import { Orange, Tomato } from '../../public/assets/svg';
 
 import BookingForm from './BookingForm';
 import ButtonFull from './common/ButtonFull';
+import { Link as ScrollLink } from 'react-scroll';
 const Hero = () => {
 	return (
 		<div className='bg-primary relative max-h-[500px]'>
@@ -31,7 +32,9 @@ const Hero = () => {
 							We serve the best fusion dishes in the city.
 						</p>
 						<div className='mt-10 flex items-center justify-center gap-x-6'>
-							<ButtonFull>Main Menu</ButtonFull>
+							<ScrollLink to={'menu'} smooth={true} offset={-60}>
+								<ButtonFull>Main Menu</ButtonFull>
+							</ScrollLink>
 						</div>
 					</div>
 				</div>

@@ -5,7 +5,10 @@ import { Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { products } from '@/data/data';
-import { CartItem, ExtraOptions } from '@/types/types';
+import { CartItem as CartItemProps} from '@/types/types';
+import { Promo, Total, CartItem } from './cart/index';
+
+
 interface CartProps {
 	isCartOpen: boolean;
 	toggleCart: () => void;
@@ -20,11 +23,11 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	const [discount, setDiscount] = useState(0);
 	const [triedToApply, setTriedToApply] = useState(false);
 
-	const handleIncrement = (item: CartItem) => {
+	const handleIncrement = (item: CartItemProps) => {
 		dispatch(incrementQuantity(item));
 	};
 
-	const handleDecrement = (item: CartItem) => {
+	const handleDecrement = (item: CartItemProps) => {
 		dispatch(decrementQuantity(item));
 	};
 
@@ -53,16 +56,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 		orderTotal = orderTotal * (1 - discount);
 	}
 
-	const formatPrice = (price: number): string => price.toFixed(2);
 
-	const formatAddons = (extraOptions: ExtraOptions): string => {
-		const selectedAddons = Object.entries(extraOptions)
-			.filter(([key, value]) => value)
-			.map(([key]) => key.charAt(0).toUpperCase() + key.slice(1))
-			.join(', ');
-
-		return selectedAddons.length > 0 ? selectedAddons : 'No addons';
-	};
 
 	return (
 		<Transition
@@ -90,120 +84,31 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 					) : (
 						<ul className='-my-6 divide-y divide-gray-200'>
 							{cartItems.map((item) => (
-								<li key={item.id} className='flex items-center py-2 gap-2'>
-									<div className='flex items-center gap-2 flex-1'>
-										<div className='h-12 w-12 flex items-center justify-center rounded-md border bg-gray-100 border-gray-200'>
-											<img
-												src={
-													products.find((product) => product.id === item.id)
-														?.img || ''
-												}
-												alt={
-													products.find((product) => product.id === item.id)
-														?.imgAlt || ''
-												}
-												className='w-10 h-10 rounded-full'
-											/>
-										</div>
-										<div className='flex flex-col'>
-											<span className='text-xs font-bold truncate'>
-												{item.name}
-											</span>
-											<span className='text-[10px] text-gray-400 truncate'>
-												{formatAddons(item.extraOptions).length > 19
-													? `${formatAddons(item.extraOptions).slice(0, 17)}...`
-													: formatAddons(item.extraOptions)}
-											</span>
-										</div>
-									</div>
-
-									<div className='flex items-center gap-1 font-sans'>
-										<button
-											className='bg-gray-200 text-black h-4 w-4 rounded-l-md flex items-center justify-center hover:bg-gray-300'
-											onClick={() => handleDecrement(item)}
-										>
-											<span className='text-black text-base'>-</span>
-										</button>
-										<span className='bg-gray-200 text-black h-4 w-5 text-xs flex items-center justify-center hover:bg-gray-300 text-center'>
-											{item.quantity}
-										</span>
-										<button
-											className='bg-gray-200 text-black h-4 w-4 rounded-r-md flex items-center justify-center hover:bg-gray-300'
-											onClick={() => handleIncrement(item)}
-										>
-											<span className='text-black text-base font-oswald'>
-												+
-											</span>
-										</button>
-									</div>
-
-									<span className='font-bold text-[14px] w-12 text-right'>
-										${totalPriceItems(item.price, item.quantity)}
-									</span>
-								</li>
+								<CartItem
+									key={item.id}
+									item={item}
+									onIncrement={handleIncrement}
+									onDecrement={handleDecrement}
+									products={products}
+									totalPriceItems={totalPriceItems}
+								/>
 							))}
 						</ul>
 					)}
 				</div>
-				<div className='border-t py-2 border-gray-200 flex flex-col items-center gap-2 justify-between w-full'>
-					<div className='flex items-center gap-2 justify-between w-full'>
-						<input
-							value={promoCode}
-							onChange={(e) => setPromoCode(e.target.value)}
-							disabled={isPromoApplied}
-							type='text'
-							className='bg-gray-200 block w-2/3 text-xs rounded-md border-0 py-1 indent-2 text-gray-900 shadow-sm  ring-inset ring-gray-300 placeholder:text-gray-400 outline-none'
-							placeholder='Coupon Code'
-						/>
-						<button
-							onClick={handleApplyPromoCode}
-							disabled={isPromoApplied}
-							className='w-1/3 inline-flex  py-1 bg-myOrange rounded-md justify-center items-center text-xs text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out'
-						>
-							Apply code
-						</button>
-					</div>
-					{triedToApply &&
-						(isPromoApplied ? (
-							<div className='flex items-center gap-2 justify-between w-full'>
-								<span className='text-xs text-green-900 font-bold font-oswald ml-1'>
-									Promo code applied
-								</span>
-							</div>
-						) : (
-							<div className='flex items-center gap-2 justify-between w-full'>
-								<span className='text-xs text-red-900 font-bold font-oswald ml-1'>
-									Error: Invalid promo code
-								</span>
-							</div>
-						))}
-				</div>
-				<div className='border-t border-gray-200 pt-6'>
-					<div className=' bg-gray-100 px-2 rounded-lg'>
-						<div className='-my-4 divide-y divide-gray-200 text-sm'>
-							<div className='flex items-center justify-between py-2 text-gray-500'>
-								<div className=''>Subtotal</div>
-								<div className='font-medium '>${formatPrice(subtotal)}</div>
-							</div>
-							<div className='flex items-center justify-between py-2 text-gray-500'>
-								<div>Shipping</div>
-								<div className='font-medium '>${formatPrice(shipping)}</div>
-							</div>
-							<div className='flex items-center justify-between py-2 text-gray-500'>
-								<div>Tax</div>
-								<div className='font-medium '>${formatPrice(tax)}</div>
-							</div>
-							<div className='flex items-center justify-between py-4'>
-								<div className='text-base font-medium text-gray-900'>
-									Order total
-								</div>
-								<div className='text-base font-medium text-gray-900'>
-									${formatPrice(orderTotal)}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<Promo
+					promoCode={promoCode}
+					setPromoCode={setPromoCode}
+					isPromoApplied={isPromoApplied}
+					handleApplyPromoCode={handleApplyPromoCode}
+					triedToApply={triedToApply}
+				/>
+				<Total
+					subtotal={subtotal}
+					shipping={shipping}
+					tax={tax}
+					orderTotal={orderTotal}
+				/>
 				<div className='my-6 flex justify-center'>
 					<button
 						className={`w-full mx-8 inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out`}
