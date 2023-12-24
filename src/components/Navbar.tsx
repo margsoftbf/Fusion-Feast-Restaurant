@@ -58,10 +58,16 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
-
+	const handleCloseCart = () => {
+		if (isCartOpen) {
+			setCartOpen(false);
+		}
+	};
 
 	return (
-		<header className='sticky top-0 z-[250] header-underline bg-primary '>
+		<header
+			className='sticky top-0 z-[250] header-underline bg-primary '
+		>
 			<nav
 				className='flex items-center justify-between  p-4 max-w-8xl mx-auto '
 				aria-label='Global'

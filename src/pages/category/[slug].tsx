@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { CartItem, Product } from '@/types/types';
 import { addItem } from '@/store/cartSlice';
 import ProductModal from '@/components/Category/ProductModal';
+import ButtonEmpty from '@/components/common/ButtonEmpty';
 const CategoryPage = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
@@ -56,6 +57,16 @@ const CategoryPage = () => {
 			return a.name.localeCompare(b.name);
 		}
 	});
+	const [productsPerPage, setProductsPerPage] = useState(8);
+	const [currentPage, setCurrentPage] = useState(1);
+	const pageCount = Math.ceil(sortedProducts.length / productsPerPage);
+	const indexOfLastProduct = currentPage * productsPerPage;
+	const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+	const currentProducts = sortedProducts.slice(
+		indexOfFirstProduct,
+		indexOfLastProduct
+	);
+	const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
 	return (
 		<div className='relative bg-primary'>
@@ -130,7 +141,7 @@ const CategoryPage = () => {
 							</div>
 						</div>
 						<div className='grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 -mx-px'>
-							{sortedProducts.map((product) => (
+							{currentProducts.map((product) => (
 								<div
 									key={product.id}
 									className='flex flex-col justify-center bg-third relative p-1 rounded-lg'
@@ -174,7 +185,7 @@ const CategoryPage = () => {
 													({product.reviews} reviews)
 												</span>
 											</div>
-											<p className='text-white font-oswald text-base text-center px-4'>
+											<p className='text-myGray font-oswald text-base text-center px-4'>
 												{product.description.length > 100
 													? `${product.description.slice(0, 100)}...`
 													: product.description}
@@ -182,11 +193,11 @@ const CategoryPage = () => {
 										</div>
 									</Link>
 									<div className='flex flex-col justify-between items-center my-2 px-1'>
-										<p className='font-bold text-myRed text-xl lg:text-2xl font-oswald py-1'>
+										<p className='font-bold text-white text-xl lg:text-2xl font-oswald py-1'>
 											${product.price}
 										</p>
 										<button
-											className='rounded-lg mt-4 mb-1 p-2  font-bold flex items-center justify-center bg-myOrange hover:bg-white duration-200 transition ease-linear'
+											className='rounded-lg mt-4 mb-1 p-1 px-2  font-bold flex items-center justify-center bg-myOrange hover:bg-white duration-200 transition ease-linear'
 											onClick={() => handleOpenModal(product)}
 											aria-label='Add to cart'
 										>
@@ -195,6 +206,41 @@ const CategoryPage = () => {
 									</div>
 								</div>
 							))}
+						</div>
+						<div className='flex justify-between items-center bg-third p-2 py-4 rounded-md my-4'>
+							<button
+								onClick={() => setCurrentPage(currentPage - 1)}
+								disabled={currentPage === 1}
+								className='rounded bg-gray-700 text-white px-3 py-1'
+							>
+								Previous
+							</button>
+
+							<div className='flex justify-center flex-grow'>
+								{Array.from({ length: pageCount }, (_, i) => i + 1).map(
+									(number) => (
+										<button
+											key={number}
+											onClick={() => paginate(number)}
+											className={`mx-1 rounded px-3 py-1 ${
+												number === currentPage
+													? 'bg-gray-700 text-white'
+													: 'bg-gray-200 text-gray-700'
+											}`}
+										>
+											{number}
+										</button>
+									)
+								)}
+							</div>
+
+							<button
+								onClick={() => setCurrentPage(currentPage + 1)}
+								disabled={currentPage === pageCount}
+								className='rounded bg-gray-700 text-white px-3 py-1'
+							>
+								Next
+							</button>
 						</div>
 					</div>
 				</div>

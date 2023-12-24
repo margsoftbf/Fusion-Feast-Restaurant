@@ -108,7 +108,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 											({product.reviews} reviews)
 										</span>
 									</div>
-									<p className='text-white font-oswald text-xs'>
+									<p className='text-gray-200 font-oswald text-xs'>
 										{product.description.length > 50
 											? `${product.description.slice(0, 50)}...`
 											: product.description}
@@ -116,7 +116,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 								</div>
 							</Link>
 							<div className='flex flex-row justify-between items-center my-2 px-1'>
-								<p className='font-bold text-myRed font-oswald py-1'>
+								<p className='font-bold text-white font-oswald py-1'>
 									${product.price}
 								</p>
 								<button

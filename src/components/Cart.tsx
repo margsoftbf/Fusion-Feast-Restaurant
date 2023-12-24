@@ -90,11 +90,8 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 					) : (
 						<ul className='-my-6 divide-y divide-gray-200'>
 							{cartItems.map((item) => (
-								<li
-									key={item.id}
-									className='flex gap-2 items-center py-2 justify-between'
-								>
-									<div className='flex items-center gap-2'>
+								<li key={item.id} className='flex items-center py-2 gap-2'>
+									<div className='flex items-center gap-2 flex-1'>
 										<div className='h-12 w-12 flex items-center justify-center rounded-md border bg-gray-100 border-gray-200'>
 											<img
 												src={
@@ -109,16 +106,18 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 											/>
 										</div>
 										<div className='flex flex-col'>
-											<span className='text-xs font-bold'>{item.name}</span>
-											<span className='text-[10px] text-gray-400'>
+											<span className='text-xs font-bold truncate'>
+												{item.name}
+											</span>
+											<span className='text-[10px] text-gray-400 truncate'>
 												{formatAddons(item.extraOptions).length > 19
-											? `${formatAddons(item.extraOptions).slice(0, 17)}...`
-											: formatAddons(item.extraOptions)}
+													? `${formatAddons(item.extraOptions).slice(0, 17)}...`
+													: formatAddons(item.extraOptions)}
 											</span>
 										</div>
 									</div>
 
-									<div className='flex items-center justify-center gap-1 font-sans'>
+									<div className='flex items-center gap-1 font-sans'>
 										<button
 											className='bg-gray-200 text-black h-4 w-4 rounded-l-md flex items-center justify-center hover:bg-gray-300'
 											onClick={() => handleDecrement(item)}
@@ -137,7 +136,8 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 											</span>
 										</button>
 									</div>
-									<span className='font-bold text-[14px]'>
+
+									<span className='font-bold text-[14px] w-12 text-right'>
 										${totalPriceItems(item.price, item.quantity)}
 									</span>
 								</li>
