@@ -32,10 +32,7 @@ export const reviews: ReviewsProps[] = [
 		position: 'Head Manager, Slack',
 		img: '/assets/reviews/ReviewMenTwo.webp',
 		imgAlt: 'Amanda Morton Photo',
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-		laborum vitae consectetur repellat molestias reiciendis quia ullam
-		cum, ut hic officiis nobis iure beatae ipsum sapiente quo possimus a
-		nemo?`,
+		text: `Extremely professional approach to clients. I highly recommend working with this company, as its rare to find such a high level of service`,
 		rating: 5,
 	},
 	{

@@ -21,16 +21,18 @@ const ProductReviews = () => {
 				}}
 				loop={true}
 				grabCursor={true}
+				breakpoints={{
+					0: {
+						slidesPerView: 1,
+					},
+				}}
 				modules={[Autoplay]}
-				className='bg-white max-w-5xl'
+				className='max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-6xl'
 			>
 				{reviews.map((review) => (
-					<SwiperSlide
-						key={review.id}
-						className='flex items-center justify-center'
-					>
-						<div className=''>
-							<div className='bg-third h-96 sm:h-72 w-[256px] sm:w-[480px] lg:w-[640px] rounded-xl mt-16 relative z-50'>
+					<SwiperSlide key={review.id}>
+						<div className='flex justify-center'>
+							<div className='bg-third h-80 sm:h-72 w-[256px] sm:w-[480px] lg:w-[640px] rounded-xl mt-16 relative z-50'>
 								<div className='hidden md:block absolute h-60 px-10 bg-third -left-16 top-5 rounded-xl'></div>
 								<div className='hidden lg:block absolute h-40 px-10 bg-third -left-28 top-16 rounded-xl'></div>
 								<div className='hidden md:block absolute h-60 px-10 bg-third -right-16 top-5 rounded-xl'></div>
@@ -49,13 +51,13 @@ const ProductReviews = () => {
 											/>
 										</div>
 									</div>
-									<p className='pt-20 px-4 text-[14px] sm:text-base italic text-center'>
+									<p className='pt-20 px-4 text-[14px] sm:text-base lg:text-xl italic text-center'>
 										{review.text}
 									</p>
 									<p className='mt-6 text-2xl font-oswald tracking-wider text-myOrange italic'>
 										{review.name}
 									</p>
-									<p className='text-xs py-2 italic'>{review.position}</p>
+									<p className='text-[14px] py-2 italic'>{review.position}</p>
 									<div className='flex items-center  py-1'>
 										{[0, 1, 2, 3, 4].map((rating) => (
 											<StarIcon
@@ -65,7 +67,7 @@ const ProductReviews = () => {
 														? 'text-yellow-400'
 														: 'text-gray-200'
 												}
-										'h-3 w-3 flex-shrink-0'
+										'h-5 w-5 flex-shrink-0'
 										`}
 												aria-hidden='true'
 											/>
