@@ -14,6 +14,12 @@ import {
 	CategoryHero,
 	ProductList,
 } from '@/components/category/index';
+import {
+	Cookie,
+	Dinner,
+	Ellipse,
+	EmptyEllipse,
+} from '../../../public/assets/svg';
 
 const CategoryPage = () => {
 	const router = useRouter();
@@ -58,7 +64,6 @@ const CategoryPage = () => {
 			sortKey === 'price' ? a.price - b.price : a.name.localeCompare(b.name)
 		);
 
-
 	const pageCount = Math.ceil(
 		sortedAndFilteredProducts.length / productsPerPage
 	);
@@ -66,8 +71,6 @@ const CategoryPage = () => {
 	const handleMaxPriceChange = (newMaxPrice: number) => {
 		setMaxPrice(newMaxPrice);
 	};
-
-
 
 	const currentProducts = sortedAndFilteredProducts.slice(
 		indexOfFirstProduct,
@@ -77,39 +80,50 @@ const CategoryPage = () => {
 	return (
 		<div className='relative bg-primary'>
 			<CategoryHero />
-			<div className='relative max-w-8xl mx-auto px-2 py-4'>
-				<div className='flex flex-col items-center justify-center gap-2 w-full lg:flex-row lg:items-start'>
-					<div className='w-5/6 lg:w-1/6  mr-2 mt-12'>
-						<div className='flex flex-col justify-between'>
-							<MenuBar />
-							<PriceRange onMaxPriceChange={handleMaxPriceChange} />
+			<div className='relative'>
+				<Cookie className='w-72 h-72 absolute bottom-0 right-6' />
+				<Ellipse className='w-24 h-24 absolute bottom-12 left-6' />
+				<Ellipse className='w-20 h-20 absolute top-12 right-6' />
+				<EmptyEllipse className='w-20 h-20 absolute top-16 left-96' />
+				<div className='relative max-w-8xl mx-auto px-2 py-4'>
+					<div className='flex flex-col items-center justify-center gap-2 w-full lg:flex-row lg:items-start'>
+						<div className='w-5/6 lg:w-1/6  mr-2 mt-12'>
+							<div className='flex flex-col justify-between'>
+								<MenuBar />
+								<PriceRange onMaxPriceChange={handleMaxPriceChange} />
+							</div>
+						</div>
+						<div className='w-5/6'>
+							<div className='py-4 flex justify-between items-center w-full'>
+								<BreadCrumb
+									categoryName={
+										slug
+											? slug.toString().replace(/\s+/g, '-').toLowerCase()
+											: ''
+									}
+								/>
+								<SortBy sortKey={sortKey} handleSortChange={handleSortChange} />
+							</div>
+							<ProductList
+								products={currentProducts}
+								onOpenModal={handleOpenModal}
+							/>
+							<Pagination
+								currentPage={currentPage}
+								pageCount={pageCount}
+								paginate={paginate}
+							/>
 						</div>
 					</div>
-					<div className='w-5/6'>
-						<div className='py-4 flex justify-between items-center w-full'>
-							<BreadCrumb />
-							<SortBy sortKey={sortKey} handleSortChange={handleSortChange} />
-						</div>
-						<ProductList
-							products={currentProducts}
-							onOpenModal={handleOpenModal}
+					{isModalOpen && selectedProduct && (
+						<ProductModal
+							product={selectedProduct}
+							onClose={handleCloseModal}
+							onAddToCart={handleAddToCartWithExtras}
+							category={slug as string}
 						/>
-						<Pagination
-							currentPage={currentPage}
-							pageCount={pageCount}
-							paginate={paginate}
-						/>
-					</div>
+					)}
 				</div>
-				{isModalOpen && selectedProduct && (
-					<ProductModal
-						product={selectedProduct}
-						onClose={handleCloseModal}
-						onAddToCart={handleAddToCartWithExtras}
-						category={slug as string}
-					/>
-				)}
-				C
 			</div>
 		</div>
 	);

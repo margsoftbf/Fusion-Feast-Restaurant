@@ -10,14 +10,14 @@ const MenuBar = () => {
 			<h3 className='font-oswald text-center text-2xl pb-4'>Menu Bar</h3>
 			<ul className=' mx-4 font-openSans grid grid-cols-2 gap-4 lg:grid-cols-1'>
 				{categories.map((category) => (
-					<li key={category.slug} className=' bg-secondary rounded-md px-1'>
+					<li key={category.slug} className=' bg-secondary rounded-md'>
 						<Link
 							href={`/category/${category.slug}`}
 							className={`flex items-center ${
 								category.slug === (slug as string)
 									? 'text-myOrange'
 									: 'text-white'
-							} hover:text-black p-2  hover:bg-myOrange  duration-200 transition ease-linear rounded-md`}
+							} hover:text-black p-2  hover:bg-myOrange  duration-200 transition ease-linear rounded-md px-2`}
 						>
 							{category.name}
 						</Link>

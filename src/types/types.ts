@@ -14,6 +14,7 @@ export type Product = {
 	reviews: number;
 	price: number;
 	description: string;
+	longDescription: string;
 };
 
 export interface ExtraOptions {

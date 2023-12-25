@@ -4,6 +4,7 @@ interface CartItemProps {
 	item: CartItemType;
 	onIncrement: (item: CartItemType) => void;
 	onDecrement: (item: CartItemType) => void;
+	onRemove: (item: CartItemType) => void;
 	products: Product[];
 	totalPriceItems: (price: number, quantity: number) => string;
 }
@@ -12,6 +13,7 @@ const CartItem: React.FC<CartItemProps> = ({
 	item,
 	onIncrement,
 	onDecrement,
+	onRemove,
 	products,
 	totalPriceItems,
 }) => {
@@ -42,6 +44,12 @@ const CartItem: React.FC<CartItemProps> = ({
 						{formatAddons(item.extraOptions).length > 19
 							? `${formatAddons(item.extraOptions).slice(0, 17)}...`
 							: formatAddons(item.extraOptions)}
+					</span>
+					<span
+						className='text-red-500 hover:text-red-700 text-[10px] cursor-pointer'
+						onClick={() => onRemove(item)}
+					>
+						Remove
 					</span>
 				</div>
 			</div>

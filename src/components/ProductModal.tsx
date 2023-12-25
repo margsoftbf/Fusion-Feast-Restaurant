@@ -5,6 +5,7 @@ import { StarIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import Image from 'next/image';
 import { addons } from '@/data/data';
+import { FaCartArrowDown } from 'react-icons/fa';
 
 interface ProductModalProps {
 	product: Product | null;
@@ -119,37 +120,38 @@ const ProductModal: React.FC<ProductModalProps> = ({
 							))}
 						</div>
 					</div>
-					<div className='mt-3 w-24 flex items-center justify-center rounded-md '>
+					<div className='mt-3 flex items-center justify-start rounded-md '>
 						<div className='flex items-center gap-1 justify-between'>
 							<button
 								onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
-								className='w-6 h-6 flex items-center font-bold justify-center  text-black bg-myOrange rounded-full hover:brightness-125 duration-200 transition ease-linear'
+								className='cursor-pointer w-6 h-6 bg-third text-white rounded-md flex items-center justify-center font-bold'
 							>
 								-
 							</button>
-							<span className='w-7 h-7  flex items-center  justify-center  text-black bg-white rounded-xl font-bold border'>
+							<span className='mx-1 w-12 h-7 text-center text-base border text-black border-gray-300 rounded-md'>
 								{quantity}
 							</span>
 							<button
 								onClick={() => setQuantity(quantity + 1)}
-								className='w-6 h-6 flex items-center font-bold justify-center  text-black bg-myOrange rounded-full hover:brightness-125 duration-200 transition ease-linear'
+								className='cursor-pointer w-6 h-6 bg-third text-white rounded-md flex items-center justify-center font-bold'
 							>
 								+
 							</button>
 						</div>
 					</div>
-					<div className='font-bold text-third font-oswald py-1 my-1'>
+					<div className='font-bold text-third font-oswald py-1 my-1 '>
 						Total Price: ${calculatePrice().toFixed(2)}
 					</div>
 					<div className='flex justify-between mt-1'>
 						<button
-							className='bg-myDarkGreen  duration-200 transition ease-linear text-white font-bold py-2 px-4 rounded'
+							className='bg-primary hover:bg-third  duration-200 text-[14px] transition ease-linear text-white font-bold px-2 rounded flex items-center gap-2'
 							onClick={handleAddToCartClick}
 						>
+							<FaCartArrowDown />
 							Add to Cart
 						</button>
 						<button
-							className='bg-myDarkRed  duration-200 transition ease-linear text-white font-bold py-2 px-4 rounded'
+							className='bg-myDarkRed  duration-200 transition ease-linear text-white font-bold py-2 px-2 rounded flex items-center gap-1'
 							onClick={onClose}
 						>
 							Close

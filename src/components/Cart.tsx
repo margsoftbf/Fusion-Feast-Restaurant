@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
-import { decrementQuantity, incrementQuantity } from '@/store/cartSlice';
+import { decrementQuantity, incrementQuantity, removeFromCart } from '@/store/cartSlice';
 import { Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
@@ -56,6 +56,10 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 		orderTotal = orderTotal * (1 - discount);
 	}
 
+	const handleRemoveItem = (item: CartItemProps) => {
+		dispatch(removeFromCart({id: item.id, extraOptions: item.extraOptions}))
+	}
+
 
 
 	return (
@@ -89,6 +93,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 									item={item}
 									onIncrement={handleIncrement}
 									onDecrement={handleDecrement}
+									onRemove={handleRemoveItem}
 									products={products}
 									totalPriceItems={totalPriceItems}
 								/>

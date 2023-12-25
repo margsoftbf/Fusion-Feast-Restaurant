@@ -69,7 +69,7 @@ const ProductList: React.FC<ProductListProps> = ({ products, onOpenModal }) => {
 								${product.price}
 							</p>
 							<button
-								className='rounded-lg mt-4 mb-1 p-1 px-2  font-bold flex items-center justify-center bg-myOrange hover:bg-white duration-200 transition ease-linear'
+								className='rounded-lg mt-4 mb-1 p-1 px-2 py-2  font-bold flex items-center justify-center bg-primary text-white hover:bg-white hover:text-primary duration-200 transition ease-linear'
 								onClick={() => onOpenModal(product)}
 								aria-label='Add to cart'
 							>

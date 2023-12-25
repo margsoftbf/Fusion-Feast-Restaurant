@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Product } from '@/types/types';
 
+
 interface DesktopSearchBarProps {
 	searchTerm: string;
 	setSearchTerm: (value: string) => void;

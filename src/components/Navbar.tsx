@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { Dialog } from '@headlessui/react';
 import { Link as ScrollLink } from 'react-scroll';
 import {
 	Bars3Icon,
@@ -15,15 +14,14 @@ import { products, navigation } from '@/data/data';
 import { SearchProps } from '@/types/types';
 import Cart from './Cart';
 import DesktopSearchBar from './navbar/DesktopSearchBar';
-import MobileSearchBar from './navbar/MobileSearchBar';
 import MobileMenu from './navbar/MobileMenu';
+import { useRouter } from 'next/router';
 
 const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 	const searchInputRef = useRef<HTMLInputElement>(null);
-
 
 	const toggleCart = () => {
 		setCartOpen(!isCartOpen);
@@ -51,6 +49,15 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
+	const router = useRouter();
+	const isHomePage = router.pathname === '/';
+
+	const handleNavigationClick = (href: string) => {
+		if (!isHomePage) {
+			router.push('/#' + href);
+		}
+	};
+
 	return (
 		<header className='sticky top-0 z-[250] header-underline bg-primary '>
 			<nav
@@ -72,17 +79,27 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 					</button>
 				</div>
 				<div className='hidden lg:flex lg:gap-x-12 text-white'>
-					{navigation.map((item) => (
-						<ScrollLink
-							key={item.name}
-							to={item.href}
-							smooth={true}
-							offset={-60}
-							className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
-						>
-							{item.name}
-						</ScrollLink>
-					))}
+					{navigation.map((item) =>
+						isHomePage ? (
+							<ScrollLink
+								key={item.name}
+								to={item.href}
+								smooth={true}
+								offset={-60}
+								className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
+							>
+								{item.name}
+							</ScrollLink>
+						) : (
+							<a
+								key={item.name}
+								onClick={() => handleNavigationClick(item.href)}
+								className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
+							>
+								{item.name}
+							</a>
+						)
+					)}
 				</div>
 				<div className='flex lg:flex-1 text-3xl'>
 					<Link href='/' className='-m-1.5 p-1.5 flex-grow'>
@@ -136,16 +153,16 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				</div>
 			</nav>
 			<MobileMenu
-                    isOpen={mobileMenuOpen}
-                    onClose={() => setMobileMenuOpen(false)}
-                    searchTerm={searchTerm}
-                    setSearchTerm={setSearchTerm}
-                    searchResults={filteredProducts}
-                    onResultClick={handleLinkClick}
-                    toggleCart={toggleCart}
-					isCartOpen={isCartOpen}
-                    cartItemsCount={cartItemsCount}
-                />
+				isOpen={mobileMenuOpen}
+				onClose={() => setMobileMenuOpen(false)}
+				searchTerm={searchTerm}
+				setSearchTerm={setSearchTerm}
+				searchResults={filteredProducts}
+				onResultClick={handleLinkClick}
+				toggleCart={toggleCart}
+				isCartOpen={isCartOpen}
+				cartItemsCount={cartItemsCount}
+			/>
 		</header>
 	);
 };

@@ -12,8 +12,8 @@ export type Category = {
 
 export const navigation = [
 	{ name: 'Menu', href: 'menu' },
-	{ name: 'Testimonials', href: '#' },
-	{ name: 'Contact Us', href: '#' },
+	{ name: 'Testimonials', href: 'testimonials' },
+	{ name: 'Contact Us', href: 'contact' },
 ];
 
 export const categories: Category[] = [
@@ -54,6 +54,7 @@ export const products: Product[] = [
 		reviews: 123,
 		price: 9.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 2,
@@ -66,6 +67,7 @@ export const products: Product[] = [
 		reviews: 123,
 		price: 17.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 3,
@@ -78,6 +80,7 @@ export const products: Product[] = [
 		reviews: 123,
 		price: 11.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 4,
@@ -90,6 +93,7 @@ export const products: Product[] = [
 		reviews: 123,
 		price: 12.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 5,
@@ -102,66 +106,7 @@ export const products: Product[] = [
 		reviews: 123,
 		price: 10.99,
 		description: 'Classic Margherita with mozzarella cheese and basil.',
-	},
-	{
-		id: 6,
-		name: 'AAMargherita - 6',
-		categorySlug: 'pizza',
-		img: '/assets/products/pizza/margherita.webp',
-		imgBig: '/assets/products/pizza/margheritaBig.webp',
-		imgAlt: 'Margherita',
-		rating: 4.5,
-		reviews: 123,
-		price: 10.99,
-		description: 'Classic Margherita with mozzarella cheese and basil.',
-	},
-	{
-		id: 7,
-		name: 'AAMargherita - 6',
-		categorySlug: 'pizza',
-		img: '/assets/products/pizza/margherita.webp',
-		imgBig: '/assets/products/pizza/margheritaBig.webp',
-		imgAlt: 'Margherita',
-		rating: 4.5,
-		reviews: 123,
-		price: 10.99,
-		description: 'Classic Margherita with mozzarella cheese and basil.',
-	},
-	{
-		id: 8,
-		name: 'AAMargherita - 6',
-		categorySlug: 'pizza',
-		img: '/assets/products/pizza/margherita.webp',
-		imgBig: '/assets/products/pizza/margheritaBig.webp',
-		imgAlt: 'Margherita',
-		rating: 4.5,
-		reviews: 123,
-		price: 10.99,
-		description: 'Classic Margherita with mozzarella cheese and basil.',
-	},
-	{
-		id: 9,
-		name: 'AAMargherita - 6',
-		categorySlug: 'pizza',
-		img: '/assets/products/pizza/margherita.webp',
-		imgBig: '/assets/products/pizza/margheritaBig.webp',
-		imgAlt: 'Margherita',
-		rating: 4.5,
-		reviews: 123,
-		price: 10.99,
-		description: 'Classic Margherita with mozzarella cheese and basil.',
-	},
-	{
-		id: 10,
-		name: 'AAMargherita - 6',
-		categorySlug: 'pizza',
-		img: '/assets/products/pizza/margherita.webp',
-		imgBig: '/assets/products/pizza/margheritaBig.webp',
-		imgAlt: 'Margherita',
-		rating: 4.5,
-		reviews: 123,
-		price: 10.99,
-		description: 'Classic Margherita with mozzarella cheese and basil.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 1,
@@ -175,6 +120,7 @@ export const products: Product[] = [
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 2,
@@ -188,6 +134,7 @@ export const products: Product[] = [
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 3,
@@ -201,6 +148,7 @@ export const products: Product[] = [
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 4,
@@ -214,6 +162,7 @@ export const products: Product[] = [
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
 		id: 5,
@@ -227,5 +176,6 @@ export const products: Product[] = [
 		price: 8.99,
 		description:
 			'Juicy beef patty with cheese, lettuce, tomato, and our special sauce.',
+		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 ];
