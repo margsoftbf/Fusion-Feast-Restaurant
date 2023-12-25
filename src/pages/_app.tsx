@@ -6,15 +6,15 @@ import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
 import Modal from 'react-modal';
+import { ModalProvider } from '@/context/ModalContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const [showSearch, setShowSearch] = useState(false);
 
-
 	useEffect(() => {
 		Modal.setAppElement('#__next');
 	}, []);
-	
+
 	return (
 		<Provider store={store}>
 			<Head>
@@ -26,7 +26,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 			</Head>
 			<Navbar showSearch={showSearch} setShowSearch={setShowSearch} />
 			<main onClick={() => setShowSearch(false)} className='m-auto'>
-				<Component {...pageProps} setShowSearch={setShowSearch} />
+				<ModalProvider>
+					<Component {...pageProps} setShowSearch={setShowSearch} />
+				</ModalProvider>
 			</main>
 		</Provider>
 	);

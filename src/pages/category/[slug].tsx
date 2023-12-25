@@ -14,18 +14,14 @@ import {
 	CategoryHero,
 	ProductList,
 } from '@/components/category/index';
-import {
-	Cookie,
-	Ellipse,
-	EmptyEllipse,
-} from '../../../public/assets/svg';
+import { Cookie, Ellipse, EmptyEllipse } from '../../../public/assets/svg';
+import { useModal } from '@/context/ModalContext';
 
 const CategoryPage = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const { slug } = router.query;
 	const categoryProducts = products.filter((p) => p.categorySlug === slug);
-	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 	const [sortKey, setSortKey] = useState('name');
 	const [currentPage, setCurrentPage] = useState(1);
@@ -37,14 +33,11 @@ const CategoryPage = () => {
 	const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
 	const [maxPrice, setMaxPrice] = useState(100);
+	const { closeModal, isModalOpen } = useModal();
 
-	const handleOpenModal = (product: Product) => {
-		setSelectedProduct(product);
-		setIsModalOpen(true);
-	};
 
 	const handleCloseModal = () => {
-		setIsModalOpen(false);
+		closeModal();
 		setSelectedProduct(null);
 	};
 
@@ -105,7 +98,6 @@ const CategoryPage = () => {
 							</div>
 							<ProductList
 								products={currentProducts}
-								onOpenModal={handleOpenModal}
 							/>
 							<Pagination
 								currentPage={currentPage}

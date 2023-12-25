@@ -32,7 +32,7 @@ export const reviews: ReviewsProps[] = [
 		position: 'Head Manager, Slack',
 		img: '/assets/reviews/ReviewMenTwo.webp',
 		imgAlt: 'Amanda Morton Photo',
-		text: `Extremely professional approach to clients. I highly recommend working with this company, as its rare to find such a high level of service`,
+		text: `Excellent collaboration and communication. The project was completed on time and met all expectations. Definitely recommend!`,
 		rating: 5,
 	},
 	{
@@ -41,7 +41,7 @@ export const reviews: ReviewsProps[] = [
 		position: 'Marketing Director, Microsoft',
 		img: '/assets/reviews/ReviewMenThree.webp',
 		imgAlt: 'James Smith Photo',
-		text: 'Extremely professional approach to clients. I highly recommend working with this company, as its rare to find such a high level of service',
+		text: 'Excellent collaboration and communication. The project was completed on time and met all expectations. Definitely recommend!',
 		rating: 4,
 	},
 	{

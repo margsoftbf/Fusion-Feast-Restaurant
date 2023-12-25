@@ -11,7 +11,8 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
 import { useState } from 'react';
 import ProductModal from '../ProductModal';
-
+import { useModal } from '@/context/ModalContext';
+useModal
 type CategoryBoxProps = {
 	categorySlug: string;
 	products: Product[];
@@ -22,17 +23,16 @@ const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 	categorySlug,
 }) => {
 	const dispatch = useDispatch();
-	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+	const { isModalOpen, openModal, closeModal } = useModal();
 
 	const handleOpenModal = (product: Product) => {
 		setSelectedProduct(product);
-		setIsModalOpen(true);
+		openModal(product);
 	};
 
 	const handleCloseModal = () => {
-		setIsModalOpen(false);
-		setSelectedProduct(null);
+		closeModal();
 	};
 
 	const handleAddToCartWithExtras = (productWithExtras: CartItem) => {

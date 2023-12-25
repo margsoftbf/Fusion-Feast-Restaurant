@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { addons } from '@/data/data';
 import { FaCartArrowDown } from 'react-icons/fa';
+import { useModal } from '@/context/ModalContext';
 
 interface ProductModalProps {
 	product: Product | null;
@@ -60,10 +61,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
 		}
 	};
 
+	const { isModalOpen, selectedProduct, closeModal } = useModal();
+
 	return (
 		<Modal
-			isOpen={!!product}
-			onRequestClose={onClose}
+			isOpen={isModalOpen}
+			onRequestClose={closeModal}
 			contentLabel='Product Details'
 			className='inset-0 flex relative max-h-[80%] justify-center items-center z-50 overflow-y-auto mx-4 my-12 top-12'
 			overlayClassName='fixed top-0 left-0 right-0 bottom-0 bg-black/30 flex justify-center items-center z-50'

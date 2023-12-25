@@ -10,6 +10,7 @@ import { addItem } from '@/store/cartSlice';
 import ProductDetails from '@/components/product/ProductDetails';
 import ProductDescription from '@/components/product/ProductDescription';
 import ProductReviews from '@/components/product/ProductReviews';
+import RelatedProducts from '@/components/product/RelatedProducts';
 
 const ProductPage = () => {
 	const router = useRouter();
@@ -73,7 +74,7 @@ const ProductPage = () => {
 						setQuantity={setQuantity}
 						addons={addons}
 					/>
-					<div className='flex flex-col mt-12'>
+					<div className='flex flex-col mt-8'>
 						<div className='flex gap-8 border-b-2 border-b-gray-500 w-full mx-auto items-center justify-center text-2xl uppercase font-medium font-oswald text-white'>
 							<button
 								className={`p-1 ${
@@ -98,6 +99,7 @@ const ProductPage = () => {
 							<ProductReviews />
 						)}
 					</div>
+					<RelatedProducts currentProductCategory={product.categorySlug} />
 				</div>
 			</div>
 		</div>

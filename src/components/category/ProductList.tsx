@@ -2,14 +2,24 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/20/solid';
-import { Product as ProductType } from '@/types/types';
+import { CartItem, Product } from '@/types/types';
+import { useModal } from '@/context/ModalContext';
+import ProductModal from '../ProductModal';
+import { useDispatch } from 'react-redux';
+import { addItem } from '@/store/cartSlice';
 
 interface ProductListProps {
-	products: ProductType[];
-	onOpenModal: (product: ProductType) => void;
+	products: Product[];
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products, onOpenModal }) => {
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
+	const { openModal, isModalOpen, selectedProduct, closeModal } = useModal();
+	const dispatch = useDispatch();
+
+	const handleAddToCartWithExtras = (productWithExtras: CartItem) => {
+		dispatch(addItem(productWithExtras));
+		closeModal();
+	};
 	return (
 		<div className='grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 -mx-px'>
 			{products.length > 0 ? (
@@ -70,12 +80,20 @@ const ProductList: React.FC<ProductListProps> = ({ products, onOpenModal }) => {
 							</p>
 							<button
 								className='rounded-lg mt-4 mb-1 p-1 px-2 py-2  font-bold flex items-center justify-center bg-primary text-white hover:bg-white hover:text-primary duration-200 transition ease-linear'
-								onClick={() => onOpenModal(product)}
+								onClick={() => openModal(product)}
 								aria-label='Add to cart'
 							>
 								Add to cart
 							</button>
 						</div>
+						{isModalOpen && selectedProduct && (
+							<ProductModal
+								product={selectedProduct}
+								onClose={closeModal}
+								onAddToCart={handleAddToCartWithExtras}
+								category={selectedProduct.categorySlug} 
+							/>
+						)}
 					</div>
 				))
 			) : (
