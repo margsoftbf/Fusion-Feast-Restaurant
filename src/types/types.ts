@@ -3,6 +3,16 @@ export interface SearchProps {
 	setShowSearch: (show: boolean) => void;
 }
 
+export interface ReviewsProps {
+	id: number;
+	name: string;
+	position: string;
+	img: string;
+	imgAlt: string;
+	text: string;
+	rating: number;
+}
+
 export type Product = {
 	id: number;
 	name: string;

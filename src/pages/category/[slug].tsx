@@ -16,7 +16,6 @@ import {
 } from '@/components/category/index';
 import {
 	Cookie,
-	Dinner,
 	Ellipse,
 	EmptyEllipse,
 } from '../../../public/assets/svg';
@@ -80,7 +79,7 @@ const CategoryPage = () => {
 	return (
 		<div className='relative bg-primary'>
 			<CategoryHero />
-			<div className='relative'>
+			<div className='relative overflow-hidden'>
 				<Cookie className='w-72 h-72 absolute bottom-0 right-6' />
 				<Ellipse className='w-24 h-24 absolute bottom-12 left-6' />
 				<Ellipse className='w-20 h-20 absolute top-12 right-6' />
