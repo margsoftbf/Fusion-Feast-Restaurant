@@ -12,7 +12,7 @@ import { addItem } from '@/store/cartSlice';
 import { useState } from 'react';
 import ProductModal from '../ProductModal';
 import { useModal } from '@/context/ModalContext';
-useModal
+useModal;
 type CategoryBoxProps = {
 	categorySlug: string;
 	products: Product[];
@@ -85,7 +85,7 @@ const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 											alt={product.name}
 											width={96}
 											height={96}
-											className='rounded-full object-cover w-auto h-auto'
+											className='rounded-full object-cover w-24 h-24'
 										/>
 									</div>
 								</div>

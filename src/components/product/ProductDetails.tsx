@@ -1,9 +1,8 @@
-import { Product, CartItem, ExtraOptions } from '@/types/types';
+import { Product, ExtraOptions } from '@/types/types';
 import { StarIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FaCartArrowDown } from 'react-icons/fa';
-
 
 interface ProductDetailsProps {
 	product: Product;
@@ -13,6 +12,8 @@ interface ProductDetailsProps {
 	handleAddToCart: () => void;
 	setQuantity: React.Dispatch<React.SetStateAction<number>>;
 	addons: Record<string, { name: string; price: number }[]>;
+	showAddedToCart: boolean;
+	setShowAddedToCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
@@ -23,17 +24,33 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 	handleAddToCart,
 	setQuantity,
 	addons,
+	showAddedToCart,
+	setShowAddedToCart,
 }) => {
 	const [activeImage, setActiveImage] = useState(product.imgBig);
+	const [totalPrice, setTotalPrice] = useState(product.price);
 
-    useEffect(() => {
-        if (product && product.imgBig) {
-          setActiveImage(product.imgBig);
-        }
-      }, [product]);
+	useEffect(() => {
+		if (product && product.imgBig) {
+			setActiveImage(product.imgBig);
+		}
+	}, [product]);
+
+	useEffect(() => {
+		const addonCost = Object.keys(selectedAddons)
+			.filter((addonName) => selectedAddons[addonName])
+			.reduce((acc, addonName) => {
+				const addonPrice =
+					addons[product.categorySlug].find((addon) => addon.name === addonName)
+						?.price || 0;
+				return acc + addonPrice;
+			}, 0);
+
+		setTotalPrice((product.price + addonCost) * quantity);
+	}, [selectedAddons, quantity, product.price, addons, product.categorySlug]);
 
 	return (
-		<div className='flex flex-col lg:flex-row gap-4 '>
+		<div className='flex flex-col lg:flex-row gap-4 relative'>
 			<div className='flex flex-col lg:flex-row items-center justify-center lg:justify-start'>
 				<div className='rounded-md bg-third lg:w-96 lg:h-96 p-2 m-2 flex items-center justify-center lg:order-1'>
 					<Image
@@ -62,8 +79,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 					))}
 				</div>
 			</div>
-			<div className='w-full lg:w-1/2 lg:mt-2'>
-				<div className='px-1 flex flex-col items-center lg:items-start'>
+			<div className='w-full lg:w-1/2 lg:mt-2 relative '>
+				{showAddedToCart && (
+					<div
+						className='absolute bottom-16  bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
+						role='alert'
+					>
+						<span className='block sm:inline'>Added to cart</span>
+					</div>
+				)}
+				<div className='px-1 flex flex-col items-center lg:items-start '>
 					<h2 className='text-3xl lg:text-4xl uppercase font-medium font-oswald text-white'>
 						{product.name}
 					</h2>
@@ -83,7 +108,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 							({product.reviews} reviews)
 						</span>
 					</div>
-					<p className='text-2xl font-oswald text-myRed'>${product.price}</p>
+					<p className='text-2xl font-oswald text-myRed'>
+						${totalPrice.toFixed(2)}
+					</p>
 					<p className='text-myGray font-openSans text-xs mt-2 px-16 text-center lg:px-0 lg:text-left'>
 						{product.longDescription}
 					</p>
@@ -124,6 +151,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 							+
 						</span>
 					</div>
+
 					<button
 						className='bg-white hover:bg-third hover:text-white  duration-200 text-[14px] transition ease-linear text-third font-bold mt-2 px-2 py-2 rounded flex items-center gap-2'
 						onClick={handleAddToCart}

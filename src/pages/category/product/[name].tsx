@@ -19,6 +19,7 @@ const ProductPage = () => {
 	const [quantity, setQuantity] = useState(1);
 	const [selectedAddons, setSelectedAddons] = useState<ExtraOptions>({});
 	const [activeTab, setActiveTab] = useState('description');
+	const [showAddedToCart, setShowAddedToCart] = useState(false);
 	const product = products.find(
 		(p) => p.name.replace(/\s+/g, '-').toLowerCase() === name
 	);
@@ -40,8 +41,12 @@ const ProductPage = () => {
 			quantity,
 			extraOptions: selectedAddons,
 		};
-
 		dispatch(addItem(cartItem));
+
+		setShowAddedToCart(true);
+		setTimeout(() => {
+			setShowAddedToCart(false);
+		}, 3000);
 	};
 
 	return (
@@ -53,6 +58,7 @@ const ProductPage = () => {
 				<Ellipse className='w-12 h-12 absolute top-12 right-6' />
 				<EmptyEllipse className='w-12 h-12 absolute top-16 left-96' />
 				<div className='relative max-w-6xl mx-auto px-2 py-4 text-white '>
+
 					<div className='mb-4 mx-auto'>
 						<BreadCrumb
 							categoryName={
@@ -73,6 +79,8 @@ const ProductPage = () => {
 						handleAddToCart={handleAddToCart}
 						setQuantity={setQuantity}
 						addons={addons}
+						showAddedToCart={showAddedToCart}
+						setShowAddedToCart={setShowAddedToCart}
 					/>
 					<div className='flex flex-col mt-8'>
 						<div className='flex gap-8 border-b-2 border-b-gray-500 w-full mx-auto items-center justify-center text-2xl uppercase font-medium font-oswald text-white'>

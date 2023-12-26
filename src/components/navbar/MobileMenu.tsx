@@ -9,7 +9,7 @@ import MobileSearchBar from './MobileSearchBar';
 import Cart from '../Cart';
 import { Product } from '@/types/types';
 import { navigation } from '@/data/data';
-
+import { useRouter } from 'next/router';
 
 interface MobileMenuProps {
 	isOpen: boolean;
@@ -18,7 +18,7 @@ interface MobileMenuProps {
 	setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 	searchResults: Product[];
 	onResultClick: (id: number) => void;
-    isCartOpen: boolean;
+	isCartOpen: boolean;
 	toggleCart: () => void;
 	cartItemsCount: number;
 }
@@ -31,9 +31,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 	searchResults,
 	onResultClick,
 	toggleCart,
-    isCartOpen,
+	isCartOpen,
 	cartItemsCount,
 }) => {
+	const router = useRouter();
+	const isHomePage = router.pathname === '/';
+
+	const handleNavigationClick = (href: string) => {
+		onClose();
+		if (!isHomePage) {
+			router.push('/#' + href);
+		} else {
+			router.push('#' + href);
+		}
+	};
 	return (
 		<Dialog as='div' className='lg:hidden' open={isOpen} onClose={onClose}>
 			<Dialog.Panel className='fixed inset-x-0 w-auto h-full top-0 z-50 bg-secondary px-6 py-8 overflow-auto'>
@@ -51,13 +62,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 					<div className='-my-6 divide-y divide-gray-500/10'>
 						<div className='space-y-2 py-4'>
 							{navigation.map((item) => (
-								<a
+								<button
 									key={item.name}
-									href={item.href}
+									onClick={() => handleNavigationClick(item.href)}
 									className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
 								>
 									{item.name}
-								</a>
+								</button>
 							))}
 						</div>
 						<div className='py-2 cursor-pointer'>

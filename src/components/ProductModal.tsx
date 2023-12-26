@@ -24,6 +24,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
 	const [extraOptions, setExtraOptions] = useState<ExtraOptions>({});
 	const [quantity, setQuantity] = useState(1);
 
+
 	const handleExtraOptionChange = (addonName: string) => {
 		setExtraOptions((prev) => ({
 			...prev,
@@ -85,7 +86,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
 						</div>
 					</div>
 				)}
-				<div className='lg:w-1/2 '>
+				<div className='lg:w-1/2 relative'>
 					<h2 className='text-center text-2xl font-oswald mb-2'>
 						{product?.name}
 					</h2>

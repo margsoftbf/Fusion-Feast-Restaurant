@@ -31,9 +31,9 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 	};
 
 	return (
-		<div className='bg-primary'>
-			<div className='max-w-6xl mx-auto mt-8'>
-				<h2 className='text-4xl uppercase font-medium font-oswald text-white text-center'>
+		<div className='bg-primary '>
+			<div className='max-w-6xl mx-auto mt-12'>
+				<h2 className='text-4xl uppercase font-medium font-oswald text-white text-center py-1 border-b-2 border-b-gray-500'>
 					Related <span className='text-myOrange'>Products</span>
 				</h2>
 				<div className='mt-6 gap-x-4 gap-y-10 sm:gap-x-6  md:gap-y-0 lg:gap-x-8 flex flex-col items-center'>
