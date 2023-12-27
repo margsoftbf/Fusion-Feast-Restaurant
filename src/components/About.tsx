@@ -31,7 +31,7 @@ const About = () => {
 							<p className='text-black font-lemonada '>25+</p>
 							<p className='text-black text-xs font-openSans'>Serving Years</p>
 						</div>
-						<div className='absolute w-full top-0 h-full rounded-xl bg-black/10 z-40'></div>
+						<div className='absolute w-full top-0 h-full rounded-xl bg-black/20 z-40'></div>
 						<div className='absolute w-48 h-full top-0 rounded-xl border border-myOrange/40 origin-bottom-left  -rotate-6'></div>
 						<div className='absolute w-48 h-full top-0 rounded-xl border border-myOrange/40 origin-bottom-left  -rotate-12'></div>
 						<Image

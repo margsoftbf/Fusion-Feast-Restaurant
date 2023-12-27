@@ -36,11 +36,22 @@ const ProductPage = () => {
 	};
 
 	const handleAddToCart = () => {
+		const addonCost = Object.keys(selectedAddons)
+        .filter(addonName => selectedAddons[addonName])
+        .reduce((acc, addonName) => {
+            const addonPrice = addons[product.categorySlug].find(addon => addon.name === addonName)?.price || 0;
+            return acc + addonPrice;
+        }, 0);
+
+		const totalPrice = (product.price + addonCost) * quantity;
+
 		const cartItem: CartItem = {
 			...product,
 			quantity,
 			extraOptions: selectedAddons,
+			price: totalPrice,
 		};
+
 		dispatch(addItem(cartItem));
 
 		setShowAddedToCart(true);
