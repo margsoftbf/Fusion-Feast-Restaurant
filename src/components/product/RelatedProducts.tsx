@@ -80,7 +80,6 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 													className='rounded-full object-cover w-auto h-auto'
 													placeholder='blur'
 										blurDataURL={product.img}
-										priority={true}
 												/>
 											</div>
 										</div>
