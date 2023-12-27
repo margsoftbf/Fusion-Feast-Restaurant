@@ -85,7 +85,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 											</div>
 										</div>
 										<div className='px-1 flex flex-col items-center'>
-											<h2 className='text-xl lg:text-2xl uppercase font-medium font-oswald text-white'>
+											<h2 className='text-xl text-center uppercase font-medium font-oswald text-white'>
 												{product.name}
 											</h2>
 											<div className='flex items-center py-2'>
@@ -104,9 +104,9 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 													({product.reviews} reviews)
 												</span>
 											</div>
-											<p className='text-myGray font-oswald text-base text-center px-4'>
-												{product.description.length > 100
-													? `${product.description.slice(0, 100)}...`
+											<p className='text-myGray font-oswald text-xs text-center px-2'>
+												{product.description.length > 30
+													? `${product.description.slice(0, 30)}...`
 													: product.description}
 											</p>
 										</div>

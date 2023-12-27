@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const ProductHero = () => {
 	return (
-		<div className='relative isolate flex justify-center items-center px-6 lg:px-8 py-4'>
+		<div className='relative isolate flex justify-center items-center px-6 lg:px-8 h-64'>
 			<div className='absolute inset-0 z-[-1]'>
 				<Image
 					src='/assets/hero/productHero.webp'

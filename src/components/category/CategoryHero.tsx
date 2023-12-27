@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const CategoryHero = () => {
 	return (
-		<div className='relative isolate flex justify-center items-center px-6 lg:px-8 py-4'>
+		<div className='relative isolate flex justify-center items-center px-6 lg:px-8 h-64'>
 			<div className='absolute inset-0 z-[-1]'>
 				<Image
 					src='/assets/hero/CategoryHero.webp'
@@ -12,7 +12,7 @@ const CategoryHero = () => {
 					sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 					placeholder='blur'
 					blurDataURL={'/assets/category/FoodMenu.webp'}
-					alt='Chef cooking in the kitchen'
+					alt='Food picture'
 				/>
 				<div className='absolute inset-0 bg-black bg-opacity-70'></div>
 			</div>

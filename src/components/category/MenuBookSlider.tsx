@@ -55,23 +55,26 @@ const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 				grabCursor={true}
 				modules={[Autoplay]}
 				breakpoints={{
-					500: {
+					576: {
 						slidesPerView: 2,
 					},
-					750: {
+					768: {
 						slidesPerView: 3,
 					},
-					1000: {
+					992: {
 						slidesPerView: 4,
 					},
-					1250: {
+					1200: {
 						slidesPerView: 5,
 					},
 				}}
 				className='w-full mx-auto'
 			>
 				{products.map((product) => (
-					<SwiperSlide key={product.id} className='flex justify-center '>
+					<SwiperSlide
+						key={product.id}
+						className='flex justify-center px-8 sm:px-0'
+					>
 						<div className='flex flex-col justify-center bg-third relative p-1 rounded-lg'>
 							<Link
 								href={`/category/product/${product.name
@@ -112,8 +115,8 @@ const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 										</span>
 									</div>
 									<p className='text-gray-200 font-oswald text-xs'>
-										{product.description.length > 50
-											? `${product.description.slice(0, 50)}...`
+										{product.description.length > 40
+											? `${product.description.slice(0, 40)}...`
 											: product.description}
 									</p>
 								</div>

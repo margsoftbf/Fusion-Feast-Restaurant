@@ -22,6 +22,7 @@
     "react-redux": "^9.0.4",
     "react-scroll": "^1.9.0",
     "redux": "^5.0.0",
+    "sharp": "^0.33.1",
     "swiper": "^11.0.5",
     "uuid": "^9.0.1"
   },

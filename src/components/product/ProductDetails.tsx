@@ -52,13 +52,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 	return (
 		<div className='flex flex-col lg:flex-row gap-4 relative'>
 			<div className='flex flex-col lg:flex-row items-center justify-center lg:justify-start'>
-				<div className='rounded-md bg-third lg:w-96 lg:h-96 p-2 m-2 flex items-center justify-center lg:order-1'>
+				<div className='rounded-md bg-third lg:w-96 lg:h-96 p-4 m-2 flex items-center justify-center lg:order-1'>
 					<Image
 						src={activeImage}
 						alt={product.name}
 						width={300}
 						height={300}
-						className='rounded-md object-cover'
+						className='rounded-md object-cover w-48 md:w-72 h-auto '
 					/>
 				</div>
 				<div className='flex flex-row lg:flex-col h-full gap-1 py-2'>
@@ -82,7 +82,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 			<div className='w-full lg:w-1/2 lg:mt-2 relative '>
 				{showAddedToCart && (
 					<div
-						className='absolute bottom-16  bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
+						className='absolute bottom-12 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
 						role='alert'
 					>
 						<span className='block sm:inline'>Added to cart</span>

@@ -91,7 +91,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
 								product={selectedProduct}
 								onClose={closeModal}
 								onAddToCart={handleAddToCartWithExtras}
-								category={selectedProduct.categorySlug} 
+								category={selectedProduct.categorySlug}
 							/>
 						)}
 					</div>
