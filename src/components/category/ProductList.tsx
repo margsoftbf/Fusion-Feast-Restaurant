@@ -41,7 +41,10 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
 										alt={product.name}
 										width={96}
 										height={96}
-										className='rounded-full object-cover w-auto h-auto'
+										placeholder='blur'
+										blurDataURL={product.img}
+										priority={true}
+										className='rounded-full object-cover w-24 h-24'
 									/>
 								</div>
 							</div>

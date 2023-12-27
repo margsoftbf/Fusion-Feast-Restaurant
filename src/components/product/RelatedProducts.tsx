@@ -59,9 +59,6 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 							1000: {
 								slidesPerView: 4,
 							},
-							1250: {
-								slidesPerView: 5,
-							},
 						}}
 						className='w-full mx-auto'
 					>
@@ -81,6 +78,9 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 													width={96}
 													height={96}
 													className='rounded-full object-cover w-auto h-auto'
+													placeholder='blur'
+										blurDataURL={product.img}
+										priority={true}
 												/>
 											</div>
 										</div>

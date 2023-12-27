@@ -11,6 +11,7 @@ const CategoryHero = () => {
 					quality={100}
 					sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 					placeholder='blur'
+					priority={true}
 					blurDataURL={'/assets/category/FoodMenu.webp'}
 					alt='Food picture'
 				/>

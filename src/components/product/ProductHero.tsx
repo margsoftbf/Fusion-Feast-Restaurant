@@ -13,6 +13,7 @@ const ProductHero = () => {
 					placeholder='blur'
 					blurDataURL={'/assets/hero/productHero.webp'}
 					alt='Chef cooking in the kitchen'
+					priority={true}
 				/>
 				<div className='absolute inset-0 bg-black bg-opacity-80'></div>
 			</div>

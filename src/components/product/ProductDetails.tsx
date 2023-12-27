@@ -58,10 +58,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 						alt={product.name}
 						width={300}
 						height={300}
-						className='rounded-md object-cover w-48 md:w-72 h-auto '
+						className='rounded-md object-cover w-48 md:w-full h-auto '
+						placeholder='blur'
+						blurDataURL={product.img}
+						priority={true}
 					/>
 				</div>
-				<div className='flex flex-row lg:flex-col h-full gap-1 py-2'>
+				<div className='flex flex-row mt-4 lg:flex-col h-full gap-1 py-2'>
 					{[1, 2, 3, 4].map((idx) => (
 						<div
 							key={idx}
@@ -70,10 +73,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 						>
 							<Image
 								src={product.imgBig}
-								alt={`Thumbnail ${idx}`}
+								alt={product.imgAlt}
 								width={54}
 								height={54}
 								className='rounded-md object-cover'
+								placeholder='blur'
+								blurDataURL={product.img}
+								priority={true}
 							/>
 						</div>
 					))}
@@ -118,7 +124,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 						<p className='mb-2 font-bold text-center lg:text-left'>
 							More Topping:
 						</p>
-						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 text-[14px]'>
+						<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-[14px]'>
 							{addons[product.categorySlug].map((addon) => (
 								<label className='flex items-center gap-0.5' key={addon.name}>
 									<input

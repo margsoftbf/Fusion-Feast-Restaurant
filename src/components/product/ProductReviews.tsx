@@ -48,6 +48,9 @@ const ProductReviews = () => {
 												width={96}
 												height={96}
 												className='rounded-full object-cover w-auto h-auto'
+												placeholder='blur'
+												blurDataURL={review.img}
+												priority={true}
 											/>
 										</div>
 									</div>

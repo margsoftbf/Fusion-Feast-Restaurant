@@ -89,6 +89,9 @@ const MenuBookSlider: React.FC<CategoryBoxProps> = ({
 											width={96}
 											height={96}
 											className='rounded-full object-cover w-24 h-24'
+											placeholder='blur'
+											blurDataURL={product.img}
+											priority={true}
 										/>
 									</div>
 								</div>

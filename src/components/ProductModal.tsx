@@ -24,7 +24,6 @@ const ProductModal: React.FC<ProductModalProps> = ({
 	const [extraOptions, setExtraOptions] = useState<ExtraOptions>({});
 	const [quantity, setQuantity] = useState(1);
 
-
 	const handleExtraOptionChange = (addonName: string) => {
 		setExtraOptions((prev) => ({
 			...prev,
@@ -81,7 +80,10 @@ const ProductModal: React.FC<ProductModalProps> = ({
 								alt={product.name}
 								width={240}
 								height={240}
-								className='rounded-full object-cover w-48 h-48 '
+								className='rounded-full object-cover w-48 h-48'
+								placeholder='blur'
+								blurDataURL={product.img}
+								priority={true}
 							/>
 						</div>
 					</div>
