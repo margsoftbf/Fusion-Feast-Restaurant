@@ -10,15 +10,14 @@ const Checkout = () => {
 		handleDecrement,
 		handleRemoveItem,
 		promoCode,
-		setPromoCode,
+
 		isPromoApplied,
-		handleApplyPromoCode,
+		
 		subtotal,
 		tax,
 		shipping,
 		orderTotal,
-		triedToApply,
-		setTriedToApply,
+
 		totalPriceItems,
 		formatAddons,
 	} = useCart();
@@ -127,7 +126,7 @@ const Checkout = () => {
 												))}
 											</ul>
 
-											<div className='mt-4'>
+											{/* <div className='mt-4'>
 												<label
 													htmlFor='discount-code-mobile'
 													className='block text-sm font-medium text-gray-700'
@@ -166,7 +165,7 @@ const Checkout = () => {
 															</span>
 														</div>
 													))}
-											</div>
+											</div> */}
 
 											<div className='mt-6 space-y-6 text-sm font-medium text-gray-500 bg-gray-100 rounded-md p-2'>
 												<div className='flex justify-between'>
@@ -270,7 +269,7 @@ const Checkout = () => {
 						</ul>
 
 						<div className='sticky bottom-0 flex-none border-t border-gray-200 bg-gray-50 p-6 '>
-							<div>
+							{/* <div>
 								<label
 									htmlFor='discount-code'
 									className='block text-sm font-medium text-gray-700'
@@ -307,7 +306,7 @@ const Checkout = () => {
 											</span>
 										</div>
 									))}
-							</div>
+							</div> */}
 
 							<div className='mt-6 flex flex-col gap-2 py-2 px-2 text-sm font-medium bg-gray-100 text-gray-500'>
 								<div className='flex border-b justify-between'>
