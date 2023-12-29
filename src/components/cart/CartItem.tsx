@@ -1,4 +1,5 @@
-import { CartItem as CartItemType, ExtraOptions, Product } from '@/types/types';
+import useCart from '@/hooks/useCart';
+import { CartItem as CartItemType, Product } from '@/types/types';
 
 interface CartItemProps {
 	item: CartItemType;
@@ -17,14 +18,8 @@ const CartItem: React.FC<CartItemProps> = ({
 	products,
 	totalPriceItems,
 }) => {
-	const formatAddons = (extraOptions: ExtraOptions): string => {
-		const selectedAddons = Object.entries(extraOptions)
-			.filter(([key, value]) => value)
-			.map(([key]) => key.charAt(0).toUpperCase() + key.slice(1))
-			.join(', ');
 
-		return selectedAddons.length > 0 ? selectedAddons : 'No addons';
-	};
+	const { formatAddons } = useCart();
 
 	return (
 		<li key={item.id} className='flex items-center py-2 gap-2'>
@@ -39,7 +34,9 @@ const CartItem: React.FC<CartItemProps> = ({
 					/>
 				</div>
 				<div className='flex flex-col'>
-					<span className='text-xs font-bold truncate'>{item.name}</span>
+					<span className='text-xs font-bold truncate'>
+						{item.name.length > 15 ? `${item.name.slice(0, 15)}...` : item.name}
+					</span>
 					<span className='text-[10px] text-gray-400 truncate'>
 						{formatAddons(item.extraOptions).length > 19
 							? `${formatAddons(item.extraOptions).slice(0, 17)}...`

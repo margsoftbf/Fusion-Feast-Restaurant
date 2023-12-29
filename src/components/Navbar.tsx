@@ -37,9 +37,12 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		state.cart.items.reduce((total, item) => total + item.quantity, 0)
 	);
 
-	const filteredProducts = products.filter((product) =>
-		product.name.toLowerCase().includes(searchTerm)
-	);
+	const filteredProducts =
+		searchTerm.trim() !== ''
+			? products.filter((product) =>
+					product.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+			  )
+			: products;
 
 	const handleLinkClick = () => {
 		setSearchTerm('');

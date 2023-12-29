@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Product } from '@/types/types';
 
-
 interface DesktopSearchBarProps {
 	searchTerm: string;
 	setSearchTerm: (value: string) => void;
@@ -37,7 +36,7 @@ const DesktopSearchBar: React.FC<DesktopSearchBarProps> = ({
 				/>
 			</div>
 			{searchTerm && (
-				<div className='absolute top-full -right-6 mt-6 bg-white border border-gray-200 rounded-md shadow-lg w-80 z-10 text-black'>
+				<div className='absolute top-full -right-6 mt-6 bg-white border border-gray-200 rounded-md shadow-lg w-80 z-10 text-black overflow-y-auto max-h-96'>
 					{searchResults.map((product) => (
 						<Link
 							href={`/category/product/${product.name

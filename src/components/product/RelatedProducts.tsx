@@ -77,9 +77,10 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
 													alt={product.name}
 													width={96}
 													height={96}
-													className='rounded-full object-cover w-auto h-auto'
+													className='rounded-full object-cover w-24 h-24'
 													placeholder='blur'
-										blurDataURL={product.img}
+													blurDataURL={product.img}
+													priority={true}
 												/>
 											</div>
 										</div>

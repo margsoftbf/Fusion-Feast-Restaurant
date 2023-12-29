@@ -50,8 +50,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 	}, [selectedAddons, quantity, product.price, addons, product.categorySlug]);
 
 	return (
-		<div className='flex flex-col lg:flex-row gap-4 relative'>
-			<div className='flex flex-col lg:flex-row items-center justify-center lg:justify-start'>
+		<div className='flex flex-col lg:flex-row gap-4 relative '>
+			<div className='flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-start '>
 				<div className='rounded-md bg-third lg:w-96 lg:h-96 p-4 m-2 flex items-center justify-center lg:order-1'>
 					<Image
 						src={activeImage}
@@ -64,7 +64,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 						priority={true}
 					/>
 				</div>
-				<div className='flex flex-row mt-4 lg:flex-col h-full gap-1 py-2'>
+				<div className='flex flex-row lg:flex-col h-full gap-1 py-2'>
 					{[1, 2, 3, 4].map((idx) => (
 						<div
 							key={idx}

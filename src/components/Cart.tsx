@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
-import { decrementQuantity, incrementQuantity, removeFromCart } from '@/store/cartSlice';
 import { Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { products } from '@/data/data';
-import { CartItem as CartItemProps} from '@/types/types';
-import { Promo, Total, CartItem } from './cart/index';
 
+import { Promo, Total, CartItem } from './cart/index';
+import Link from 'next/link';
+import useCart from '@/hooks/useCart';
 
 interface CartProps {
 	isCartOpen: boolean;
@@ -16,51 +14,17 @@ interface CartProps {
 }
 
 const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
-	const dispatch = useDispatch();
-	const cartItems = useSelector((state: RootState) => state.cart.items);
-	const [promoCode, setPromoCode] = useState('');
-	const [isPromoApplied, setIsPromoApplied] = useState(false);
-	const [discount, setDiscount] = useState(0);
-	const [triedToApply, setTriedToApply] = useState(false);
-
-	const handleIncrement = (item: CartItemProps) => {
-		dispatch(incrementQuantity(item));
-	};
-
-	const handleDecrement = (item: CartItemProps) => {
-		dispatch(decrementQuantity(item));
-	};
-
-	const totalPriceItems = (price: number, quantity: number): string =>
-		(price * quantity).toFixed(2);
-
-	const subtotal = cartItems.reduce(
-		(total, item) => total + item.price * item.quantity,
-		0
-	);
-
-	const handleApplyPromoCode = () => {
-		setTriedToApply(true);
-		if (promoCode === 'PROMO50' && !isPromoApplied) {
-			setIsPromoApplied(true);
-			setDiscount(0.5);
-		} else {
-			setIsPromoApplied(false);
-		}
-	};
-	const tax = subtotal * 0.07;
-	const shipping = cartItems.length * 1.5;
-	let orderTotal = subtotal + tax + shipping;
-
-	if (isPromoApplied) {
-		orderTotal = orderTotal * (1 - discount);
-	}
-
-	const handleRemoveItem = (item: CartItemProps) => {
-		dispatch(removeFromCart({id: item.id, extraOptions: item.extraOptions}))
-	}
-
-
+	const {
+		cartItems, 
+		handleIncrement,
+		handleDecrement,
+		handleRemoveItem,
+		subtotal,
+		tax,
+		shipping,
+		orderTotal,
+		totalPriceItems,
+	  } = useCart();
 
 	return (
 		<Transition
@@ -101,13 +65,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 						</ul>
 					)}
 				</div>
-				<Promo
-					promoCode={promoCode}
-					setPromoCode={setPromoCode}
-					isPromoApplied={isPromoApplied}
-					handleApplyPromoCode={handleApplyPromoCode}
-					triedToApply={triedToApply}
-				/>
+				<Promo />
 				<Total
 					subtotal={subtotal}
 					shipping={shipping}
@@ -115,11 +73,13 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 					orderTotal={orderTotal}
 				/>
 				<div className='my-6 flex justify-center'>
-					<button
+					<Link
+						href='/checkout'
 						className={`w-full mx-8 inline-flex py-2 px-5 bg-myOrange rounded-lg justify-center items-center gap-2.5 text-base text-black font-oswald tracking-wider hover:bg-third hover:text-white transition duration-300 ease-in-out`}
+						onClick={toggleCart}
 					>
 						Checkout
-					</button>
+					</Link>
 				</div>
 			</div>
 		</Transition>

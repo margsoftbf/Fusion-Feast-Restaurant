@@ -1,12 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { CartItem } from '@/types/types';
+
 interface CartState {
 	items: CartItem[];
+	promoCode: string;
+	isPromoApplied: boolean;
+	discount: number;
+	triedToApply: boolean;
 }
 
 const initialState: CartState = {
 	items: [],
+	promoCode: '',
+	isPromoApplied: false,
+	discount: 0,
+	triedToApply: false,
 };
 
 type ExtraOptions = Record<string, boolean>;
@@ -85,9 +94,33 @@ const cartSlice = createSlice({
 				}
 			}
 		},
+		applyPromoCode: (state, action: PayloadAction<string>) => {
+			state.promoCode = action.payload;
+			state.isPromoApplied = action.payload === 'PROMO50';
+			state.discount = state.isPromoApplied ? 0.5 : 0;
+		},
+		clearPromoCode: (state) => {
+			state.promoCode = '';
+			state.isPromoApplied = false;
+			state.discount = 0;
+		},
+		setTriedToApply: (state, action: PayloadAction<boolean>) => {
+			state.triedToApply = action.payload;
+		},
+		updatePromoCode: (state, action: PayloadAction<string>) => {
+			state.promoCode = action.payload;
+		},
 	},
 });
 
-export const { addItem, removeFromCart, incrementQuantity, decrementQuantity } =
-	cartSlice.actions;
+export const {
+	addItem,
+	removeFromCart,
+	incrementQuantity,
+	decrementQuantity,
+	applyPromoCode,
+	clearPromoCode,
+	setTriedToApply,
+	updatePromoCode
+} = cartSlice.actions;
 export default cartSlice.reducer;

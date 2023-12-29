@@ -20,7 +20,7 @@ const Hero = () => {
 						alt='Chef cooking in the kitchen'
 						priority={true}
 					/>
-					<div className='absolute inset-0 bg-black bg-opacity-60'></div>
+					<div className='absolute inset-0 bg-black bg-opacity-50'></div>
 					<Orange className='w-64 h-64 absolute bottom-0 opacity-20 lg:opacity-60' />
 					<Tomato className='hidden lg:block lg:w-64 lg:h-64 lg:absolute lg:right-12 lg:top-12 lg:opacity-60' />
 				</div>

@@ -32,7 +32,7 @@ const MobileSearchBar: React.FC<MobileSearchBarProps> = ({
 				onChange={(e) => setSearchTerm(e.target.value)}
 			/>
 			{searchTerm && (
-				<div className='absolute left-0 right-0 w-full mt-6 bg-white border border-gray-200 rounded-md shadow-lg z-10'>
+				<div className='absolute left-0 right-0 w-full mt-6 bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto max-h-96'>
 					{searchResults.map((product) => (
 						<Link
 							href={`/category/product/${product.name
