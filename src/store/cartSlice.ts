@@ -110,6 +110,10 @@ const cartSlice = createSlice({
 		updatePromoCode: (state, action: PayloadAction<string>) => {
 			state.promoCode = action.payload;
 		},
+		clearCart: (state) => {
+            state.items = [];
+        },
+
 	},
 });
 
@@ -121,6 +125,7 @@ export const {
 	applyPromoCode,
 	clearPromoCode,
 	setTriedToApply,
-	updatePromoCode
+	updatePromoCode,
+	clearCart
 } = cartSlice.actions;
 export default cartSlice.reducer;

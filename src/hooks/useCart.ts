@@ -33,10 +33,10 @@ const useCart = () => {
 			newOrderTotal *= 1 - discount;
 		}
 
-		setSubtotal(parseFloat(newSubtotal.toFixed(2)));
-		setTax(parseFloat(newTax.toFixed(2)));
-		setShipping(parseFloat(newShipping.toFixed(2)));
-		setOrderTotal(parseFloat(newOrderTotal.toFixed(2)));
+		setSubtotal(newSubtotal);
+		setTax(newTax);
+		setShipping(newShipping);
+		setOrderTotal(newOrderTotal);
 	}, [items, isPromoApplied, discount]);
 
 	const handleIncrement = (item: CartItem) => {

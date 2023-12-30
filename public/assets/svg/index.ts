@@ -18,3 +18,4 @@ export { default as Chef } from './Chef.svg';
 export { default as Dinner } from './Dinner.svg';
 export { default as BorderDeal } from './BorderDeal.svg';
 export { default as LineDeal } from './LineDeal.svg';
+export { default as CheckoutIcon } from './CheckoutIcon.svg';

@@ -14,22 +14,22 @@ const Total: React.FC<TotalProps> = ({
 				<div className='-my-4 divide-y divide-gray-200 text-sm'>
 					<div className='flex items-center justify-between py-2 text-gray-500'>
 						<div className=''>Subtotal</div>
-						<div className='font-medium '>${subtotal}</div>
+						<div className='font-medium '>${subtotal.toFixed(2)}</div>
 					</div>
 					<div className='flex items-center justify-between py-2 text-gray-500'>
 						<div>Shipping</div>
-						<div className='font-medium '>${shipping}</div>
+						<div className='font-medium '>${shipping.toFixed(2)}</div>
 					</div>
 					<div className='flex items-center justify-between py-2 text-gray-500'>
 						<div>Tax</div>
-						<div className='font-medium '>${tax}</div>
+						<div className='font-medium '>${tax.toFixed(2)}</div>
 					</div>
 					<div className='flex items-center justify-between py-4'>
 						<div className='text-base font-medium text-gray-900'>
 							Order total
 						</div>
 						<div className='text-base font-medium text-gray-900'>
-							${orderTotal}
+							${orderTotal.toFixed(2)}
 						</div>
 					</div>
 				</div>
