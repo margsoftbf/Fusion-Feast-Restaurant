@@ -12,10 +12,10 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { products, navigation } from '@/data/data';
 import { SearchProps } from '@/types/types';
-import Cart from './Cart';
 import DesktopSearchBar from './navbar/DesktopSearchBar';
 import MobileMenu from './navbar/MobileMenu';
 import { useRouter } from 'next/router';
+import Cart from './Cart';
 
 const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,6 +33,8 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		setShowSearch(!showSearch);
 	};
 
+	console.log(searchTerm);
+
 	const cartItemsCount = useSelector((state: RootState) =>
 		state.cart.items.reduce((total, item) => total + item.quantity, 0)
 	);
@@ -40,7 +42,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const filteredProducts =
 		searchTerm.trim() !== ''
 			? products.filter((product) =>
-					product.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+					product.name.toLowerCase().includes(searchTerm.toLowerCase())
 			  )
 			: products;
 

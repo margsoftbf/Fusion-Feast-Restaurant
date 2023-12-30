@@ -6,7 +6,6 @@ import {
 	PhoneIcon,
 } from '@heroicons/react/24/outline';
 import MobileSearchBar from './MobileSearchBar';
-import Cart from '../Cart';
 import { Product } from '@/types/types';
 import { navigation } from '@/data/data';
 import { useRouter } from 'next/router';
@@ -45,6 +44,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 			router.push('#' + href);
 		}
 	};
+
+	const handleCheckout = () => {
+		onClose();
+		router.push('/checkout');
+	};
 	return (
 		<Dialog as='div' className='lg:hidden' open={isOpen} onClose={onClose}>
 			<Dialog.Panel className='fixed inset-x-0 w-auto h-full top-0 z-50 bg-secondary px-6 py-8 overflow-auto'>
@@ -77,8 +81,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 								<span>+1-555-157-5651</span>
 							</span>
 							<button
-								onClick={toggleCart}
-								className='relative text-sm font-semibold leading-6 py-1 my-2 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
+								onClick={handleCheckout}
+								className='relative my-2  ease-in-out duration-300 transition gap-x-2 cursor-pointer flex items-center gap-2 -mx-2 rounded-lg px-2 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary'
 							>
 								<span className='flex justify-center items-center absolute left-1 top-0 bg-white text-black rounded-full font-bold w-4 h-4 text-xs font-openSans'>
 									{cartItemsCount}
@@ -93,11 +97,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 								onResultClick={onResultClick}
 							/>
 						</div>
-						<Cart
-							isCartOpen={isCartOpen}
-							toggleCart={toggleCart}
-							cartItemsCount={cartItemsCount}
-						/>
+
 					</div>
 				</div>
 			</Dialog.Panel>

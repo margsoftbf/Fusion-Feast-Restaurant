@@ -270,7 +270,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 1,
+		id: 11,
 		name: 'Classic Cheeseburger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/classicCheeseburger.webp',
@@ -284,7 +284,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 2,
+		id: 12,
 		name: 'Bacon Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/baconBurger.webp',
@@ -297,7 +297,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 3,
+		id: 13,
 		name: 'Veggie Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/veggieBurger.webp',
@@ -310,7 +310,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 4,
+		id: 14,
 		name: 'Mushroom Swiss Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/mushroomBurger.webp',
@@ -323,7 +323,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 5,
+		id: 15,
 		name: 'Spicy Jalapeno Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/spicyJalapenoBurger.webp',
@@ -336,7 +336,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 6,
+		id: 16,
 		name: 'Blue Cheese Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/blueCheeseBurger.webp',
@@ -349,7 +349,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 7,
+		id: 17,
 		name: 'BBQ Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/bbqBurger.webp',
@@ -362,7 +362,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 8,
+		id: 18,
 		name: 'Turkey Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/turkeyBurger.webp',
@@ -375,7 +375,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 9,
+		id: 19,
 		name: 'Double Stack',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/doubleStackBurger.webp',
@@ -388,7 +388,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 10,
+		id: 20,
 		name: 'California Burger',
 		categorySlug: 'burgers',
 		img: '/assets/products/burgers/californiaBurger.webp',
@@ -401,7 +401,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 1,
+		id: 21,
 		name: 'California Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/californiaRoll.webp',
@@ -414,7 +414,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 2,
+		id: 22,
 		name: 'Spicy Tuna Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/spicyTuna.webp',
@@ -427,7 +427,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 3,
+		id: 23,
 		name: 'Philadelphia Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/philadelphia.webp',
@@ -440,7 +440,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 4,
+		id: 24,
 		name: 'Dragon Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/dragonRoll.webp',
@@ -453,7 +453,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 5,
+		id: 25,
 		name: 'Rainbow Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/rainbowRoll.webp',
@@ -466,7 +466,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 6,
+		id: 26,
 		name: 'Tempura Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/tempuraRoll.webp',
@@ -479,7 +479,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 7,
+		id: 27,
 		name: 'Veggie Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/veggieRoll.webp',
@@ -492,7 +492,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 8,
+		id: 28,
 		name: 'Eel Avocado Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/eelAvocado.webp',
@@ -505,7 +505,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 9,
+		id: 29,
 		name: 'Salmon Avocado Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/salmonAvocado.webp',
@@ -518,7 +518,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 10,
+		id: 30,
 		name: 'Spicy Crab Roll',
 		categorySlug: 'sushi',
 		img: '/assets/products/sushi/spicyCrab.webp',
@@ -531,7 +531,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 1,
+		id: 31,
 		name: 'Grilled Salmon',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/grilledSalmon.webp',
@@ -544,7 +544,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 2,
+		id: 32,
 		name: 'Ribeye Steak',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/ribeyeSteak.webp',
@@ -557,7 +557,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 3,
+		id: 33,
 		name: 'Chicken Parmesan',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/chickenParmesan.webp',
@@ -571,7 +571,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 4,
+		id: 34,
 		name: 'Vegetable Stir-Fry',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/vegetableStirFry.webp',
@@ -584,7 +584,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 5,
+		id: 35,
 		name: 'Spaghetti Carbonara',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/spaghettiCarbonara.webp',
@@ -597,7 +597,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 6,
+		id: 36,
 		name: 'Beef Bourguignon',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/beefBourguignon.webp',
@@ -611,7 +611,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 7,
+		id: 37,
 		name: 'Lamb Shank',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/lambShank.webp',
@@ -624,7 +624,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 8,
+		id: 38,
 		name: 'Shrimp Scampi',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/shrimpScamp.webp',
@@ -637,7 +637,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 9,
+		id: 39,
 		name: 'Pork Chop',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/porkChop.webp',
@@ -650,7 +650,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 10,
+		id: 40,
 		name: 'Mushroom Risotto',
 		categorySlug: 'dinner',
 		img: '/assets/products/dinner/mushroomRisotto.webp',
@@ -663,7 +663,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 1,
+		id: 41,
 		name: 'Tomato Basil Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/tomatoSoup.webp',
@@ -676,7 +676,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 2,
+		id: 42,
 		name: 'Chicken Noodle Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/chickenNoodle.webp',
@@ -689,7 +689,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 3,
+		id: 43,
 		name: 'Beef Barley Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/beefBarley.webp',
@@ -702,7 +702,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 4,
+		id: 44,
 		name: 'Minestrone Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/minestrone.webp',
@@ -715,7 +715,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 5,
+		id: 45,
 		name: 'Butternut Squash Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/butternutSquash.webp',
@@ -728,7 +728,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 6,
+		id: 46,
 		name: 'French Onion Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/frenchOnion.webp',
@@ -741,7 +741,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 7,
+		id: 47,
 		name: 'Clam Chowder Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/clamChowder.webp',
@@ -754,7 +754,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 8,
+		id: 48,
 		name: 'Lentil Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/lentilSoup.webp',
@@ -767,7 +767,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 9,
+		id: 49,
 		name: 'Chicken Tortilla Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/chickenTortilla.webp',
@@ -780,7 +780,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 10,
+		id: 50,
 		name: 'Broccoli Cheddar Soup',
 		categorySlug: 'soups',
 		img: '/assets/products/soups/broccoliCheddar.webp',
@@ -793,7 +793,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 1,
+		id: 51,
 		name: 'Caesar Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/caesarSalad.webp',
@@ -806,7 +806,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 2,
+		id: 52,
 		name: 'Greek Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/greekSalad.webp',
@@ -819,7 +819,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 3,
+		id: 53,
 		name: 'Caprese Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/capreseSalad.webp',
@@ -832,7 +832,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 4,
+		id: 54,
 		name: 'Garden Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/gardenSalad.webp',
@@ -845,7 +845,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 5,
+		id: 55,
 		name: 'Cobb Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/cobbSalad.webp',
@@ -858,7 +858,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 6,
+		id: 56,
 		name: 'Spinach Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/spinachSalad.webp',
@@ -871,7 +871,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 7,
+		id: 57,
 		name: 'Asian Chicken Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/asianChickenSalad.webp',
@@ -884,7 +884,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 8,
+		id: 58,
 		name: 'Quinoa Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/quinoaSalad.webp',
@@ -897,7 +897,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 9,
+		id: 59,
 		name: 'Waldorf Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/waldorfSalad.webp',
@@ -910,7 +910,7 @@ export const products: Product[] = [
 		longDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto quaerat facilis fugit enim beatae optio reiciendis explicabo quos tenetur? Vitae, quidem. Odit commodi doloremque impedit maxime illo eaque, corrupti non vel facilis voluptate suscipit! Neque impedit nesciunt itaque totam dolore fuga enim ad quo earum, corporis, provident, dolorem officia.`,
 	},
 	{
-		id: 10,
+		id: 60,
 		name: 'Southwest Salad',
 		categorySlug: 'salads',
 		img: '/assets/products/salads/southwestSalad.webp',
