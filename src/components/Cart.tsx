@@ -15,7 +15,7 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 	const {
-		cartItems, 
+		cartItems,
 		handleIncrement,
 		handleDecrement,
 		handleRemoveItem,
@@ -24,7 +24,7 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 		shipping,
 		orderTotal,
 		totalPriceItems,
-	  } = useCart();
+	} = useCart();
 
 	return (
 		<Transition
@@ -46,11 +46,11 @@ const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
 					className='h-5 w-5 right-2 top-2 absolute cursor-pointer'
 					onClick={toggleCart}
 				/>
-				<div className='relative flow-root p-1 my-8 mt-12'>
+				<div className='relative flow-root p-1 my-8 mt-8 overflow-y-auto max-h-80'>
 					{cartItems.length === 0 ? (
 						<p className='text-center font-semibold'>Your cart is empty.</p>
 					) : (
-						<ul className='-my-6 divide-y divide-gray-200'>
+						<ul className='divide-y divide-gray-200'>
 							{cartItems.map((item) => (
 								<CartItem
 									key={item.id}

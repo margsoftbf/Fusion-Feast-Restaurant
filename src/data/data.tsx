@@ -12,6 +12,7 @@ export type Category = {
 
 export const navigation = [
 	{ name: 'Menu', href: 'menu' },
+	{ name: 'About Us', href: '/about' },
 	{ name: 'Testimonials', href: 'testimonials' },
 	{ name: 'Contact Us', href: 'contact' },
 ];

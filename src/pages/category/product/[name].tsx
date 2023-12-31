@@ -9,8 +9,8 @@ import { CartItem, ExtraOptions } from '@/types/types';
 import { addItem } from '@/store/cartSlice';
 import ProductDetails from '@/components/product/ProductDetails';
 import ProductDescription from '@/components/product/ProductDescription';
-import ProductReviews from '@/components/product/ProductReviews';
 import RelatedProducts from '@/components/product/RelatedProducts';
+import Reviews from '@/components/Reviews';
 
 const ProductPage = () => {
 	const router = useRouter();
@@ -115,7 +115,7 @@ const ProductPage = () => {
 						{activeTab === 'description' ? (
 							<ProductDescription />
 						) : (
-							<ProductReviews />
+							<Reviews />
 						)}
 					</div>
 					<RelatedProducts currentProductCategory={product.categorySlug} />

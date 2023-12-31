@@ -40,9 +40,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 		onClose();
 		if (!isHomePage) {
 			router.push('/#' + href);
+		} else if (href.startsWith('/')) {
+			router.push(href);
 		} else {
 			router.push('#' + href);
-		}
+		} 
 	};
 
 	const handleCheckout = () => {

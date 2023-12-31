@@ -33,8 +33,6 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		setShowSearch(!showSearch);
 	};
 
-	console.log(searchTerm);
-
 	const cartItemsCount = useSelector((state: RootState) =>
 		state.cart.items.reduce((total, item) => total + item.quantity, 0)
 	);
@@ -58,7 +56,9 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const isHomePage = router.pathname === '/';
 
 	const handleNavigationClick = (href: string) => {
-		if (!isHomePage) {
+		if (href.startsWith('/')) {
+			router.push(href);
+		} else {
 			router.push('/#' + href);
 		}
 	};
@@ -85,7 +85,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				</div>
 				<div className='hidden lg:flex lg:gap-x-12 text-white'>
 					{navigation.map((item) =>
-						isHomePage ? (
+						isHomePage && !item.href.startsWith('/') ? (
 							<ScrollLink
 								key={item.name}
 								to={item.href}
@@ -98,7 +98,11 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						) : (
 							<a
 								key={item.name}
-								onClick={() => handleNavigationClick(item.href)}
+								href='#'
+								onClick={(e) => {
+									e.preventDefault();
+									handleNavigationClick(item.href);
+								}}
 								className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
 							>
 								{item.name}
