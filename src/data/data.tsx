@@ -17,6 +17,27 @@ export const navigation = [
 	{ name: 'Contact Us', href: 'contact' },
 ];
 
+export const chefs = [
+	{
+		name: 'Mark Webber',
+		position: 'Master Chef',
+		img: '/assets/chefs/chef-one.webp',
+		imgAlt: 'Mark Webber Photo',
+	},
+	{
+		name: 'Jacob Thompson',
+		position: 'Master Chef',
+		img: '/assets/chefs/chef-two.webp',
+		imgAlt: 'Jacob Thompson Photo',
+	},
+	{
+		name: 'Kimberly Smith',
+		position: 'Master Chef',
+		img: '/assets/chefs/chef-three.webp',
+		imgAlt: 'Kimberly Smith Photo',
+	},
+];
+
 export const categories: Category[] = [
 	{ name: 'Pizza', slug: 'pizza', icon: <CiPizza /> },
 	{ name: 'Burgers', slug: 'burgers', icon: <CiBurger /> },
