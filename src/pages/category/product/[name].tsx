@@ -10,7 +10,7 @@ import { addItem } from '@/store/cartSlice';
 import ProductDetails from '@/components/product/ProductDetails';
 import ProductDescription from '@/components/product/ProductDescription';
 import RelatedProducts from '@/components/product/RelatedProducts';
-import Reviews from '@/components/Reviews';
+import ReviewsSlider from '@/components/ReviewsSlider';
 
 const ProductPage = () => {
 	const router = useRouter();
@@ -115,7 +115,7 @@ const ProductPage = () => {
 						{activeTab === 'description' ? (
 							<ProductDescription />
 						) : (
-							<Reviews />
+							<ReviewsSlider />
 						)}
 					</div>
 					<RelatedProducts currentProductCategory={product.categorySlug} />

@@ -2,6 +2,7 @@ import Reviews from '@/components/Reviews';
 import OurTrending from '@/components/about/OurTrending';
 import AboutPageSection from '@/components/about/AboutPageSection';
 import Chefs from '@/components/Chefs';
+import WhyVisitsUs from '@/components/about/WhyVisitsUs';
 
 const Aboutus = () => {
 	return (
@@ -11,7 +12,8 @@ const Aboutus = () => {
 					<AboutPageSection />
 					<OurTrending />
 					<Chefs />
-					{/* <Reviews /> */}
+					<WhyVisitsUs />
+					<Reviews />
 				</div>
 			</div>
 		</div>
