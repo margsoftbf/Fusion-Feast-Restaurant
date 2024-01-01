@@ -89,7 +89,6 @@ const cartSlice = createSlice({
 			if (itemIndex !== -1) {
 				if (state.items[itemIndex].quantity > 1) {
 					state.items[itemIndex].quantity -= 1;
-				} else {
 					state.items.splice(itemIndex, 1);
 				}
 			}
@@ -111,9 +110,8 @@ const cartSlice = createSlice({
 			state.promoCode = action.payload;
 		},
 		clearCart: (state) => {
-            state.items = [];
-        },
-
+			state.items = [];
+		},
 	},
 });
 
@@ -126,6 +124,6 @@ export const {
 	clearPromoCode,
 	setTriedToApply,
 	updatePromoCode,
-	clearCart
+	clearCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;

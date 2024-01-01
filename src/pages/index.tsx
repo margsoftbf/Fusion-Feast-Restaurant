@@ -1,4 +1,5 @@
 import About from '@/components/About';
+import Blog from '@/components/Blog';
 import Chefs from '@/components/Chefs';
 import Deal from '@/components/Deal';
 import Gallery from '@/components/Gallery';
@@ -16,6 +17,7 @@ export default function Home() {
 			<MenuBook />
 			<TodayDiscount />
 			<Chefs />
+			<Blog />
 			<Reviews />
 			<Gallery />
 		</main>

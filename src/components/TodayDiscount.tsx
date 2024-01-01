@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import {
+	Donut,
 	Ellipse,
 	EmptyEllipse,
 	SubTitleLeft,
@@ -42,6 +43,7 @@ const TodayDiscount = () => {
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-6 lg:w-5 lg:h-5 lg:bottom-12' />
 			<Ellipse className='w-1 h-1 absolute top-48 left-48 lg:w-5 lg:h-5 lg:top-28' />
 			<EmptyEllipse className='w-2 h-2 absolute top-32 right-96 lg:w-5 lg:h-5 lg:top-40' />
+			<Donut className='w-20 h-20 absolute bottom-32 left-0' />
 			<div className='max-w-8xl mx-auto relative'>
 				<div>
 					<div className='flex items-center justify-center gap-2 relative'>

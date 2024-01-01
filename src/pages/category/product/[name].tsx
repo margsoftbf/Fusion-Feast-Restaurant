@@ -37,14 +37,16 @@ const ProductPage = () => {
 
 	const handleAddToCart = () => {
 		const addonCost = Object.keys(selectedAddons)
-        .filter(addonName => selectedAddons[addonName])
-        .reduce((acc, addonName) => {
-            const addonPrice = addons[product.categorySlug].find(addon => addon.name === addonName)?.price || 0;
-            return acc + addonPrice;
-        }, 0);
+			.filter((addonName) => selectedAddons[addonName])
+			.reduce((acc, addonName) => {
+				const addonPrice =
+					addons[product.categorySlug].find((addon) => addon.name === addonName)
+						?.price || 0;
+				return acc + addonPrice;
+			}, 0);
 
-		const totalPrice = (product.price + addonCost) * quantity;
 
+		const totalPrice = product.price + addonCost
 		const cartItem: CartItem = {
 			...product,
 			quantity,
@@ -69,7 +71,6 @@ const ProductPage = () => {
 				<Ellipse className='w-12 h-12 absolute top-12 right-6' />
 				<EmptyEllipse className='w-12 h-12 absolute top-16 left-96' />
 				<div className='relative max-w-6xl mx-auto px-2 py-4 text-white '>
-
 					<div className='mb-4 mx-auto'>
 						<BreadCrumb
 							categoryName={

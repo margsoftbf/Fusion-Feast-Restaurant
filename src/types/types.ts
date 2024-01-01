@@ -56,9 +56,9 @@ export interface CartItem extends ProductWithExtras {
 }
 
 export interface PaymentFormDataTypes {
-    email: string;
-    nameOnCard: string;
-    cardNumber: string;
+	email: string;
+	nameOnCard: string;
+	cardNumber: string;
 	expirationDate: string;
 	cvc: string;
 	address: string;
