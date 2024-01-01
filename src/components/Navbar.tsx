@@ -89,6 +89,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 							<ScrollLink
 								key={item.name}
 								to={item.href}
+								aria-label={item.description || item.name}
 								smooth={true}
 								offset={-60}
 								className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
@@ -99,6 +100,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 							<Link
 								key={item.name}
 								href={`#${item.href}`}
+								aria-label={item.description || item.name}
 								onClick={(e) => {
 									e.preventDefault();
 									handleNavigationClick(item.href);
@@ -129,13 +131,13 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 							/>
 						) : (
 							<div className='w-36 flex justify-end'>
-								<a
+								<button
 									onClick={handleToggleSearch}
 									className='text-sm font-semibold p-1 leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
 								>
 									<MagnifyingGlassIcon className='h-5 w-5' />
 									<span>Search</span>
-								</a>
+								</button>
 							</div>
 						)}
 					</div>

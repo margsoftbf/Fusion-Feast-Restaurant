@@ -11,10 +11,10 @@ export type Category = {
 };
 
 export const navigation = [
-	{ name: 'Menu', href: '/category/pizza' },
-	{ name: 'About Us', href: '/about' },
-	{ name: 'Reviews', href: 'reviews' },
-	{ name: 'Contact Us', href: 'contact' },
+	{ name: 'Menu', href: '/category/pizza', description: 'Check our menu' },
+	{ name: 'About Us', href: '/about', description: 'Learn more about our restaurant' },
+	{ name: 'Reviews', href: 'reviews', description: 'Check our reviews' },
+	{ name: 'Contact Us', href: 'contact', description: 'Contact with us' },
 ];
 
 export const chefs = [

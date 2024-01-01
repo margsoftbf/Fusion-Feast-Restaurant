@@ -70,6 +70,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 							{navigation.map((item) => (
 								<button
 									key={item.name}
+									aria-label={item.description || item.name}
 									onClick={() => handleNavigationClick(item.href)}
 									className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition'
 								>

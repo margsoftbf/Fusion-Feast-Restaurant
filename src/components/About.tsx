@@ -43,7 +43,7 @@ const About = () => {
 							fill={true}
 							placeholder='blur'
 							blurDataURL={'/assets/about/chefAbout.webp'}
-							priority={true}
+							loading='lazy'
 							quality={75}
 							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 							alt='Chef cooking in the kitchen'

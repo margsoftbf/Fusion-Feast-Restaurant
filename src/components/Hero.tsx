@@ -11,14 +11,13 @@ const Hero = () => {
 				<div className='absolute inset-0 z-[-1] '>
 					<Image
 						src='/assets/hero/heroBig.webp'
-						fill={true}
-						priority={true}
-						style={{ objectFit: 'cover' }}
-						quality={100}
-						sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
-						placeholder='blur'
-						blurDataURL={'/assets/hero/heroBig.webp'}
 						alt='Chef cooking in the kitchen'
+						fill={true}
+						className='object-cover'
+						quality={75}
+						sizes='100vw'
+						placeholder='blur'
+						blurDataURL='/assets/hero/heroBig.webp'
 					/>
 					<div className='absolute inset-0 bg-black bg-opacity-50'></div>
 					<Orange className='w-64 h-64 absolute bottom-0 opacity-20 lg:opacity-60' />
