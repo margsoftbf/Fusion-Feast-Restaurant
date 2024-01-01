@@ -11,26 +11,29 @@ export type Category = {
 };
 
 export const navigation = [
-	{ name: 'Menu', href: 'menu' },
+	{ name: 'Menu', href: '/category/pizza' },
 	{ name: 'About Us', href: '/about' },
-	{ name: 'Testimonials', href: 'testimonials' },
+	{ name: 'Reviews', href: 'reviews' },
 	{ name: 'Contact Us', href: 'contact' },
 ];
 
 export const chefs = [
 	{
+		id: 1,
 		name: 'Mark Webber',
 		position: 'Master Chef',
 		img: '/assets/chefs/chef-one.webp',
 		imgAlt: 'Mark Webber Photo',
 	},
 	{
+		id: 2,
 		name: 'Jacob Thompson',
 		position: 'Master Chef',
 		img: '/assets/chefs/chef-two.webp',
 		imgAlt: 'Jacob Thompson Photo',
 	},
 	{
+		id: 3,
 		name: 'Kimberly Smith',
 		position: 'Master Chef',
 		img: '/assets/chefs/chef-three.webp',

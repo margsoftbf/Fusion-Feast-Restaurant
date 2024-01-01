@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Drink,
 	Ellipse,
@@ -16,6 +16,15 @@ import Link from 'next/link';
 import { chefs } from '@/data/data';
 
 const Chefs = () => {
+	const [showSoonMessage, setShowSoonMessage] = useState(false);
+
+	const handleSoonMessage = () => {
+		setShowSoonMessage(true);
+
+		setTimeout(() => {
+			setShowSoonMessage(false);
+		}, 3000);
+	};
 	return (
 		<div className='bg-secondary py-8 relative'>
 			<Fries className='w-40 h-40 absolute bottom-12 left-0 opacity-60 ' />
@@ -39,14 +48,17 @@ const Chefs = () => {
 					</div>
 				</div>
 
-				<div className='w-full flex flex-wrap gap-4 justify-around mt-4 '>
+				<div className='w-full flex flex-wrap gap-4 justify-center mt-4 '>
 					{chefs.map((chef) => (
-						<div className='w-80 h-[450px] xl:w-96 xl:h-[500px] relative rounded-xl mx-auto flex flex-col overflow-hidden group'>
-							<div className='group-hover:h-3/5 h-4/5 w-full rounded-xl  transition-all duration-300'>
+						<div
+							key={chef.id}
+							className='w-72 h-[400px]  relative rounded-xl flex flex-col overflow-hidden group'
+						>
+							<div className='group-hover:h-3/5 h-4/5 w-full rounded-xl  transition-all duration-300 relative'>
 								<div className='absolute bg-black/20 w-full h-full top-0 left-0 z-30'></div>
 								<Image
 									src={chef.img}
-									className='object-cover rounded-t-xl'
+									className='object-cover rounded-t-xl relative'
 									fill={true}
 									placeholder='blur'
 									blurDataURL={chef.img}
@@ -86,7 +98,15 @@ const Chefs = () => {
 											<IoLogoTwitter className='w-5 h-5 z-50 ' />
 										</Link>
 									</div>
-									<div className='button'>
+									{showSoonMessage && (
+										<div
+											className='absolute bottom-16 right-8 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
+											role='alert'
+										>
+											<span className='block sm:inline'>SOON</span>
+										</div>
+									)}
+									<div className='button' onClick={handleSoonMessage}>
 										<ButtonFull>View more</ButtonFull>
 									</div>
 								</div>

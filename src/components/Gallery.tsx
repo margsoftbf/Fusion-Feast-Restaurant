@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
 import { FaInstagram } from 'react-icons/fa';
+import { Autoplay } from 'swiper/modules';
 const Gallery = () => {
 	const images = [
 		'/assets/gallery/gallery-1.webp',
@@ -27,6 +28,11 @@ const Gallery = () => {
 				freeMode={true}
 				loop={true}
 				navigation={true}
+				autoplay={{
+					delay: 3500,
+					disableOnInteraction: true,
+				}}
+				modules={[Autoplay]}
 				breakpoints={{
 					500: {
 						slidesPerView: 2,
@@ -53,13 +59,13 @@ const Gallery = () => {
 			>
 				{images.map((src, index) => (
 					<SwiperSlide key={index}>
-						<div className='w-48 h-64'>
+						<div className='w-64 h-64 relative'>
 							<Image
 								src={src}
 								alt={`Gallery image ${index + 1}`}
-								objectFit='cover'
 								fill={true}
-								className='w-full h-full rounded-md hover:opacity-80 transition duration-300 ease-in-out border'
+								className='w-full h-full rounded-md hover:opacity-80 transition duration-300 ease-in-out border border-third object-cover relative'
+								sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 							/>
 							<div className='absolute top-0 left-0 w-full h-full rounded-md bg-black/80 opacity-0 hover:opacity-100 flex justify-center items-center transition duration-300 ease-in-out'>
 								<div className='p-2 bg-white rounded-xl cursor-pointer'>

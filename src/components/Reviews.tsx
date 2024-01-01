@@ -10,7 +10,7 @@ import ReviewsSlider from './ReviewsSlider';
 
 const Reviews = () => {
 	return (
-		<div className='bg-secondary py-8 relative'>
+		<div className='bg-secondary py-8 relative overflow-hidden' id='reviews'>
 			<EmptyEllipse className='w-2 h-2 absolute top-16 right-60 lg:w-8 lg:h-8 lg:top-40' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-12 lg:w-8 lg:h-8 lg:bottom-12' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 left-48 lg:w-5 lg:h-5 lg:bottom-12' />
