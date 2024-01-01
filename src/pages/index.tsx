@@ -1,12 +1,14 @@
-import About from '@/components/About';
-import Blog from '@/components/Blog';
-import Chefs from '@/components/Chefs';
-import Deal from '@/components/Deal';
-import Gallery from '@/components/Gallery';
-import Hero from '@/components/Hero';
-import MenuBook from '@/components/MenuBook';
-import Reviews from '@/components/Reviews';
-import TodayDiscount from '@/components/TodayDiscount';
+import dynamic from 'next/dynamic';
+
+const Hero = dynamic(() => import('@/components/Hero'));
+const About = dynamic(() => import('@/components/About'));
+const Deal = dynamic(() => import('@/components/Deal'));
+const MenuBook = dynamic(() => import('@/components/MenuBook'), { ssr: false });
+const TodayDiscount = dynamic(() => import('@/components/TodayDiscount'));
+const Chefs = dynamic(() => import('@/components/Chefs'), { ssr: false });
+const Blog = dynamic(() => import('@/components/Blog'));
+const Reviews = dynamic(() => import('@/components/Reviews'), { ssr: false });
+const Gallery = dynamic(() => import('@/components/Gallery'), { ssr: false });
 
 export default function Home() {
 	return (

@@ -96,7 +96,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 								{item.name}
 							</ScrollLink>
 						) : (
-							<a
+							<Link
 								key={item.name}
 								href={`#${item.href}`}
 								onClick={(e) => {
@@ -106,7 +106,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 								className='text-sm font-semibold leading-6 text-white font-openSans hover:text-myOrange ease-in-out duration-300 transition cursor-pointer'
 							>
 								{item.name}
-							</a>
+							</Link>
 						)
 					)}
 				</div>
