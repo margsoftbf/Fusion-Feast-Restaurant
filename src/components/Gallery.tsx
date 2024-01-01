@@ -21,7 +21,7 @@ const Gallery = () => {
 	];
 
 	return (
-		<div className='mx-auto w-full p-8'>
+		<div className='mx-auto w-full m-2 p-8'>
 			<Swiper
 				spaceBetween={30}
 				slidesPerView={1}
@@ -59,7 +59,7 @@ const Gallery = () => {
 			>
 				{images.map((src, index) => (
 					<SwiperSlide key={index}>
-						<div className='w-64 h-64 relative'>
+						<div className='w-56 h-56 relative'>
 							<Image
 								src={src}
 								alt={`Gallery image ${index + 1}`}

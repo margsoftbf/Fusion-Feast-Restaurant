@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { categories, products } from '@/data/data';
-import CategoryBox from './category/MenuBookSlider';
+
 import React from 'react';
 import {
 	Ellipse,
@@ -9,6 +10,11 @@ import {
 	SubTitleLeft,
 	SubTitleRight,
 } from '../../public/assets/svg';
+
+const CategoryBox = dynamic(() => import('./category/MenuBookSlider'), {
+	loading: () => <p>Loading...</p>,
+	ssr: false, 
+  });
 
 const MenuBook = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(

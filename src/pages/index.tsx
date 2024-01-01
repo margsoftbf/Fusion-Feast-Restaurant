@@ -1,14 +1,15 @@
+import Navbar from '@/components/Navbar';
 import dynamic from 'next/dynamic';
 
 const Hero = dynamic(() => import('@/components/Hero'));
 const About = dynamic(() => import('@/components/About'));
 const Deal = dynamic(() => import('@/components/Deal'));
-const MenuBook = dynamic(() => import('@/components/MenuBook'), { ssr: false });
+const MenuBook = dynamic(() => import('@/components/MenuBook'));
 const TodayDiscount = dynamic(() => import('@/components/TodayDiscount'));
-const Chefs = dynamic(() => import('@/components/Chefs'), { ssr: false });
+const Chefs = dynamic(() => import('@/components/Chefs'));
 const Blog = dynamic(() => import('@/components/Blog'));
-const Reviews = dynamic(() => import('@/components/Reviews'), { ssr: false });
-const Gallery = dynamic(() => import('@/components/Gallery'), { ssr: false });
+const Reviews = dynamic(() => import('@/components/Reviews'));
+const Gallery = dynamic(() => import('@/components/Gallery'));
 
 export default function Home() {
 	return (
