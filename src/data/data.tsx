@@ -39,6 +39,13 @@ export const chefs = [
 		img: '/assets/chefs/chef-three.webp',
 		imgAlt: 'Kimberly Smith Photo',
 	},
+	{
+		id: 4,
+		name: 'Nathan Peterson',
+		position: 'Master Chef',
+		img: '/assets/chefs/chef-four.webp',
+		imgAlt: 'Nathan Peterson Photo',
+	},
 ];
 
 export const categories: Category[] = [
@@ -104,6 +111,60 @@ export const reviews: ReviewsProps[] = [
 		imgAlt: 'William Wilson Photo',
 		text: 'High-quality services, but the price could be more competitive. Recommended for those looking for uncompromised quality.',
 		rating: 4,
+	},
+];
+import { BlogPostTypes } from '@/types/types';
+export const blogPosts: BlogPostTypes[] = [
+	{
+		id: 1,
+		title: 'Best Breakfast Items of This New City Choices',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl: '/assets/blog/blog-1.webp',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'Restaurant', href: '#' },
+		author: {
+			name: 'Eula Hubbard',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl: '/assets/people/avatar-nathan-peterson.webp',
+		},
+	},
+	{
+		id: 2,
+		title: 'Best Breakfast Items of This New City Choices',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl: '/assets/blog/blog-2.webp',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'Food', href: '#' },
+		author: {
+			name: 'Mary Wright',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl: '/assets/people/avatar-angela-gray.webp',
+		},
+	},
+	{
+		id: 3,
+		title: 'Best Breakfast Items of This New City Choices',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl: '/assets/blog/blog-3.webp',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'Restaurant', href: '#' },
+		author: {
+			name: 'Laura Jackson',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl: '/assets/people/avatar-mark-webber.webp',
+		},
 	},
 ];
 
