@@ -48,7 +48,7 @@ const Blog = () => {
 				</div>
 				<div className='mx-auto mt-16 flex flex-wrap justify-center gap-8 p-4 lg:gap-x-8 '>
 					{blogPosts.map((post) => (
-						<a
+						<div
 							key={post.id}
 							href='#'
 							onClick={(e) => {
@@ -107,7 +107,7 @@ const Blog = () => {
 									</div>
 								</div>
 							</div>
-						</a>
+						</div>
 					))}
 				</div>
 				{selectedPost && (
