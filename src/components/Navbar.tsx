@@ -87,6 +87,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 					{navigation.map((item) =>
 						isHomePage && !item.href.startsWith('/') ? (
 							<ScrollLink
+								name={item.name}
 								key={item.name}
 								to={item.href}
 								aria-label={item.description || item.name}

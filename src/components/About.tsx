@@ -100,7 +100,7 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<Link href='/about'>
+					<Link aria-label='about page' href='/about'>
 						<ButtonEmpty>Learn More</ButtonEmpty>
 					</Link>
 				</div>

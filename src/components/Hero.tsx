@@ -32,7 +32,7 @@ const Hero = () => {
 							We serve the best fusion dishes in the city.
 						</p>
 						<div className='mt-10 flex items-center justify-center gap-x-6'>
-							<ScrollLink to={'menu'} smooth={true} offset={-60}>
+							<ScrollLink name='menu' to={'menu'} smooth={true} offset={-60}>
 								<ButtonFull>Main Menu</ButtonFull>
 							</ScrollLink>
 						</div>
