@@ -98,7 +98,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						) : (
 							<a
 								key={item.name}
-								href='#'
+								href={`#${item.href}`}
 								onClick={(e) => {
 									e.preventDefault();
 									handleNavigationClick(item.href);

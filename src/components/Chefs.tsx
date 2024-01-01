@@ -12,7 +12,6 @@ import Image from 'next/image';
 import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { IoLogoTwitter } from 'react-icons/io';
 import ButtonFull from './common/ButtonFull';
-import Link from 'next/link';
 import { chefs } from '@/data/data';
 
 const Chefs = () => {
@@ -62,7 +61,6 @@ const Chefs = () => {
 									fill={true}
 									placeholder='blur'
 									blurDataURL={chef.img}
-									priority={true}
 									quality={75}
 									alt={chef.imgAlt}
 									sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
@@ -79,24 +77,24 @@ const Chefs = () => {
 								</div>
 								<div className='opacity-0 group-hover:opacity-80 flex justify-between w-full px-4'>
 									<div className='linki flex items-end gap-3'>
-										<Link
-											href='#'
+										<p
+											
 											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out  flex items-center justify-center'
 										>
 											<PhoneIcon className='w-5 h-5 z-50 ' />
-										</Link>
-										<Link
-											href='#'
+										</p>
+										<p
+										
 											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center'
 										>
 											<EnvelopeIcon className='w-5 h-5 z-50 ' />
-										</Link>
-										<Link
-											href='#'
+										</p>
+										<p
+											
 											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center'
 										>
 											<IoLogoTwitter className='w-5 h-5 z-50 ' />
-										</Link>
+										</p>
 									</div>
 									{showSoonMessage && (
 										<div

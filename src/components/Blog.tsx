@@ -50,7 +50,6 @@ const Blog = () => {
 					{blogPosts.map((post) => (
 						<div
 							key={post.id}
-							href='#'
 							onClick={(e) => {
 								e.preventDefault();
 								openModal(post);
@@ -115,7 +114,7 @@ const Blog = () => {
 						isOpen={modalIsOpen}
 						onRequestClose={closeModal}
 						contentLabel='Example Modal'
-						className='inset-0 flex relative max-h-[80%] justify-center items-center z-50 overflow-y-auto mx-4 my-12 top-12'
+						className='inset-0 flex relative max-h-[80%] justify-center items-center z-50 overflow-y-auto mx-4 my-12 top-12 outline-none'
 						overlayClassName='fixed top-0 left-0 right-0 bottom-0 bg-black/95 flex justify-center items-center z-50'
 					>
 						<div className='bg-white rounded-md p-4 mx-auto max-w-8xl px-6 lg:px-8 text-white relative overflow-y-auto max-h-[80vh]'>
