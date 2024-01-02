@@ -50,7 +50,6 @@ const ReviewsSlider = () => {
 												className='rounded-full object-cover w-auto h-auto'
 												placeholder='blur'
 												blurDataURL={review.img}
-												priority={true}
 											/>
 										</div>
 									</div>

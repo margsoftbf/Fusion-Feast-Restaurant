@@ -11,9 +11,13 @@ export type Category = {
 };
 
 export const navigation = [
+	{ name: 'Home', href: '/', description: 'Homepage' },
 	{ name: 'Menu', href: '/category/pizza', description: 'Check our menu' },
-	{ name: 'About Us', href: '/about', description: 'Learn more about our restaurant' },
-	{ name: 'Reviews', href: 'reviews', description: 'Check our reviews' },
+	{
+		name: 'About Us',
+		href: '/about',
+		description: 'Learn more about our restaurant',
+	},
 	{ name: 'Contact Us', href: 'contact', description: 'Contact with us' },
 ];
 

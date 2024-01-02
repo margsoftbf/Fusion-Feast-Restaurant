@@ -45,6 +45,15 @@ export interface FormDataTypes {
 	email: string;
 }
 
+export interface ContactDataTypes {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string;
+    message: string;
+}
+
+
 export interface ProductWithExtras extends Product {
 	quantity: number;
 	extraOptions: ExtraOptions;

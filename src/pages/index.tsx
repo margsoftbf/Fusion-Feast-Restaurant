@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
 import dynamic from 'next/dynamic';
 
@@ -23,6 +24,7 @@ export default function Home() {
 			<Blog />
 			<Reviews />
 			<Gallery />
+			<Contact />
 		</main>
 	);
 }

@@ -14,7 +14,7 @@ const Hero = () => {
 						alt='Chef cooking in the kitchen'
 						fill={true}
 						className='object-cover'
-						quality={75}
+						quality={100}
 						sizes='100vw'
 						placeholder='blur'
 						blurDataURL='/assets/hero/heroBig.webp'

@@ -53,7 +53,7 @@ const Gallery = () => {
 						slidesPerView: 7,
 					},
 					2000: {
-						slidesPerView: 8,
+						slidesPerView: 9,
 					},
 				}}
 			>

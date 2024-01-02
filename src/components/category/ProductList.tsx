@@ -79,7 +79,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
 						</Link>
 						<div className='flex flex-col justify-between items-center my-2 px-1'>
 							<p className='font-bold text-white text-xl lg:text-2xl font-oswald py-1'>
-								${product.price}
+								${product.price.toFixed(2)}
 							</p>
 							<button
 								className='rounded-lg mt-4 mb-1 p-1 px-2 py-2  font-bold flex items-center justify-center bg-primary text-white hover:bg-white hover:text-primary duration-200 transition ease-linear'
