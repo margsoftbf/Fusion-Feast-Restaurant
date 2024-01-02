@@ -4,9 +4,18 @@ import { Orange, Tomato } from '../../public/assets/svg';
 import BookingForm from './BookingForm';
 import ButtonFull from './common/ButtonFull';
 import { Link as ScrollLink } from 'react-scroll';
+import { motion } from 'framer-motion';
+motion;
 const Hero = () => {
 	return (
-		<div className='bg-primary relative max-h-[500px]'>
+		<motion.div
+			className='bg-primary relative max-h-[500px]'
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ opacity: 1, y: 0 }}
+			whileInView='visible'
+			viewport={{ once: true }}
+			transition={{ duration: 0.3, type: 'ease-in' }}
+		>
 			<div className='relative isolate flex justify-center items-center px-6 lg:px-8'>
 				<div className='absolute inset-0 z-[-1] '>
 					<Image
@@ -42,7 +51,7 @@ const Hero = () => {
 			<div className='hidden lg:block lg:mx-auto lg:absolute lg:-bottom-12 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-40'>
 				<BookingForm />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

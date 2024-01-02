@@ -10,6 +10,7 @@ import {
 	SubTitleLeft,
 	SubTitleRight,
 } from '../../public/assets/svg';
+import { motion } from 'framer-motion';
 
 const CategoryBox = dynamic(() => import('./category/MenuBookSlider'), {
 	loading: () => <p>Loading...</p>,
@@ -22,7 +23,10 @@ const MenuBook = () => {
 	);
 
 	return (
-		<div className='bg-secondary py-8 relative' id='menu'>
+		<motion.div className='bg-secondary py-8 relative' id='menu' animate={{ opacity: 1, y: 0 }}
+		whileInView={{ opacity: 1, y: 0 }}
+		viewport={{ once: true }}
+		transition={{ duration: 0.5, type: 'ease-in' }} >
 			<Fries className='w-36 h-36 absolute bottom-0 left-0 lg:bottom-12' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-6 lg:w-5 lg:h-5 lg:bottom-12' />
 			<Ellipse className='w-1 h-1 absolute top-48 left-48 lg:w-5 lg:h-5 lg:top-28' />
@@ -72,7 +76,7 @@ const MenuBook = () => {
 						))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

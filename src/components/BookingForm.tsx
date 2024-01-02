@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import {FormDataTypes} from '@/types/types';
-
+import { FormDataTypes } from '@/types/types';
+import { motion } from 'framer-motion';
 
 const BookingForm = () => {
 	const initialFormData: FormDataTypes = {
@@ -58,7 +58,14 @@ const BookingForm = () => {
 	};
 
 	return (
-		<div className='bg-white rounded-lg h-24 w-[900px] shadow-md relative'>
+		<motion.div
+			className='bg-white rounded-lg h-24 w-[900px] shadow-md relative'
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ opacity: 1, y: 0 }}
+			whileInView='visible'
+			viewport={{ once: true }}
+			transition={{ duration: 0.3, type: 'ease-in' }}
+		>
 			<form
 				className='flex w-full h-full gap-6 items-center justify-center text-[14px]'
 				onSubmit={handleSubmit}
@@ -153,7 +160,7 @@ const BookingForm = () => {
 					</div>
 				</div>
 			)}
-		</div>
+		</motion.div>
 	);
 };
 

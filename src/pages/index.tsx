@@ -1,5 +1,4 @@
 import Contact from '@/components/Contact';
-import Navbar from '@/components/Navbar';
 import dynamic from 'next/dynamic';
 
 const Hero = dynamic(() => import('@/components/Hero'));

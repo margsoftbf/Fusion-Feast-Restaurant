@@ -17,6 +17,8 @@ import MobileMenu from './navbar/MobileMenu';
 import { useRouter } from 'next/router';
 import Cart from './Cart';
 
+import { motion } from 'framer-motion';
+
 const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
@@ -63,8 +65,20 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
+	const variants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: { opacity: 1, y: 0 },
+	};
+
 	return (
-		<header className='sticky top-0 z-[250] header-underline bg-primary '>
+		<motion.header
+			className='sticky top-0 z-[250] header-underline bg-primary '
+			initial={{ opacity: 0, y: 50 }} 
+			animate={{ opacity: 1, y: 0 }}
+			whileInView='visible'
+			viewport={{ once: true }}
+			transition={{ duration: 0.3, type: 'ease-in' }}
+		>
 			<nav
 				className='flex items-center justify-between  p-4 max-w-8xl mx-auto '
 				aria-label='Global'
@@ -175,7 +189,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 				isCartOpen={isCartOpen}
 				cartItemsCount={cartItemsCount}
 			/>
-		</header>
+		</motion.header>
 	);
 };
 

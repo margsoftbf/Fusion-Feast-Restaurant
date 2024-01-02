@@ -12,13 +12,21 @@ import {
 import Image from 'next/image';
 import ButtonEmpty from './common/ButtonEmpty';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 const imageStyle = {
 	borderRadius: '0.75rem',
 };
 
 const About = () => {
 	return (
-		<div className='relative bg-secondary overflow-hidden'>
+		<motion.div
+			className='relative bg-secondary overflow-hidden'
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ opacity: 1, y: 0 }}
+			whileInView='visible'
+			viewport={{ once: true }}
+			transition={{ duration: 0.3, type: 'ease-in' }}
+		>
 			<div className='max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-12 mt-8 py-6 sm:py-12 lg:py-20'>
 				<div className='text-white  md:w-1/2 flex justify-center items-center relative m-2 '>
 					<Ellipse className='w-3 h-3 absolute bottom-0 left-6 lg:w-5 lg:h-5 lg:bottom-12' />
@@ -105,7 +113,7 @@ const About = () => {
 					</Link>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
