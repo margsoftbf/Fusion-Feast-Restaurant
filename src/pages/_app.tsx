@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/store/store';
 import Modal from 'react-modal';
 import { ModalProvider } from '@/context/ModalContext';
+import Footer from '@/components/Footer';
 
 const DynamicNavbar = dynamic(() => import('@/components/Navbar'), {
 	loading: () => <p>Loading Navbar...</p>,
@@ -29,13 +30,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				<link rel='icon' href='/favicon.ico' />
 				<meta httpEquiv='Content-Language' content='en' />
 			</Head>
-			{/* <Navbar showSearch={showSearch} setShowSearch={setShowSearch} /> */}
 			<DynamicNavbar showSearch={showSearch} setShowSearch={setShowSearch} />
 			<main onClick={() => setShowSearch(false)} className='m-auto'>
 				<ModalProvider>
 					<Component {...pageProps} setShowSearch={setShowSearch} />
 				</ModalProvider>
 			</main>
+			<Footer />
 		</Provider>
 	);
 };

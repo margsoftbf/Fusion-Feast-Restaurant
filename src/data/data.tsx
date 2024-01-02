@@ -3,6 +3,9 @@ import { BiSushi } from 'react-icons/bi';
 import { MdOutlineDinnerDining } from 'react-icons/md';
 import { LuSoup, LuSalad } from 'react-icons/lu';
 import { Product, ReviewsProps } from '@/types/types';
+import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
+import { ComponentPropsWithoutRef } from 'react';
+
 
 export type Category = {
 	name: string;
@@ -20,6 +23,60 @@ export const navigation = [
 	},
 	{ name: 'Contact Us', href: 'contact', description: 'Contact with us' },
 ];
+
+export const navigationFooter = {
+	solutions: [
+		{ name: 'Marketing', href: '#' },
+		{ name: 'Analytics', href: '#' },
+		{ name: 'Commerce', href: '#' },
+		{ name: 'Insights', href: '#' },
+	],
+	support: [
+		{ name: 'Pricing', href: '#' },
+		{ name: 'Documentation', href: '#' },
+		{ name: 'Guides', href: '#' },
+		{ name: 'API Status', href: '#' },
+	],
+	company: [
+		{ name: 'About', href: '#' },
+		{ name: 'Blog', href: '#' },
+		{ name: 'Jobs', href: '#' },
+		{ name: 'Press', href: '#' },
+		{ name: 'Partners', href: '#' },
+	],
+	legal: [
+		{ name: 'Claim', href: '#' },
+		{ name: 'Privacy', href: '#' },
+		{ name: 'Terms', href: '#' },
+	],
+	social: [
+		{
+			name: 'Facebook',
+			href: '#',
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaFacebook {...props} />
+		},
+		{
+			name: 'Instagram',
+			href: '#',
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaInstagram {...props} />
+		},
+		{
+			name: 'Twitter',
+			href: '#',
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaTwitter {...props} />
+		},
+		{
+			name: 'GitHub',
+			href: '#',
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaGithub {...props} />
+		},
+		{
+			name: 'YouTube',
+			href: '#',
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaYoutube {...props} />
+		},
+	],
+};
 
 export const chefs = [
 	{
