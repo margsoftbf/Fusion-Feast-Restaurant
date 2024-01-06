@@ -65,10 +65,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
-	const variants = {
-		hidden: { opacity: 0, y: 50 },
-		visible: { opacity: 1, y: 0 },
-	};
+
 
 	return (
 		<motion.header
