@@ -4,7 +4,11 @@ import 'swiper/css';
 import Image from 'next/image';
 import { FaInstagram } from 'react-icons/fa';
 import { Autoplay } from 'swiper/modules';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
+
 const Gallery = () => {
+	const { ref, controls } = useScrollAnimation();
 	const images = [
 		'/assets/gallery/gallery-1.webp',
 		'/assets/gallery/gallery-2.webp',
@@ -21,7 +25,14 @@ const Gallery = () => {
 	];
 
 	return (
-		<div className='mx-auto w-full m-2 p-8'>
+		<motion.div className='mx-auto w-full m-2 p-8' 	ref={ref}
+		animate={controls}
+		initial='hidden'
+		variants={{
+			visible: { opacity: 1, y: 0 },
+			hidden: { opacity: 0, y: 50 },
+		}}
+		transition={{ duration: 1.5, type: 'ease-in' }}>
 			<Swiper
 				spaceBetween={30}
 				slidesPerView={1}
@@ -76,7 +87,7 @@ const Gallery = () => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-		</div>
+		</motion.div>
 	);
 };
 

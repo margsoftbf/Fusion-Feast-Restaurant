@@ -13,26 +13,40 @@ import Image from 'next/image';
 import ButtonEmpty from './common/ButtonEmpty';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+
 const imageStyle = {
 	borderRadius: '0.75rem',
 };
 
 const About = () => {
+	const { ref, controls } = useScrollAnimation();
+
 	return (
 		<motion.div
 			className='relative bg-secondary overflow-hidden'
-			initial={{ opacity: 0, y: 50 }}
-			animate={{ opacity: 1, y: 0 }}
-			whileInView='visible'
-			viewport={{ once: true }}
-			transition={{ duration: 0.3, type: 'ease-in' }}
+			ref={ref}
+			animate={controls}
+			initial='hidden'
+			variants={{
+				visible: { opacity: 1, y: 0 },
+				hidden: { opacity: 0, y: 50 },
+			}}
+			transition={{ duration: 1.2, type: 'ease-in' }}
 		>
 			<div className='max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-12 mt-8 py-6 sm:py-12 lg:py-20'>
 				<div className='text-white  md:w-1/2 flex justify-center items-center relative m-2 '>
 					<Ellipse className='w-3 h-3 absolute bottom-0 left-6 lg:w-5 lg:h-5 lg:bottom-12' />
 					<Ellipse className='w-1 h-1 absolute top-12 left-6 lg:w-5 lg:h-5 lg:top-28' />
 					<EmptyEllipse className='w-2 h-2 absolute top-16 left-6 lg:w-5 lg:h-5 lg:top-40' />
-					<div className='w-48 h-64 sm:h-96 sm:w-60 lg:h-[500px] lg:w-[300px] relative ml-12 rounded-3xl'>
+					<motion.div
+						className='w-48 h-64 sm:h-96 sm:w-60 lg:h-[500px] lg:w-[300px] relative ml-12 rounded-3xl'
+						initial={{ opacity: 0, y: -100 }}
+						animate={{ opacity: 1, y: 0 }}
+						whileInView='visible'
+						viewport={{ once: true }}
+						transition={{ duration: 1.8, type: 'ease-in' }}
+					>
 						<div className='absolute h-16 w-24 rounded-md bg-white z-[41] -right-6 top-6 flex flex-col items-center justify-center gap-1'>
 							<p className='text-black font-lemonada '>144+</p>
 							<p className='text-black text-xs font-openSans'>Master Chefs</p>
@@ -56,10 +70,17 @@ const About = () => {
 							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 							alt='Chef cooking in the kitchen'
 						/>
-					</div>
+					</motion.div>
 				</div>
 				<Taco className='w-60 h-60 absolute bottom-0 right-0 opacity-40 lg:opacity-100' />
-				<div className='text-white md:w-1/2 relative flex flex-col mr-4 items-center justify-center md:items-start'>
+				<motion.div
+					className='text-white md:w-1/2 relative flex flex-col mr-4 items-center justify-center md:items-start'
+					initial={{ opacity: 0, x: 50 }}
+					animate={{ opacity: 1, x: 0 }}
+					whileInView='visible'
+					viewport={{ once: true }}
+					transition={{ duration: 2.3, type: 'ease-in' }}
+				>
 					<div className='flex items-center justify-center gap-2 relative my-2'>
 						<SubTitleLeft className='w-7 h-7' />
 						<h2 className='font-lemonada text-myOrange font-light'>About Us</h2>
@@ -111,7 +132,7 @@ const About = () => {
 					<Link aria-label='about page' href='/about'>
 						<ButtonEmpty>Learn More</ButtonEmpty>
 					</Link>
-				</div>
+				</motion.div>
 			</div>
 		</motion.div>
 	);

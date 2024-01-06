@@ -12,6 +12,8 @@ import { Product } from '@/types/types';
 import React, { useState, useEffect } from 'react';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
 
 const TodayDiscount = () => {
 	const [randomProducts, setRandomProducts] = useState<Product[]>([]);
@@ -38,8 +40,21 @@ const TodayDiscount = () => {
 		setRandomProducts(getRandomProducts(products, 6));
 	}, []);
 
+	const { ref, controls } = useScrollAnimation();
+
 	return (
-		<div className='bg-primary py-8 relative' id='menu'>
+		<motion.div
+			className='bg-primary py-8 relative'
+			id='menu'
+			ref={ref}
+			animate={controls}
+			initial='hidden'
+			variants={{
+				visible: { opacity: 1, y: 0 },
+				hidden: { opacity: 0, y: 50 },
+			}}
+			transition={{ duration: 1.5, type: 'ease-in' }}
+		>
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-6 lg:w-5 lg:h-5 lg:bottom-12' />
 			<Ellipse className='w-1 h-1 absolute top-48 left-48 lg:w-5 lg:h-5 lg:top-28' />
 			<EmptyEllipse className='w-2 h-2 absolute top-32 right-96 lg:w-5 lg:h-5 lg:top-40' />
@@ -119,7 +134,7 @@ const TodayDiscount = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

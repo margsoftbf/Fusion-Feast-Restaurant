@@ -7,6 +7,9 @@ import {
 import { SubTitleLeft } from '../../public/assets/svg';
 import ButtonFull from './common/ButtonFull';
 import { ContactDataTypes } from '@/types/types';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
+
 const Contact = () => {
 	const initialFormData = {
 		firstName: '',
@@ -68,8 +71,17 @@ const Contact = () => {
 		}
 	};
 
+	const { ref, controls } = useScrollAnimation();
+
 	return (
-		<div id='contact' className='relative isolate bg-secondary'>
+		<motion.div id='contact' className='relative isolate bg-secondary' 	ref={ref}
+		animate={controls}
+		initial='hidden'
+		variants={{
+			visible: { opacity: 1, y: 0 },
+			hidden: { opacity: 0, y: 50 },
+		}}
+		transition={{ duration: 1.5, type: 'ease-in' }}>
 			<div className='mx-auto grid max-w-6xl grid-cols-1 lg:grid-cols-2'>
 				<div className='relative px-6 pb-20 pt-12 lg:static lg:px-8'>
 					<div className='mx-auto max-w-xl lg:mx-0 lg:max-w-lg'>
@@ -276,7 +288,7 @@ const Contact = () => {
 				</form>
 				{isFormSubmitted && <div>Your message has been sent!</div>}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

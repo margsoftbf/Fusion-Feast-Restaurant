@@ -7,10 +7,21 @@ import {
 } from '../../public/assets/svg';
 import 'swiper/css';
 import ReviewsSlider from './ReviewsSlider';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
+
 
 const Reviews = () => {
+	const { ref, controls } = useScrollAnimation();
 	return (
-		<div className='bg-secondary py-8 relative overflow-hidden' id='reviews'>
+		<motion.div className='bg-secondary py-8 relative overflow-hidden' id='reviews' 	ref={ref}
+		animate={controls}
+		initial='hidden'
+		variants={{
+			visible: { opacity: 1, y: 0 },
+			hidden: { opacity: 0, y: 50 },
+		}}
+		transition={{ duration: 1.5, type: 'ease-in' }}>
 			<EmptyEllipse className='w-2 h-2 absolute top-16 right-60 lg:w-8 lg:h-8 lg:top-40' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-12 lg:w-8 lg:h-8 lg:bottom-12' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 left-48 lg:w-5 lg:h-5 lg:bottom-12' />
@@ -33,7 +44,7 @@ const Reviews = () => {
 				</div>
 				<ReviewsSlider />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

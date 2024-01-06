@@ -60,11 +60,11 @@ const BookingForm = () => {
 	return (
 		<motion.div
 			className='bg-white rounded-lg h-24 w-[900px] shadow-md relative'
-			initial={{ opacity: 0, y: 50 }}
+			initial={{ opacity: 0, y: -100 }}
 			animate={{ opacity: 1, y: 0 }}
 			whileInView='visible'
 			viewport={{ once: true }}
-			transition={{ duration: 0.3, type: 'ease-in' }}
+			transition={{ duration: 2.3, type: 'ease-in' }}
 		>
 			<form
 				className='flex w-full h-full gap-6 items-center justify-center text-[14px]'

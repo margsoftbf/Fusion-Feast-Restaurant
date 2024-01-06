@@ -13,6 +13,9 @@ import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { IoLogoTwitter } from 'react-icons/io';
 import ButtonFull from './common/ButtonFull';
 import { chefs } from '@/data/data';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
+
 
 const Chefs = () => {
 	const [showSoonMessage, setShowSoonMessage] = useState(false);
@@ -24,8 +27,17 @@ const Chefs = () => {
 			setShowSoonMessage(false);
 		}, 3000);
 	};
+
+	const { ref, controls } = useScrollAnimation();
 	return (
-		<div className='bg-secondary py-8 relative'>
+		<motion.div className='bg-secondary py-8 relative' 	ref={ref}
+		animate={controls}
+		initial='hidden'
+		variants={{
+			visible: { opacity: 1, y: 0 },
+			hidden: { opacity: 0, y: 50 },
+		}}
+		transition={{ duration: 1.5, type: 'ease-in' }}>
 			<Fries className='w-40 h-40 absolute bottom-12 left-0 opacity-60 ' />
 			<Drink className='w-40 h-40 absolute top-12 right-0 opacity-60' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-60 lg:w-5 lg:h-5 lg:bottom-12' />
@@ -104,7 +116,7 @@ const Chefs = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

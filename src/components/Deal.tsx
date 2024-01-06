@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Orange } from '../../public/assets/svg';
 import ButtonFull from './common/ButtonFull';
 import { motion } from 'framer-motion';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const Deal = () => {
 	const [showNotification, setShowNotification] = useState(false);
@@ -46,12 +47,20 @@ const Deal = () => {
 		}, 3000);
 	};
 
+	const { ref, controls } = useScrollAnimation();
+
 	return (
-		<motion.div className='bg-primary p-4 text-white flex justify-between items-center relative overflow-hidden' 	initial={{ opacity: 0, y: 50 }} 
-		animate={{ opacity: 1, y: 0 }}
-		whileInView='visible'
-		viewport={{ once: true }}
-		transition={{ duration: 0.5, type: 'ease-in' }}>
+		<motion.div
+			ref={ref}
+			animate={controls}
+			initial='hidden'
+			variants={{
+				visible: { opacity: 1, y: 0 },
+				hidden: { opacity: 0, y: 50 },
+			}}
+			transition={{ duration: 1.2, type: 'ease-in' }}
+			className='bg-primary p-4 text-white flex justify-between items-center relative overflow-hidden'
+		>
 			<Orange className='w-40 h-40 absolute -top-3 -left-5 rotate-45' />
 			<div className='max-w-8xl mx-auto flex flex-col md:flex-row md:max-w-2xl lg:max-w-4xl items-center justify-between w-full'>
 				<div className='flex flex-col items-center md:items-start gap-2 my-4'>

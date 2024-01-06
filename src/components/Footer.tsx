@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import ButtonFull from './common/ButtonFull';
 import { navigationFooter } from '@/data/data';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
 
 
 const Footer = () => {
@@ -8,9 +10,16 @@ const Footer = () => {
 	const isHomePage = router.pathname === '/';
 
 	const footerClass = isHomePage ? 'bg-primary' : 'bg-secondary';
-
+	const { ref, controls } = useScrollAnimation();
 	return (
-		<footer className={footerClass} aria-labelledby='footer-heading'>
+		<motion.footer className={footerClass} aria-labelledby='footer-heading' 	ref={ref}
+		animate={controls}
+		initial='hidden'
+		variants={{
+			visible: { opacity: 1, y: 0 },
+			hidden: { opacity: 0, y: 50 },
+		}}
+		transition={{ duration: 1.5, type: 'ease-in' }}>
 			<h2 id='footer-heading' className='sr-only'>
 				Footer
 			</h2>
@@ -135,7 +144,7 @@ const Footer = () => {
 					</p>
 				</div>
 			</div>
-		</footer>
+		</motion.footer>
 	);
 };
 
