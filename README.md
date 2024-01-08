@@ -20,11 +20,17 @@ https://fusion-feast-restaurant.vercel.app/
 
 ## Technologies Used:
 React & Redux: For robust state management and high performance.
+
 Next.js: Leveraging server-side rendering for enhanced SEO and faster load times.
+
 TypeScript: Ensuring type-safe and reliable codebase.
+
 Tailwind CSS: For sleek, responsive design.
+
 Framer Motion: Adding smooth and engaging animations.
+
 Swiper: Interactive sliders for a dynamic user interface.
+
 UUID: Unique identifiers for secure and efficient data handling.
 
 
@@ -32,24 +38,40 @@ UUID: Unique identifiers for secure and efficient data handling.
 Fusion Feast’s layout includes:
 
 Home Page
+
 Dynamic Product Categories
+
 Search Functionality
+
 About Us Page
+
 Menu with Price Range Selection
+
 Modal-based Product Addition
+
 Cart and Checkout Page
+
 Sorting and Discount Options
+
 Blog and Reviews Sections
+
 Our Chefs Showcase
+
 Gallery
+
 Contact Page
+
 Comprehensive Footer
 
 
 ## Custom Typography:
 Bakilda: Used for the brand name and section descriptions.
+
 Lemonada (Google Fonts): Styling for sub-titles and smaller sections.
+
 Open Sans: Primary font for general text content.
+
+
 
 Visit Fusion Feast for a unique dining experience. For any inquiries or assistance, please use our contact page or reach out to our support team.
 

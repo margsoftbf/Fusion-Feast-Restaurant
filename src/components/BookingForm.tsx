@@ -64,7 +64,7 @@ const BookingForm = () => {
 			animate={{ opacity: 1, y: 0 }}
 			whileInView='visible'
 			viewport={{ once: true }}
-			transition={{ duration: 2.3, type: 'ease-in' }}
+			transition={{ duration: 1.3, type: 'ease-in' }}
 		>
 			<form
 				className='flex w-full h-full gap-6 items-center justify-center text-[14px]'
