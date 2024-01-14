@@ -19,7 +19,7 @@ const Footer = () => {
 			visible: { opacity: 1, y: 0 },
 			hidden: { opacity: 0, y: 50 },
 		}}
-		transition={{ duration: 0.7, type: 'ease-in' }}>
+		transition={{ duration: 0.2, type: 'ease-in' }}>
 			<h2 id='footer-heading' className='sr-only'>
 				Footer
 			</h2>
