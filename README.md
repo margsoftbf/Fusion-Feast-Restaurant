@@ -6,10 +6,6 @@ Welcome to Fusion Feast, a cutting-edge digital restaurant experience where trad
 
 https://fusion-feast-restaurant.vercel.app/
 
-## Screenshot
-
-![App Screenshoot](https://margsoftbf.github.io/Portfolio/assets/FusionFeast.webp)
-
 ## Download and Installation
 
 ```bash
@@ -17,6 +13,11 @@ https://fusion-feast-restaurant.vercel.app/
   npm i
   npm run dev
 ```
+
+## Screenshot
+
+![App Screenshoot](https://margsoftbf.github.io/Portfolio/assets/FusionFeast.webp)
+
 
 ## Technologies Used:
 

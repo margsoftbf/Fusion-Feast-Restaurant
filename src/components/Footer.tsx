@@ -4,7 +4,6 @@ import { navigationFooter } from '@/data/data';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 
-
 const Footer = () => {
 	const router = useRouter();
 	const isHomePage = router.pathname === '/';
@@ -12,14 +11,18 @@ const Footer = () => {
 	const footerClass = isHomePage ? 'bg-primary' : 'bg-secondary';
 	const { ref, controls } = useScrollAnimation();
 	return (
-		<motion.footer className={footerClass} aria-labelledby='footer-heading' 	ref={ref}
-		animate={controls}
-		initial='hidden'
-		variants={{
-			visible: { opacity: 1, y: 0 },
-			hidden: { opacity: 0, y: 50 },
-		}}
-		transition={{ duration: 0.2, type: 'ease-in' }}>
+		<motion.footer
+			className={footerClass}
+			aria-labelledby='footer-heading'
+			ref={ref}
+			animate={controls}
+			initial='hidden'
+			variants={{
+				visible: { opacity: 1, y: 0 },
+				hidden: { opacity: 0, y: 50 },
+			}}
+			transition={{ duration: 0.02, type: 'ease-in' }}
+		>
 			<h2 id='footer-heading' className='sr-only'>
 				Footer
 			</h2>

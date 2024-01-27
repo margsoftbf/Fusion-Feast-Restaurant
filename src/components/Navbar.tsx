@@ -74,7 +74,7 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 			animate={{ opacity: 1, y: 0 }}
 			whileInView='visible'
 			viewport={{ once: true }}
-			transition={{ duration: 0.5, type: 'ease-in' }}
+			transition={{ duration: 0.4, type: 'ease-in' }}
 		>
 			<nav
 				className='flex items-center justify-between  p-4 max-w-8xl mx-auto '
