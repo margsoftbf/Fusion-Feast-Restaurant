@@ -16,11 +16,21 @@ https://fusion-feast-restaurant.vercel.app/
 
 ## Screenshot
 
+# Full screen
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FullScreen.png)
+
+# Add to Cart
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/AddToCart1.jpg?raw=true)
+
+# Food Menu
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FoodMenu.jpg?raw=true)
+
+# Food Details
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FoodDetails.jpg?raw=true)
+
+# Checkout Page
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/Checkout.jpg?raw=true)
+
 
 ## Technologies Used:
 
