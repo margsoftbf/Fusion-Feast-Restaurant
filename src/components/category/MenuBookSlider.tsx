@@ -6,7 +6,6 @@ import 'swiper/css';
 import { Product } from '@/types/types';
 import MenuBookSlide from './MenuBookSlide';
 
-
 type CategoryBoxProps = {
     categorySlug: string;
     products: Product[];

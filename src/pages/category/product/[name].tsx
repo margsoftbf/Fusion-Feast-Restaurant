@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import { products, addons } from '../../../data/data';
-import ProductHero from '@/components/Product/ProductHero';
+import ProductHero from '@/components/product/ProductHero';
 import BreadCrumb from '@/components/common/BreadCrumb';
 import { Ellipse, EmptyEllipse, Tomato } from '../../../../public/assets/svg';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { CartItem, ExtraOptions } from '@/types/types';
 import { addItem } from '@/store/cartSlice';
-import ProductDetails from '@/components/Product/ProductDetails';
-import ProductDescription from '@/components/Product/ProductDescription';
-import RelatedProducts from '@/components/Product/RelatedProducts';
+import ProductDetails from '@/components/product/ProductDetails';
+import ProductDescription from '@/components/product/ProductDescription';
+import RelatedProducts from '@/components/product/RelatedProducts';
 import ReviewsSlider from '@/components/ReviewsSlider';
 import Custom404 from '@/pages/404';
 
