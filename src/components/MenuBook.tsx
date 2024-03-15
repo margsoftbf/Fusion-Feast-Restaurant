@@ -10,7 +10,7 @@ import {
 } from '../../public/assets/svg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
-import MenuBookSlider from './category/MenuBookSlider';
+import MenuBookSlider from './Category/MenuBookSlider';
 
 const MenuBook = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(

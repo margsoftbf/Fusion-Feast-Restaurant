@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import {  DesktopSearchBarProps } from '@/types/types';
 
-
 const DesktopSearchBar = ({
 	searchTerm,
 	setSearchTerm,

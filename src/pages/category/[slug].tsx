@@ -13,7 +13,7 @@ import {
 	SortBy,
 	CategoryHero,
 	ProductList,
-} from '@/components/category/index';
+} from '@/components/Category/index';
 import { Cookie, Ellipse, EmptyEllipse } from '../../../public/assets/svg';
 import { useModal } from '@/context/ModalContext';
 

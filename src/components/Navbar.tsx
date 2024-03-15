@@ -13,12 +13,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { products, navigation } from '@/data/data';
 import { SearchProps } from '@/types/types';
-import DesktopSearchBar from './Navbar/DesktopSearchBar';
 import MobileMenu from './Navbar/MobileMenu';
 import { useRouter } from 'next/router';
 import Cart from './Cart';
 import { motion } from 'framer-motion';
 import LoginModal from './Auth/LoginModal';
+import DesktopSearchBar from './Navbar/DesktopSearchBar';
 
 const Navbar = ({ showSearch, setShowSearch }: SearchProps) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
