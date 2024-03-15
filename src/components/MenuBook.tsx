@@ -12,11 +12,8 @@ import {
 } from '../../public/assets/svg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import MenuBookSlider from './Category/MenuBookSlider';
 
-const CategoryBox = dynamic(() => import('./Category/MenuBookSlider'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
 
 const MenuBook = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -76,7 +73,7 @@ const MenuBook = () => {
 								!selectedCategory || category.slug === selectedCategory
 						)
 						.map((category) => (
-							<CategoryBox
+							<MenuBookSlider
 								key={category.slug}
 								categorySlug={category.slug}
 								products={products.filter(
