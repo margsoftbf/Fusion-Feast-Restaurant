@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { categories, products } from '@/data/data';
-
 import React from 'react';
 import {
 	Ellipse,
