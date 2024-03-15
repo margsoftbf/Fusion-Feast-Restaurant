@@ -1,4 +1,4 @@
-import CheckoutHero from '@/components/checkout/CheckoutHero';
+import CheckoutHero from '@/components/Checkout/CheckoutHero';
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import useCart from '@/hooks/useCart';
@@ -10,9 +10,9 @@ import {
 	SubTitleRight,
 } from '../../public/assets/svg';
 import Promo from '../components/cart/Promo';
-import CartItemList from '@/components/checkout/CartItemList';
-import Cost from '@/components/checkout/Cost';
-import CheckoutForm from '@/components/checkout/CheckoutForm';
+import CartItemList from '@/components/Checkout/CartItemList';
+import Cost from '@/components/Checkout/Cost';
+import CheckoutForm from '@/components/Checkout/CheckoutForm';
 
 const Checkout = () => {
 	const { orderTotal } = useCart();

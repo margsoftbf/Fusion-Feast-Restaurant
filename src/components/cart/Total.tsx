@@ -1,12 +1,12 @@
 import React from 'react';
 import { TotalProps } from '@/types/types';
 
-const Total: React.FC<TotalProps> = ({
+const Total = ({
 	subtotal,
 	shipping,
 	tax,
 	orderTotal,
-}) => {
+}: TotalProps) => {
 
 	return (
 		<div className='border-t border-gray-200 pt-6'>

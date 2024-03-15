@@ -1,22 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import { Product } from '@/types/types';
+import {  DesktopSearchBarProps } from '@/types/types';
 
-interface DesktopSearchBarProps {
-	searchTerm: string;
-	setSearchTerm: (value: string) => void;
-	searchResults: Product[];
-	onSearchClick: (e: React.MouseEvent) => void;
-	onResultClick: (id: number) => void;
-}
-const DesktopSearchBar: React.FC<DesktopSearchBarProps> = ({
+
+const DesktopSearchBar = ({
 	searchTerm,
 	setSearchTerm,
 	searchResults,
 	onSearchClick,
 	onResultClick,
-}) => {
+}: DesktopSearchBarProps) => {
 	return (
 		<div className='w-36 flex relative'>
 			<div className='w-36 flex'>

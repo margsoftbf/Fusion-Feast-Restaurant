@@ -6,24 +6,28 @@ import {
 	XMarkIcon,
 	ShoppingBagIcon,
 	PhoneIcon,
+	UserIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { products, navigation } from '@/data/data';
 import { SearchProps } from '@/types/types';
-import DesktopSearchBar from './navbar/DesktopSearchBar';
-import MobileMenu from './navbar/MobileMenu';
+import DesktopSearchBar from './Navbar/DesktopSearchBar';
+import MobileMenu from './Navbar/MobileMenu';
 import { useRouter } from 'next/router';
 import Cart from './Cart';
-
 import { motion } from 'framer-motion';
+import LoginModal from './Auth/LoginModal';
 
-const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
+const Navbar = ({ showSearch, setShowSearch }: SearchProps) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [modalOpen, setOpenModal] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 	const searchInputRef = useRef<HTMLInputElement>(null);
+	const openModal = () => setOpenModal(true);
+	const closeModal = () => setOpenModal(false);
 
 	const toggleCart = () => {
 		setCartOpen(!isCartOpen);
@@ -65,12 +69,10 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 		}
 	};
 
-
-
 	return (
 		<motion.header
 			className='sticky top-0 z-[250] header-underline bg-primary '
-			initial={{ opacity: 0, y: 50 }} 
+			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			whileInView='visible'
 			viewport={{ once: true }}
@@ -173,6 +175,14 @@ const Navbar: React.FC<SearchProps> = ({ showSearch, setShowSearch }) => {
 						toggleCart={toggleCart}
 						cartItemsCount={cartItemsCount}
 					/>
+					<button
+						onClick={openModal}
+						className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
+					>
+						<UserIcon className='w-5 h-5' />
+						<span>Login</span>
+					</button>
+					<LoginModal isOpen={modalOpen} closeModal={closeModal} />
 				</div>
 			</nav>
 			<MobileMenu

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
+import { PriceRangeProps } from '@/types/types';
 
-interface PriceRangeProps {
-    onMaxPriceChange: (newMaxPrice: number) => void;
-  }
-
-const PriceRange: React.FC<PriceRangeProps> = ({ onMaxPriceChange }) => {
+const PriceRange = ({ onMaxPriceChange }: PriceRangeProps) => {
 	const [maxPrice, setMaxPrice] = useState(100);
 
 	const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {

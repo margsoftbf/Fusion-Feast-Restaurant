@@ -1,17 +1,12 @@
 import Link from 'next/link';
 import ButtonEmpty from '../common/ButtonEmpty';
-import { Product } from '@/types/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import MenuBookSlide from './MenuBookSlide'; 
+import { CategoryBoxProps } from '@/types/types';
 
-type CategoryBoxProps = {
-    categorySlug: string;
-    products: Product[];
-};
-
-const MenuBookSlider: React.FC<CategoryBoxProps> = ({ products, categorySlug }) => {
+const MenuBookSlider = ({ products, categorySlug }: CategoryBoxProps) => {
     return (
         <div className='mt-6 gap-x-4 gap-y-10 sm:gap-x-6  md:gap-y-0 lg:gap-x-8 flex flex-col items-center'>
             <Swiper

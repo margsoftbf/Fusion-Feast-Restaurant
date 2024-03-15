@@ -1,24 +1,14 @@
 import useCart from '@/hooks/useCart';
-import { CartItem as CartItemType, Product } from '@/types/types';
+import { CartItemProps } from '@/types/types';
 
-interface CartItemProps {
-	item: CartItemType;
-	onIncrement: (item: CartItemType) => void;
-	onDecrement: (item: CartItemType) => void;
-	onRemove: (item: CartItemType) => void;
-	products: Product[];
-	totalPriceItems: (price: number, quantity: number) => string;
-}
-
-const CartItem: React.FC<CartItemProps> = ({
+const CartItem = ({
 	item,
 	onIncrement,
 	onDecrement,
 	onRemove,
 	products,
 	totalPriceItems,
-}) => {
-
+}: CartItemProps) => {
 	const { formatAddons } = useCart();
 
 	return (

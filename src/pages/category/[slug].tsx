@@ -13,7 +13,7 @@ import {
 	SortBy,
 	CategoryHero,
 	ProductList,
-} from '@/components/category/index';
+} from '@/components/Category/index';
 import { Cookie, Ellipse, EmptyEllipse } from '../../../public/assets/svg';
 import { useModal } from '@/context/ModalContext';
 
@@ -34,7 +34,6 @@ const CategoryPage = () => {
 
 	const [maxPrice, setMaxPrice] = useState(100);
 	const { closeModal, isModalOpen } = useModal();
-
 
 	const handleCloseModal = () => {
 		closeModal();
@@ -96,9 +95,7 @@ const CategoryPage = () => {
 								/>
 								<SortBy sortKey={sortKey} handleSortChange={handleSortChange} />
 							</div>
-							<ProductList
-								products={currentProducts}
-							/>
+							<ProductList products={currentProducts} />
 							<Pagination
 								currentPage={currentPage}
 								pageCount={pageCount}

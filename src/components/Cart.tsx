@@ -2,18 +2,13 @@ import { Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { products } from '@/data/data';
-
+import { CartProps } from '@/types/types';
 import { Promo, Total, CartItem } from './cart/index';
 import Link from 'next/link';
 import useCart from '@/hooks/useCart';
 
-interface CartProps {
-	isCartOpen: boolean;
-	toggleCart: () => void;
-	cartItemsCount: number;
-}
 
-const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
+const Cart = ({ isCartOpen, toggleCart }: CartProps) => {
 	const {
 		cartItems,
 		handleIncrement,

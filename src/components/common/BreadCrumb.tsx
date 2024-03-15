@@ -1,15 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { BreadCrumbProps } from '@/types/types';
 
-interface BreadCrumbProps {
-	categoryName?: string;
-	productName?: string;
-}
-
-const BreadCrumb: React.FC<BreadCrumbProps> = ({
+const BreadCrumb = ({
 	categoryName,
 	productName,
-}) => {
+}: BreadCrumbProps) => {
 	const formatBreadcrumb = (str: string) => {
 		return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
 	};

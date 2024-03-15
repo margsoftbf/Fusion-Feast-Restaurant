@@ -1,8 +1,6 @@
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
-
 import Image from 'next/image';
 ButtonEmpty;
-import Link from 'next/link';
 import ButtonEmpty from '../common/ButtonEmpty';
 import {
 	Chef,
@@ -12,7 +10,6 @@ import {
 	FreshFood,
 	LineDeal,
 	SubTitleLeft,
-	Taco,
 } from '../../../public/assets/svg';
 const imageStyle = {
 	borderRadius: '0.75rem',
@@ -26,7 +23,7 @@ const AboutPageSection = () => {
 			<Ellipse className='w-1 h-1 absolute top-12 left-96 lg:w-5 lg:h-5 lg:top-28' />
 			<EmptyEllipse className='w-2 h-2 absolute top-16 left-60 lg:w-5 lg:h-5 lg:top-40' />
 			<div className='max-w-8xl mx-auto flex flex-col lg:flex-row  gap-12 mt-8 '>
-				<div className='text-white  lg:w-1/2 flex justify-center items-center relative m-2 lg:justify-start'>
+				<div className='text-white  lg:w-1/2 flex justify-center items-center relative m-2 lg:justify-end lg:pr-12'>
 					<div className='w-60 h-64 sm:h-96 sm:w-72 lg:h-[500px] lg:w-[350px] relative ml-12 rounded-3xl'>
 						<div className='absolute w-full top-0 h-full rounded-xl bg-black/20 z-40'></div>
 						<Image

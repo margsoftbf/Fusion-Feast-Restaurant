@@ -1,21 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import { Product } from '@/types/types';
+import { MobileSearchBarProps } from '@/types/types';
 
-interface MobileSearchBarProps {
-	searchTerm: string;
-	setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-	searchResults: Product[];
-	onResultClick: (id: number) => void;
-}
 
-const MobileSearchBar: React.FC<MobileSearchBarProps> = ({
+
+const MobileSearchBar = ({
 	searchTerm,
 	setSearchTerm,
 	searchResults,
 	onResultClick,
-}) => {
+}: MobileSearchBarProps) => {
 	return (
 		<div className='relative my-4'>
 			<div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>

@@ -1,15 +1,10 @@
-type ButtonProps = {
-	children: React.ReactNode;
-	onClick?: () => void;
-	className?: string;
-	type?: 'button' | 'submit' | 'reset';
-};
+import { ButtonProps } from "@/types/types";
 
-const ButtonEmpty: React.FC<ButtonProps> = ({
+const ButtonEmpty = ({
 	children,
 	onClick,
 	className,
-}) => {
+}: ButtonProps) => {
 	return (
 		<button
 			onClick={onClick}

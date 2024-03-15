@@ -8,21 +8,14 @@ import { addItem } from '@/store/cartSlice';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useModal } from '@/context/ModalContext';
+import { MenuBookSlideProps } from '@/types/types';
 
 const ProductModal = dynamic(() => import('../ProductModal'), {
 	loading: () => <p>Loading...</p>,
 	ssr: false,
 });
 
-type MenuBookSlideProps = {
-	product: Product;
-	categorySlug: string;
-};
-
-const MenuBookSlide: React.FC<MenuBookSlideProps> = ({
-	product,
-	categorySlug,
-}) => {
+const MenuBookSlide = ({ product, categorySlug }: MenuBookSlideProps) => {
 	const dispatch = useDispatch();
 	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 	const { isModalOpen, openModal, closeModal } = useModal();
@@ -51,14 +44,10 @@ const MenuBookSlide: React.FC<MenuBookSlideProps> = ({
 				>
 					<div className='flex p-1'>
 						<div className='rounded-full border-dashed border-2 border-myOrange p-2 m-2 mx-auto relative'>
-							<Image
+							<img
 								src={product.img}
 								alt={product.name}
-								width={96}
-								height={96}
 								className='rounded-full object-cover w-24 h-24'
-								placeholder='blur'
-								blurDataURL={product.img}
 							/>
 						</div>
 					</div>
@@ -91,7 +80,7 @@ const MenuBookSlide: React.FC<MenuBookSlideProps> = ({
 				</Link>
 				<div className='flex flex-row justify-between items-center my-2 px-1'>
 					<p className='font-bold text-white font-oswald py-1'>
-						${product.price}
+						${product.price.toFixed(2)}
 					</p>
 					<button
 						className='h-7 w-8 rounded-lg flex items-center justify-center bg-myGreen hover:bg-myOrange duration-200 transition ease-linear'

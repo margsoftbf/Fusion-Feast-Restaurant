@@ -1,16 +1,10 @@
-import React from 'react';
+import { PaginationProps } from "@/types/types";
 
-interface PaginationProps {
-	currentPage: number;
-	pageCount: number;
-	paginate: (pageNumber: number) => void;
-}
-
-const Pagination: React.FC<PaginationProps> = ({
+const Pagination = ({
 	currentPage,
 	pageCount,
 	paginate,
-}) => {
+}: PaginationProps) => {
 	return (
 		<div className='flex justify-between items-center bg-third p-2 py-4 rounded-md my-4'>
 			<button

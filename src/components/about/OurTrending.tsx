@@ -1,4 +1,3 @@
-import React from 'react';
 import { Carrot, Strawberry, SubTitleLeft } from '../../../public/assets/svg';
 import Image from 'next/image';
 import { FaArrowRightLong } from 'react-icons/fa6';

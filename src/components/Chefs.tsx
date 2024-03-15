@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
 	Drink,
 	Ellipse,
@@ -11,33 +10,25 @@ import {
 import Image from 'next/image';
 import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { IoLogoTwitter } from 'react-icons/io';
-import ButtonFull from './common/ButtonFull';
 import { chefs } from '@/data/data';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 
-
 const Chefs = () => {
-	const [showSoonMessage, setShowSoonMessage] = useState(false);
-
-	const handleSoonMessage = () => {
-		setShowSoonMessage(true);
-
-		setTimeout(() => {
-			setShowSoonMessage(false);
-		}, 3000);
-	};
 
 	const { ref, controls } = useScrollAnimation();
 	return (
-		<motion.div className='bg-secondary py-8 relative' 	ref={ref}
-		animate={controls}
-		initial='hidden'
-		variants={{
-			visible: { opacity: 1, y: 0 },
-			hidden: { opacity: 0, y: 50 },
-		}}
-		transition={{ duration: 1.5, type: 'ease-in' }}>
+		<motion.div
+			className='bg-secondary py-8 relative'
+			ref={ref}
+			animate={controls}
+			initial='hidden'
+			variants={{
+				visible: { opacity: 1, y: 0 },
+				hidden: { opacity: 0, y: 50 },
+			}}
+			transition={{ duration: 1.5, type: 'ease-in' }}
+		>
 			<Fries className='w-40 h-40 absolute bottom-12 left-0 opacity-60 ' />
 			<Drink className='w-40 h-40 absolute top-12 right-0 opacity-60' />
 			<Ellipse className='w-3 h-3 absolute bottom-0 right-60 lg:w-5 lg:h-5 lg:bottom-12' />
@@ -87,28 +78,17 @@ const Chefs = () => {
 										{chef.position}
 									</p>
 								</div>
-								<div className='opacity-0 group-hover:opacity-80 flex justify-between w-full px-4'>
-									<div className='linki flex items-end gap-3'>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out  flex items-center justify-center'>
+								<div className='opacity-0 group-hover:opacity-80 flex items-center justify-center w-full px-4'>
+									<div className='flex gap-3'>
+										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out  flex items-center justify-center cursor-pointer'>
 											<PhoneIcon className='w-5 h-5 z-50 ' />
 										</p>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center'>
+										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'>
 											<EnvelopeIcon className='w-5 h-5 z-50 ' />
 										</p>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center'>
+										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'>
 											<IoLogoTwitter className='w-5 h-5 z-50 ' />
 										</p>
-									</div>
-									{showSoonMessage && (
-										<div
-											className='absolute bottom-16 right-8 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
-											role='alert'
-										>
-											<span className='block sm:inline'>SOON</span>
-										</div>
-									)}
-									<div className='button' onClick={handleSoonMessage}>
-										<ButtonFull>View more</ButtonFull>
 									</div>
 								</div>
 							</div>

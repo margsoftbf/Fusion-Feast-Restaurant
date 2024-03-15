@@ -7,12 +7,9 @@ import { useModal } from '@/context/ModalContext';
 import ProductModal from '../ProductModal';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
+import { ProductListProps } from '@/types/types';
 
-interface ProductListProps {
-	products: Product[];
-}
-
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList = ({ products }: ProductListProps) => {
 	const { openModal, isModalOpen, selectedProduct, closeModal } = useModal();
 	const dispatch = useDispatch();
 

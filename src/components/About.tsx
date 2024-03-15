@@ -34,8 +34,8 @@ const About = () => {
 			}}
 			transition={{ duration: 1.2, type: 'ease-in' }}
 		>
-			<div className='max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-12 mt-8 py-6 sm:py-12 lg:py-20'>
-				<div className='text-white  md:w-1/2 flex justify-center items-center relative m-2 '>
+			<div className='max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-6 mt-8 py-6 sm:py-12 lg:py-20'>
+				<div className='text-white  md:w-1/2 flex justify-center items-center relative m-2'>
 					<Ellipse className='w-3 h-3 absolute bottom-0 left-6 lg:w-5 lg:h-5 lg:bottom-12' />
 					<Ellipse className='w-1 h-1 absolute top-12 left-6 lg:w-5 lg:h-5 lg:top-28' />
 					<EmptyEllipse className='w-2 h-2 absolute top-16 left-6 lg:w-5 lg:h-5 lg:top-40' />
@@ -72,7 +72,6 @@ const About = () => {
 						/>
 					</motion.div>
 				</div>
-				<Taco className='w-60 h-60 absolute bottom-0 right-0 opacity-40 lg:opacity-100' />
 				<motion.div
 					className='text-white md:w-1/2 relative flex flex-col mr-4 items-center justify-center md:items-start'
 					initial={{ opacity: 0, x: 50 }}

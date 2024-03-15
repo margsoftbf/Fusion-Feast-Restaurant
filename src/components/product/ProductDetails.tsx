@@ -16,7 +16,7 @@ interface ProductDetailsProps {
 	setShowAddedToCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ProductDetails: React.FC<ProductDetailsProps> = ({
+const ProductDetails = ({
 	product,
 	quantity,
 	selectedAddons,
@@ -26,7 +26,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 	addons,
 	showAddedToCart,
 	setShowAddedToCart,
-}) => {
+}: ProductDetailsProps) => {
 	const [activeImage, setActiveImage] = useState(product.imgBig);
 	const [totalPrice, setTotalPrice] = useState(product.price);
 

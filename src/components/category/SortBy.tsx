@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import { SortByProps } from "@/types/types";
 
-
-interface SortByProps {
-    sortKey: string;
-    handleSortChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
-
-const SortBy: React.FC<SortByProps> = ({sortKey, handleSortChange}) => {
+const SortBy = ({sortKey, handleSortChange}: SortByProps) => {
 
 	return (
 		<div>

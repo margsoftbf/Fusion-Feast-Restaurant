@@ -13,7 +13,7 @@ import {
 import { motion } from 'framer-motion';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
-const CategoryBox = dynamic(() => import('./category/MenuBookSlider'), {
+const CategoryBox = dynamic(() => import('./Category/MenuBookSlider'), {
 	loading: () => <p>Loading...</p>,
 	ssr: false,
 });

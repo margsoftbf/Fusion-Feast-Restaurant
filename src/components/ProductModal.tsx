@@ -1,6 +1,5 @@
 import Modal from 'react-modal';
-import { Product } from '@/types/types';
-import { ProductWithExtras, ExtraOptions } from '@/types/types';
+import { ProductWithExtras, ExtraOptions, ProductModalProps } from '@/types/types';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -8,19 +7,13 @@ import { addons } from '@/data/data';
 import { FaCartArrowDown } from 'react-icons/fa';
 import { useModal } from '@/context/ModalContext';
 
-interface ProductModalProps {
-	product: Product | null;
-	onClose: () => void;
-	onAddToCart: (productWithExtras: ProductWithExtras) => void;
-	category: string;
-}
 
 const ProductModal: React.FC<ProductModalProps> = ({
 	product,
 	onClose,
 	onAddToCart,
 	category,
-}) => {
+}: ProductModalProps) => {
 	const [extraOptions, setExtraOptions] = useState<ExtraOptions>({});
 	const [quantity, setQuantity] = useState(1);
 

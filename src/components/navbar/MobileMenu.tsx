@@ -1,28 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import {
 	XMarkIcon,
 	ShoppingBagIcon,
 	PhoneIcon,
+	UserIcon,
 } from '@heroicons/react/24/outline';
 import MobileSearchBar from './MobileSearchBar';
-import { Product } from '@/types/types';
+import { MobileMenuProps } from '@/types/types';
 import { navigation } from '@/data/data';
 import { useRouter } from 'next/router';
+import LoginModal from '../Auth/LoginModal';
 
-interface MobileMenuProps {
-	isOpen: boolean;
-	onClose: () => void;
-	searchTerm: string;
-	setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-	searchResults: Product[];
-	onResultClick: (id: number) => void;
-	isCartOpen: boolean;
-	toggleCart: () => void;
-	cartItemsCount: number;
-}
-
-const MobileMenu: React.FC<MobileMenuProps> = ({
+const MobileMenu = ({
 	isOpen,
 	onClose,
 	searchTerm,
@@ -32,9 +22,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 	toggleCart,
 	isCartOpen,
 	cartItemsCount,
-}) => {
+}: MobileMenuProps) => {
 	const router = useRouter();
 	const isHomePage = router.pathname === '/';
+	const [modalOpen, setOpenModal] = useState(false);
+	const openModal = () => setOpenModal(true);
+	const closeModal = () => setOpenModal(false);
 
 	const handleNavigationClick = (href: string) => {
 		onClose();
@@ -44,7 +37,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 			router.push(href);
 		} else {
 			router.push('#' + href);
-		} 
+		}
 	};
 
 	const handleCheckout = () => {
@@ -93,6 +86,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 								<ShoppingBagIcon className='h-5 w-5' />
 								<span>Checkout</span>
 							</button>
+							<button
+								onClick={openModal}
+								className='relative text-sm font-semibold leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
+							>
+								<UserIcon className='w-5 h-5' />
+								<span>Login</span>
+							</button>
+							<LoginModal isOpen={modalOpen} closeModal={closeModal} />
 							<MobileSearchBar
 								searchTerm={searchTerm}
 								setSearchTerm={setSearchTerm}
@@ -100,7 +101,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 								onResultClick={onResultClick}
 							/>
 						</div>
-
 					</div>
 				</div>
 			</Dialog.Panel>

@@ -1,21 +1,9 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { Product } from '@/types/types';
-
-interface ModalContextType {
-	isModalOpen: boolean;
-	selectedProduct: Product | null;
-	openModal: (product: Product) => void;
-	closeModal: () => void;
-	handleOpenModal?: (product: Product) => void;
-}
+import { Product, ModalContextType, ModalProviderProps } from '@/types/types';
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
-interface ModalProviderProps {
-	children: ReactNode;
-}
-
-export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
+export const ModalProvider = ({ children }: ModalProviderProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
