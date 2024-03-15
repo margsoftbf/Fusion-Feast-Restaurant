@@ -1,8 +1,8 @@
 import Reviews from '@/components/Reviews';
-import OurTrending from '@/components/About/OurTrending';
-import AboutPageSection from '@/components/About/AboutPageSection';
+import OurTrending from '@/components/about/OurTrending';
+import AboutPageSection from '@/components/about/AboutPageSection';
 import Chefs from '@/components/Chefs';
-import WhyVisitsUs from '@/components/About/WhyVisitsUs';
+import WhyVisitsUs from '@/components/about/WhyVisitsUs';
 import Gallery from '@/components/Gallery';
 
 const Aboutus = () => {
