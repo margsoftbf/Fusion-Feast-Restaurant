@@ -3,8 +3,14 @@ import ButtonEmpty from '../common/ButtonEmpty';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import MenuBookSlide from './MenuBookSlide'; 
-import { CategoryBoxProps } from '@/types/types';
+import { Product } from '@/types/types';
+import MenuBookSlide from './MenuBookSlide';
+
+
+type CategoryBoxProps = {
+    categorySlug: string;
+    products: Product[];
+};
 
 const MenuBookSlider = ({ products, categorySlug }: CategoryBoxProps) => {
     return (

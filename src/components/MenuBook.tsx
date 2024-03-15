@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { categories, products } from '@/data/data';
 import React from 'react';
@@ -11,8 +10,7 @@ import {
 } from '../../public/assets/svg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
-import MenuBookSlider from './Category/MenuBookSlider';
-
+import MenuBookSlider from './category/MenuBookSlider';
 
 const MenuBook = () => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
