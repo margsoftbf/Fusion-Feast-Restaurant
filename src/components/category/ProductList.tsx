@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/20/solid';
-import { CartItem, Product } from '@/types/types';
+import { CartItem } from '@/types/types';
 import { useModal } from '@/context/ModalContext';
 import ProductModal from '../ProductModal';
 import { useDispatch } from 'react-redux';

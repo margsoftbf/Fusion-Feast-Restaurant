@@ -2,6 +2,11 @@
 
 Welcome to Fusion Feast, a cutting-edge digital restaurant experience where tradition meets innovation. Our platform offers a novel approach to ordering and enjoying your favorite dishes, from pizzas and burgers to an array of gourmet selections. Fusion Feast is more than just a restaurant - it's a culinary journey tailored to your preferences and tastes.
 
+## Login Info
+
+Login: test@test.com
+Pass: admin123
+
 ## Live Preview:
 
 https://fusion-feast-restaurant.vercel.app/

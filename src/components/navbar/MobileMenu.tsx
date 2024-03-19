@@ -6,11 +6,12 @@ import {
 	PhoneIcon,
 	UserIcon,
 } from '@heroicons/react/24/outline';
-import MobileSearchBar from './MobileSearchBar';
 import { MobileMenuProps } from '@/types/types';
 import { navigation } from '@/data/data';
 import { useRouter } from 'next/router';
 import LoginModal from '../Auth/LoginModal';
+import MobileSearchBar from './MobileSearchBar';
+import { useSession, signOut } from 'next-auth/react';
 
 const MobileMenu = ({
 	isOpen,
@@ -24,6 +25,7 @@ const MobileMenu = ({
 	cartItemsCount,
 }: MobileMenuProps) => {
 	const router = useRouter();
+	const { data: session } = useSession();
 	const isHomePage = router.pathname === '/';
 	const [modalOpen, setOpenModal] = useState(false);
 	const openModal = () => setOpenModal(true);
@@ -86,13 +88,32 @@ const MobileMenu = ({
 								<ShoppingBagIcon className='h-5 w-5' />
 								<span>Checkout</span>
 							</button>
-							<button
-								onClick={openModal}
-								className='relative text-sm font-semibold leading-6 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
-							>
-								<UserIcon className='w-5 h-5' />
-								<span>Login</span>
-							</button>
+							{!session ? (
+								<button
+									onClick={openModal}
+									className='relative my-2  ease-in-out duration-300 transition gap-x-2 cursor-pointer flex items-center gap-2 -mx-2 rounded-lg px-2 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary'
+								>
+									<UserIcon className='w-5 h-5' />
+									<span>Login</span>
+								</button>
+							) : (
+								<>
+									<button
+										onClick={() => router.push('/account')}
+										className='relative my-2  ease-in-out duration-300 transition gap-x-2 cursor-pointer flex items-center gap-2 -mx-2 rounded-lg px-2 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary'
+									>
+										<UserIcon className='w-5 h-5' />
+										<span>Your account</span>
+									</button>
+									<button
+										onClick={() => signOut()}
+										className='relative my-2  ease-in-out duration-300 transition gap-x-2 cursor-pointer flex items-center gap-2 -mx-2 rounded-lg px-2 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary'
+									>
+										<UserIcon className='w-5 h-5' />
+										<span>Logout</span>
+									</button>
+								</>
+							)}
 							<LoginModal isOpen={modalOpen} closeModal={closeModal} />
 							<MobileSearchBar
 								searchTerm={searchTerm}

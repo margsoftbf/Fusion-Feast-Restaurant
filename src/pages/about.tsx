@@ -7,7 +7,7 @@ import Gallery from '@/components/Gallery';
 
 const Aboutus = () => {
 	return (
-		<div id='about' className='relative bg-primary text-white'>
+		<div id='about' className='relative bg-primary text-white h-full'>
 			<div className='relative mx-auto overflow-hidden'>
 				<div className='md:-mt-12'>
 					<AboutPageSection />

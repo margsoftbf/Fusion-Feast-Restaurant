@@ -5,7 +5,6 @@ import {
 	MagnifyingGlassIcon,
 	XMarkIcon,
 	ShoppingBagIcon,
-	PhoneIcon,
 	UserIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -19,8 +18,10 @@ import Cart from './Cart';
 import { motion } from 'framer-motion';
 import LoginModal from './Auth/LoginModal';
 import DesktopSearchBar from './navbar/DesktopSearchBar';
+import { useSession, signOut } from 'next-auth/react';
 
 const Navbar = ({ showSearch, setShowSearch }: SearchProps) => {
+	const { data: session } = useSession();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [modalOpen, setOpenModal] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
@@ -156,10 +157,10 @@ const Navbar = ({ showSearch, setShowSearch }: SearchProps) => {
 						)}
 					</div>
 
-					<span className='flex items-center gap-2 mx-1 rounded-lg px-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition cursor-pointer'>
+					{/* <span className='flex items-center gap-2 mx-1 rounded-lg px-1 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-primary ease-in-out duration-300 transition cursor-pointer'>
 						<PhoneIcon className='h-5 w-5' />
 						<span>+1-555-157-5651</span>
-					</span>
+					</span> */}
 					<button
 						onClick={toggleCart}
 						className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'
@@ -175,13 +176,33 @@ const Navbar = ({ showSearch, setShowSearch }: SearchProps) => {
 						toggleCart={toggleCart}
 						cartItemsCount={cartItemsCount}
 					/>
-					<button
-						onClick={openModal}
-						className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
-					>
-						<UserIcon className='w-5 h-5' />
-						<span>Login</span>
-					</button>
+					{!session ? (
+						<button
+							onClick={openModal}
+							className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
+						>
+							<UserIcon className='w-5 h-5' />
+							<span>Login</span>
+						</button>
+					) : (
+						<>
+							<button
+								onClick={() => router.push('/account')}
+								className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
+							>
+								<UserIcon className='w-5 h-5' />
+								<span>Your account</span>
+							</button>
+							<button
+								onClick={() => signOut()}
+								className='relative text-sm font-semibold leading-6 p-1 text-white hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-1 cursor-pointer'
+							>
+								<UserIcon className='w-5 h-5' />
+								<span>Logout</span>
+							</button>
+						</>
+					)}
+					
 					<LoginModal isOpen={modalOpen} closeModal={closeModal} />
 				</div>
 			</nav>

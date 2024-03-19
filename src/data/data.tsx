@@ -3,9 +3,14 @@ import { BiSushi } from 'react-icons/bi';
 import { MdOutlineDinnerDining } from 'react-icons/md';
 import { LuSoup, LuSalad } from 'react-icons/lu';
 import { Product, ReviewsProps } from '@/types/types';
-import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
+import {
+	FaFacebook,
+	FaInstagram,
+	FaTwitter,
+	FaGithub,
+	FaYoutube,
+} from 'react-icons/fa';
 import { ComponentPropsWithoutRef } from 'react';
-
 
 export type Category = {
 	name: string;
@@ -53,27 +58,35 @@ export const navigationFooter = {
 		{
 			name: 'Facebook',
 			href: '#',
-			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaFacebook {...props} />
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => (
+				<FaFacebook {...props} />
+			),
 		},
 		{
 			name: 'Instagram',
 			href: '#',
-			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaInstagram {...props} />
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => (
+				<FaInstagram {...props} />
+			),
 		},
 		{
 			name: 'Twitter',
 			href: '#',
-			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaTwitter {...props} />
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => (
+				<FaTwitter {...props} />
+			),
 		},
 		{
 			name: 'GitHub',
 			href: '#',
-			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaGithub {...props} />
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaGithub {...props} />,
 		},
 		{
 			name: 'YouTube',
 			href: '#',
-			icon: (props: ComponentPropsWithoutRef<'svg'>) => <FaYoutube {...props} />
+			icon: (props: ComponentPropsWithoutRef<'svg'>) => (
+				<FaYoutube {...props} />
+			),
 		},
 	],
 };
@@ -284,6 +297,65 @@ export const addons: Record<string, Addon[]> = {
 		{ name: 'Extra Dressing', price: 0.5 },
 	],
 };
+
+export const orders = [
+	{
+		id: 1,
+		date: '19.03.2024',
+		img: '/assets/products/pizza/margherita.webp',
+		name: 'Margherita',
+		price: 14.5,
+		status: 'Delivered',
+	},
+	{
+		id: 2,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+	{
+		id: 3,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+	{
+		id: 4,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+	{
+		id: 5,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+	{
+		id: 6,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+	{
+		id: 7,
+		date: '19.03.2024',
+		img: '/assets/products/burgers/classicCheeseburger.webp',
+		name: 'Classic Cheeseburger',
+		price: 11.99,
+		status: 'Delivered',
+	},
+];
 
 export const products: Product[] = [
 	{
