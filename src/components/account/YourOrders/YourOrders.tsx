@@ -3,7 +3,7 @@ import React from 'react';
 
 const YourOrders = () => {
 	return (
-		<div className='bg-third text-white rounded-md py-4 my-2 px-4'>
+		<div className='bg-third text-white rounded-md py-4 my-2 px-4 overflow-x-auto'>
 			<table className='w-full table-auto'>
 				<thead className='w-full h-12'>
 					<tr className='border-b bg-zinc-900 border-myGray/30 font-poppins text-white text-[14px] whitespace-nowrap'>
