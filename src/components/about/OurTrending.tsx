@@ -53,8 +53,8 @@ const OurTrending = () => {
 							</p>
 						</div>
 					</div>
-					<div className='bg-black w-64 lg:w-48 xl:w-60 2xl:w-64 h-96 relative rounded-xl'>
-						<div className='absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-[95%] h-[95%] rounded-xl z-10 opacity-50 flex items-end'></div>
+					<div className='bg-black w-64 lg:w-48 xl:w-60 2xl:w-64 h-96 relative rounded-xl group'>
+						<div className='absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-[95%] h-[95%] rounded-xl z-10 opacity-50 flex items-end group-hover:opacity-70 transition-opacity duration-300 cursor-pointer'></div>
 						<Image
 							src='/assets/about/trending-two.webp'
 							className='object-cover rounded-xl'
@@ -66,9 +66,21 @@ const OurTrending = () => {
 							alt='Inside of restaurant'
 							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 						/>
+						<div className='absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+							<p className='text-white font-bold text-xl font-oswald mb-2'>
+								Restaurant Interior
+							</p>
+							<p className='text-white text-sm mb-2 mt-6'>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+								soluta?
+							</p>
+							<p className='text-white text-sm mt-4 mb-2 flex items-center gap-2 cursor-pointer'>
+								<span>Learn More</span> <FaArrowRightLong className='w-4 h-4' />
+							</p>
+						</div>
 					</div>
-					<div className='bg-black w-64 lg:w-48 xl:w-60 2xl:w-64 h-96 relative rounded-xl'>
-						<div className='absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-[95%] h-[95%] rounded-xl z-10 opacity-50 flex items-end'></div>
+					<div className='bg-black w-64 lg:w-48 xl:w-60 2xl:w-64 h-96 relative rounded-xl group'>
+						<div className='absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-[95%] h-[95%] rounded-xl z-10 opacity-50 flex items-end group-hover:opacity-70 transition-opacity duration-300 cursor-pointer'></div>
 						<Image
 							src='/assets/about/trending-three.webp'
 							className='object-cover rounded-xl'
@@ -80,6 +92,18 @@ const OurTrending = () => {
 							alt='Cookies with chocolate'
 							sizes='(max-width: 350px) 350px, (max-width: 500px) 500px, (max-width: 768px) 768px, (max-width: 1200px) 1200px'
 						/>
+						<div className='absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+							<p className='text-white font-bold text-xl font-oswald mb-2'>
+								Chocolate Cookies
+							</p>
+							<p className='text-white text-sm mb-2 mt-6'>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+								soluta?
+							</p>
+							<p className='text-white text-sm mt-4 mb-2 flex items-center gap-2 cursor-pointer'>
+								<span>Learn More</span> <FaArrowRightLong className='w-4 h-4' />
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
