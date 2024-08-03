@@ -4,8 +4,8 @@ Welcome to Fusion Feast, a cutting-edge digital restaurant experience where trad
 
 ## Login Info
 
-Login: test@test.com
-Pass: admin123
+- Login: test@test.com
+- Password: admin123
 
 ## Live Preview:
 
@@ -13,29 +13,43 @@ https://fusion-feast-restaurant.vercel.app/
 
 ## Download and Installation
 
+## Standard Installation
+
 ```bash
   git clone https://github.com/margsoftbf/Fusion-Feast-Restaurant.git
-  npm i
+  npm install
   npm run dev
+```
+
+## Docker Installation
+
+```bash
+  git clone https://github.com/margsoftbf/Fusion-Feast-Restaurant.git
+  docker-compose build
+  docker-compose up
 ```
 
 ## Screenshot
 
 # Full screen
+
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FullScreen.png)
 
 # Add to Cart
+
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/AddToCart1.jpg?raw=true)
 
 # Food Menu
+
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FoodMenu.jpg?raw=true)
 
 # Food Details
+
 ![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/FoodDetails.jpg?raw=true)
 
 # Checkout Page
-![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/Checkout.jpg?raw=true)
 
+![App Screenshoot](https://github.com/margsoftbf/Fusion-Feast-Restaurant/blob/main/public/assets/screenshot/Checkout.jpg?raw=true)
 
 ## Technologies Used:
 
@@ -46,7 +60,6 @@ https://fusion-feast-restaurant.vercel.app/
 - Framer Motion: Adding smooth and engaging animations.
 - Swiper: Interactive sliders for a dynamic user interface.
 - UUID: Unique identifiers for secure and efficient data handling.
-
 
 ## Application Layout:
 
@@ -66,14 +79,11 @@ Fusion Feast’s layout includes:
 - Contact Page
 - Comprehensive Footer
 
-
 ## Custom Typography:
 
 - Bakilda: Used for the brand name and section descriptions.
 - Lemonada (Google Fonts): Styling for sub-titles and smaller sections.
 - Open Sans: Primary font for general text content.
-
-
 
 Visit Fusion Feast for a unique dining experience. For any inquiries or assistance, please use our contact page or reach out to our support team.
 
