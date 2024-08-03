@@ -13,10 +13,19 @@ import { IoLogoTwitter } from 'react-icons/io';
 import { chefs } from '@/data/data';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
+import { MouseEventHandler, useState } from 'react';
 
 const Chefs = () => {
-
 	const { ref, controls } = useScrollAnimation();
+	const [showNotification, setShowNotification] = useState(false);
+
+	const handleNotification: MouseEventHandler<HTMLParagraphElement> = () => {
+		setShowNotification(true);
+		setTimeout(() => {
+			setShowNotification(false);
+		}, 2000);
+	};
+
 	return (
 		<motion.div
 			className='bg-secondary py-8 relative'
@@ -78,18 +87,32 @@ const Chefs = () => {
 										{chef.position}
 									</p>
 								</div>
-								<div className='opacity-0 group-hover:opacity-80 flex items-center justify-center w-full px-4'>
-									<div className='flex gap-3'>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out  flex items-center justify-center cursor-pointer'>
+								<div className='opacity-0 group-hover:opacity-80 flex items-center justify-center w-full px-4 relative'>
+									<div className='flex gap-3 relative'>
+										<p
+											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out  flex items-center justify-center cursor-pointer'
+											onClick={handleNotification}
+										>
 											<PhoneIcon className='w-5 h-5 z-50 ' />
 										</p>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'>
+										<p
+											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'
+											onClick={handleNotification}
+										>
 											<EnvelopeIcon className='w-5 h-5 z-50 ' />
 										</p>
-										<p className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'>
+										<p
+											className='w-9 h-9 rounded-full bg-primary hover:bg-white text-white hover:text-black transition duration-300 ease-in-out flex items-center justify-center cursor-pointer'
+											onClick={handleNotification}
+										>
 											<IoLogoTwitter className='w-5 h-5 z-50 ' />
 										</p>
 									</div>
+									{showNotification && (
+										<div className='absolute bg-green-900 border border-green-400 text-white px-2 py-1 rounded text-xs -top-10 left-1/2 transform -translate-x-1/2'>
+											SOON
+										</div>
+									)}
 								</div>
 							</div>
 						</div>

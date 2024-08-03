@@ -75,8 +75,8 @@ const BookingForm = () => {
 						type='text'
 						id='date'
 						name='date'
-						className={`border rounded-lg p-2 outline-none w-44 ${
-							errors.date ? 'border-red-500' : 'border-gray-300'
+						className={`border border-gray-300 rounded-lg p-2 outline-none w-44 ${
+							errors.date ? 'border-red-500' : ''
 						}`}
 						placeholder='Select Date'
 						value={formData.date}
@@ -95,7 +95,7 @@ const BookingForm = () => {
 						type='text'
 						id='time'
 						name='time'
-						className={`border rounded-lg p-2 w-36 outline-none ${
+						className={`border border-gray-300 rounded-lg p-2 w-36 outline-none ${
 							errors.time ? 'border-red-500' : ''
 						}`}
 						placeholder='Select Time'
@@ -115,7 +115,7 @@ const BookingForm = () => {
 						type='text'
 						id='name'
 						name='name'
-						className={`border rounded-lg p-2 w-36 outline-none ${
+						className={`border border-gray-300 rounded-lg p-2 w-36 outline-none ${
 							errors.name ? 'border-red-500' : ''
 						}`}
 						placeholder='Person name'
@@ -133,7 +133,7 @@ const BookingForm = () => {
 						type='email'
 						id='email'
 						name='email'
-						className={`border rounded-lg p-2 w-44 outline-none ${
+						className={`border border-gray-300 rounded-lg p-2 w-44 outline-none ${
 							errors.email ? 'border-red-500' : ''
 						}`}
 						placeholder='E-mail'

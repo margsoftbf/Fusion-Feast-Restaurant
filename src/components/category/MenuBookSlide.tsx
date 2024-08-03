@@ -1,6 +1,5 @@
 import { Product, CartItem } from '@/types/types';
 import Link from 'next/link';
-import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { IoMdAddCircle } from 'react-icons/io';
 import { useDispatch } from 'react-redux';

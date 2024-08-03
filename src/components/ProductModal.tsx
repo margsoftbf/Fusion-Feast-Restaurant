@@ -1,12 +1,15 @@
 import Modal from 'react-modal';
-import { ProductWithExtras, ExtraOptions, ProductModalProps } from '@/types/types';
+import {
+	ProductWithExtras,
+	ExtraOptions,
+	ProductModalProps,
+} from '@/types/types';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import Image from 'next/image';
 import { addons } from '@/data/data';
 import { FaCartArrowDown } from 'react-icons/fa';
 import { useModal } from '@/context/ModalContext';
-
 
 const ProductModal: React.FC<ProductModalProps> = ({
 	product,
@@ -64,9 +67,9 @@ const ProductModal: React.FC<ProductModalProps> = ({
 			className='inset-0 flex relative max-h-[80%] justify-center items-center z-50 overflow-y-auto mx-4 my-12 top-12'
 			overlayClassName='fixed top-0 left-0 right-0 bottom-0 bg-black/30 flex justify-center items-center z-50'
 		>
-			<div className='bg-white rounded-md p-2 mx-auto max-w-8xl px-2 lg:px-3 z-50 text-black relative overflow-y-auto max-h-[80vh] w-full flex flex-col items-center lg:gap-4 lg:flex-row lg:justify-between'>
+			<div className='bg-white rounded-md p-2 mx-auto max-w-8xl px-4 lg:px-10 z-50 text-black relative overflow-y-auto max-h-[80vh] w-full flex flex-col items-center lg:gap-4 lg:flex-row lg:justify-between'>
 				{product && (
-					<div className='flex p-1 lg:w-1/2'>
+					<div className='flex p-1 lg:w-2/5'>
 						<div className='rounded-md bg-gray-100 w-60 h-60 p-2 m-2 mx-auto flex items-center justify-center '>
 							<Image
 								src={product.imgBig}
@@ -81,7 +84,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
 						</div>
 					</div>
 				)}
-				<div className='lg:w-1/2 relative'>
+				<div className='lg:w-3/5 relative'>
 					<h2 className='text-center text-2xl font-oswald mb-2'>
 						{product?.name}
 					</h2>
